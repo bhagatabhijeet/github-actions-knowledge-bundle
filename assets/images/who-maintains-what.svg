@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 570" width="1200" height="570" role="img" aria-label="With a self-hosted CI server you maintain all seven layers. With GitHub Actions on hosted runners you maintain only the pipeline definition">
+  <rect width="1200" height="570" rx="20" fill="#0d1117"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+
+    <!-- column headings -->
+    <text x="310" y="52" font-size="22" font-weight="800" fill="#ffa657">Self-hosted CI server</text>
+    <text x="310" y="78" font-size="16" fill="#c9d1d9">7 of 7 layers are yours</text>
+    <text x="890" y="52" font-size="22" font-weight="800" fill="#3fb950">GitHub Actions, hosted runners</text>
+    <text x="890" y="78" font-size="16" fill="#c9d1d9">1 of 7 layers is yours</text>
+
+    <!-- left column: all yours -->
+    <g font-size="18" font-weight="700" fill="#ffffff">
+      <g fill="#3d1d00" stroke="#ffa657" stroke-width="3">
+        <rect x="40" y="100" width="540" height="48" rx="12"/>
+        <rect x="40" y="158" width="540" height="48" rx="12"/>
+        <rect x="40" y="216" width="540" height="48" rx="12"/>
+        <rect x="40" y="274" width="540" height="48" rx="12"/>
+        <rect x="40" y="332" width="540" height="48" rx="12"/>
+        <rect x="40" y="390" width="540" height="48" rx="12"/>
+        <rect x="40" y="448" width="540" height="48" rx="12"/>
+      </g>
+      <text x="310" y="130">Pipeline definition</text>
+      <text x="310" y="188">Build tools: languages, SDKs, CLIs</text>
+      <text x="310" y="246">Plugins and integrations</text>
+      <text x="310" y="304">Scaling and build queues</text>
+      <text x="310" y="362">CI server software and upgrades</text>
+      <text x="310" y="420">Operating system and security patches</text>
+      <text x="310" y="478">Machines, disks and backups</text>
+    </g>
+
+    <!-- right column: one yours, six GitHub's -->
+    <g font-size="18" font-weight="700" fill="#ffffff">
+      <rect x="620" y="100" width="540" height="48" rx="12" fill="#3d1d00" stroke="#ffa657" stroke-width="3"/>
+      <g fill="#0f2d17" stroke="#3fb950" stroke-width="3">
+        <rect x="620" y="158" width="540" height="48" rx="12"/>
+        <rect x="620" y="216" width="540" height="48" rx="12"/>
+        <rect x="620" y="274" width="540" height="48" rx="12"/>
+        <rect x="620" y="332" width="540" height="48" rx="12"/>
+        <rect x="620" y="390" width="540" height="48" rx="12"/>
+        <rect x="620" y="448" width="540" height="48" rx="12"/>
+      </g>
+      <text x="890" y="130">Pipeline definition</text>
+      <text x="890" y="188">Build tools: languages, SDKs, CLIs</text>
+      <text x="890" y="246">Plugins and integrations</text>
+      <text x="890" y="304">Scaling and build queues</text>
+      <text x="890" y="362">CI server software and upgrades</text>
+      <text x="890" y="420">Operating system and security patches</text>
+      <text x="890" y="478">Machines, disks and backups</text>
+    </g>
+
+    <!-- legend -->
+    <g font-size="16" fill="#c9d1d9" text-anchor="start">
+      <rect x="400" y="522" width="26" height="20" rx="5" fill="#3d1d00" stroke="#ffa657" stroke-width="2"/>
+      <text x="436" y="538">You maintain it</text>
+      <rect x="620" y="522" width="26" height="20" rx="5" fill="#0f2d17" stroke="#3fb950" stroke-width="2"/>
+      <text x="656" y="538">GitHub maintains it</text>
+    </g>
+  </g>
+</svg>

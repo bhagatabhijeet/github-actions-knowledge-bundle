@@ -148,15 +148,14 @@ Any two of: run independent jobs in parallel instead of serially; cache dependen
 
 You understand why CI/CD exists, can tell delivery from deployment, and have built a staged pipeline with a matrix and an artifact.
 
-> [!NOTE]
-> **More chapters are on the way.** This guide grows one topic at a time. Check the [change log](../log.md) to see what's new.
+Next up: the question this chapter skipped. **What does a pipeline run on**, and why did so many teams get tired of looking after it themselves?
 
 ---
 
 <p align="center">
   <a href="05-your-first-ci-pipeline.md">⬅️ Your First CI Pipeline</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="index.md">📚 Chapter 2</a>
+  <a href="../README.md">🏠 Home</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="../README.md"><b>🏠 Back to Home</b></a>
+  <a href="../03-problem-with-traditional-ci-cd-tools/01-the-problem-statement.md"><b>Next: Chapter 3, The Problem with Traditional CI/CD Tools ➡️</b></a>
 </p>

@@ -10,6 +10,7 @@ okf_version: "0.2"
 
 * [01 - Introduction to GitHub Actions](01-introduction-to-github-actions/) - What GitHub Actions is, its six core concepts, how to read workflow YAML, and a first hands-on workflow.
 * [02 - Basics of CI/CD](02-basics-of-ci-cd/) - Why CI/CD exists, continuous integration, delivery versus deployment, pipeline anatomy, and a first hands-on CI pipeline.
+* [03 - The Problem with Traditional CI/CD Tools](03-problem-with-traditional-ci-cd-tools/) - The problem statement for self-hosted CI servers, their six hidden costs, and how GitHub Actions answers each one, trade-offs included.
 
 # Sample Workflows
 

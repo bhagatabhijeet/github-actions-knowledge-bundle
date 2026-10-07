@@ -12,8 +12,8 @@ generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
 
 <p align="center">
   <a href="01-introduction-to-github-actions/01-what-is-github-actions.md"><img src="https://img.shields.io/badge/START%20READING-%E2%96%B6-2ea043?style=for-the-badge" alt="Start reading"></a>
-  <img src="https://img.shields.io/badge/CHAPTERS-2-58a6ff?style=for-the-badge" alt="2 chapters">
-  <img src="https://img.shields.io/badge/LESSONS-11-bc8cff?style=for-the-badge" alt="11 lessons">
+  <img src="https://img.shields.io/badge/CHAPTERS-3-58a6ff?style=for-the-badge" alt="3 chapters">
+  <img src="https://img.shields.io/badge/LESSONS-15-bc8cff?style=for-the-badge" alt="15 lessons">
   <img src="https://img.shields.io/badge/LIVE%20WORKFLOWS-2-f778ba?style=for-the-badge&logo=githubactions&logoColor=white" alt="2 live workflows">
   <img src="https://img.shields.io/badge/OKF-v0.2-ffa657?style=for-the-badge" alt="OKF v0.2">
   <img src="https://img.shields.io/badge/LICENSE-CC0-e3b341?style=for-the-badge" alt="CC0 license">
@@ -52,11 +52,13 @@ flowchart LR
     S([🧑‍💻 You are here]):::start --> C1
     C1["<b>01</b><br/>🤖 Introduction to<br/>GitHub Actions"]:::blue --> C2
     C2["<b>02</b><br/>🔄 Basics of<br/>CI/CD"]:::pink --> C3
-    C3["🔜 More chapters<br/>on the way"]:::soon
+    C3["<b>03</b><br/>🧯 The Problem with<br/>Traditional CI/CD Tools"]:::green --> C4
+    C4["🔜 More chapters<br/>on the way"]:::soon
 
     classDef start fill:#3d2a00,stroke:#e3b341,color:#fff,stroke-width:2px
     classDef blue fill:#0c1d3a,stroke:#58a6ff,color:#fff,stroke-width:2px
     classDef pink fill:#3a0f2b,stroke:#f778ba,color:#fff,stroke-width:2px
+    classDef green fill:#0f2d17,stroke:#3fb950,color:#fff,stroke-width:2px
     classDef soon fill:#161b22,stroke:#8b949e,color:#c9d1d9,stroke-width:2px,stroke-dasharray: 6 4
 ```
 
@@ -84,6 +86,17 @@ flowchart LR
 | 2.4 | 🏭 [**Anatomy of a Pipeline**](02-basics-of-ci-cd/04-anatomy-of-a-pipeline.md) | Map pipeline stages onto jobs, `needs`, matrices and artifacts | 9 min |
 | 2.5 | 🛠️ [**Your First CI Pipeline**](02-basics-of-ci-cd/05-your-first-ci-pipeline.md) 🛠️ | Build a lint → test → package pipeline and watch it catch a bug | 25 min |
 | 2.6 | 📋 [**Cheat Sheet & Quiz**](02-basics-of-ci-cd/06-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
+
+<br>
+
+<a href="03-problem-with-traditional-ci-cd-tools/01-the-problem-statement.md"><img src="assets/images/chapter-03-banner.svg" alt="Chapter 3: The Problem with Traditional CI/CD Tools" width="100%"></a>
+
+| # | Lesson | You'll be able to... | ⏱️ |
+|:---:|---|---|:---:|
+| 3.1 | 🧯 [**The Problem Statement**](03-problem-with-traditional-ci-cd-tools/01-the-problem-statement.md) | State in one sentence what goes wrong with a self-hosted CI server | 6 min |
+| 3.2 | 🧊 [**The Hidden Costs**](03-problem-with-traditional-ci-cd-tools/02-hidden-costs-of-self-hosted-ci.md) | Name the six pains: upkeep, snowflake agents, capacity, plugins, glue, silos | 8 min |
+| 3.3 | 🛟 [**How GitHub Actions Answers**](03-problem-with-traditional-ci-cd-tools/03-how-github-actions-answers.md) | Map each pain to an Actions feature, and name the trade-offs | 9 min |
+| 3.4 | 📋 [**Cheat Sheet & Quiz**](03-problem-with-traditional-ci-cd-tools/04-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
 
 > [!NOTE]
 > 🔜 **This book is still being written.** New chapters land one topic at a time. Watch the repo, or peek at the [change log](log.md).
@@ -125,6 +138,7 @@ cd github-actions-knowledge-bundle
  ┣ 📄 log.md                               OKF change log
  ┣ 📂 01-introduction-to-github-actions    Chapter 1 lessons
  ┣ 📂 02-basics-of-ci-cd                   Chapter 2 lessons
+ ┣ 📂 03-problem-with-traditional-ci-cd-tools   Chapter 3 lessons
  ┣ 📂 assets
  ┃  ┣ 📂 images                            diagrams and banners (SVG)
  ┃  ┗ 📂 snippets                          copy-paste YAML
