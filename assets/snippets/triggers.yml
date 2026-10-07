@@ -1,0 +1,28 @@
+# Common ways to start a workflow. Mix and match under a single `on:` key.
+
+on:
+  # Code events
+  push:
+    branches: [main]
+    paths: ['src/**']        # only when these files change
+  pull_request:
+    branches: [main]
+
+  # A clock (cron is in UTC; this is 06:30 every weekday)
+  schedule:
+    - cron: '30 6 * * 1-5'
+
+  # A button in the Actions tab, with an optional form
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Where to deploy
+        type: choice
+        options: [staging, production]
+        default: staging
+
+  # Other things that happen on GitHub
+  release:
+    types: [published]
+  issues:
+    types: [opened]

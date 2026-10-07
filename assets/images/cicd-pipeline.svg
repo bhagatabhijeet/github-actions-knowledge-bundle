@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="A CI/CD pipeline: commit, build, test, package, deploy to staging, deploy to production">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#8b949e"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="400" rx="20" fill="#0d1117"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+
+    <!-- CI bracket -->
+    <rect x="40" y="40" width="722" height="44" rx="10" fill="#0c1d3a" stroke="#58a6ff" stroke-width="2"/>
+    <text x="401" y="69" font-size="18" font-weight="700" fill="#79c0ff">CONTINUOUS INTEGRATION  -  is this change safe to merge?</text>
+
+    <!-- CD bracket -->
+    <rect x="778" y="40" width="382" height="44" rx="10" fill="#0f2d17" stroke="#3fb950" stroke-width="2"/>
+    <text x="969" y="69" font-size="18" font-weight="700" fill="#56d364">CONTINUOUS DELIVERY  -  get it to users</text>
+
+    <!-- stages -->
+    <g font-size="20" font-weight="700" fill="#ffffff">
+      <rect x="40" y="130" width="160" height="120" rx="16" fill="#3d2a00" stroke="#e3b341" stroke-width="3"/>
+      <text x="120" y="184">Commit</text>
+
+      <rect x="232" y="130" width="160" height="120" rx="16" fill="#0c1d3a" stroke="#58a6ff" stroke-width="3"/>
+      <text x="312" y="184">Build</text>
+
+      <rect x="424" y="130" width="160" height="120" rx="16" fill="#22123f" stroke="#bc8cff" stroke-width="3"/>
+      <text x="504" y="184">Test</text>
+
+      <rect x="616" y="130" width="146" height="120" rx="16" fill="#3a0f2b" stroke="#f778ba" stroke-width="3"/>
+      <text x="689" y="184">Package</text>
+
+      <rect x="794" y="130" width="160" height="120" rx="16" fill="#3d1d00" stroke="#ffa657" stroke-width="3"/>
+      <text x="874" y="184">Staging</text>
+
+      <rect x="986" y="130" width="174" height="120" rx="16" fill="#0f2d17" stroke="#3fb950" stroke-width="3"/>
+      <text x="1073" y="184">Production</text>
+    </g>
+
+    <g font-size="14" fill="#c9d1d9">
+      <text x="120" y="212">a small change</text>
+      <text x="312" y="212">compile, install</text>
+      <text x="504" y="212">lint, unit, integration</text>
+      <text x="689" y="212">one artifact</text>
+      <text x="874" y="212">rehearsal</text>
+      <text x="1073" y="212">real users</text>
+    </g>
+
+    <!-- arrows -->
+    <g stroke="#8b949e" stroke-width="3" marker-end="url(#arrow)">
+      <line x1="202" y1="190" x2="228" y2="190"/>
+      <line x1="394" y1="190" x2="420" y2="190"/>
+      <line x1="586" y1="190" x2="612" y2="190"/>
+      <line x1="764" y1="190" x2="790" y2="190"/>
+      <line x1="956" y1="190" x2="982" y2="190"/>
+    </g>
+
+    <!-- feedback loop -->
+    <path d="M504 254 C 504 330, 120 330, 120 258" fill="none" stroke="#f85149" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+    <text x="312" y="346" font-size="16" font-weight="600" fill="#ff7b72">red build? fix it within minutes, not weeks</text>
+
+    <text x="969" y="320" font-size="16" fill="#c9d1d9">The same artifact travels through every environment.</text>
+    <text x="969" y="344" font-size="16" fill="#c9d1d9">Build once, deploy many.</text>
+  </g>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-label="An event triggers a workflow; a workflow contains jobs; each job runs its steps on its own runner">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#8b949e"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="560" rx="20" fill="#0d1117"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+
+    <!-- EVENT -->
+    <rect x="40" y="200" width="190" height="160" rx="16" fill="#3d2a00" stroke="#e3b341" stroke-width="3"/>
+    <text x="135" y="240" text-anchor="middle" font-size="15" font-weight="700" letter-spacing="3" fill="#e3b341">EVENT</text>
+    <text x="135" y="282" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">git push</text>
+    <text x="135" y="312" text-anchor="middle" font-size="15" fill="#d6c38a">pull request</text>
+    <text x="135" y="334" text-anchor="middle" font-size="15" fill="#d6c38a">schedule, manual...</text>
+
+    <line x1="234" y1="280" x2="290" y2="280" stroke="#8b949e" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="262" y="266" text-anchor="middle" font-size="13" fill="#8b949e">triggers</text>
+
+    <!-- WORKFLOW -->
+    <rect x="296" y="40" width="864" height="480" rx="20" fill="#0c1d3a" stroke="#58a6ff" stroke-width="3"/>
+    <text x="324" y="80" font-size="15" font-weight="700" letter-spacing="3" fill="#58a6ff">WORKFLOW</text>
+    <text x="444" y="80" font-size="15" fill="#9fc6f5">.github/workflows/ci.yml</text>
+
+    <!-- JOB 1 -->
+    <rect x="324" y="104" width="390" height="330" rx="16" fill="#22123f" stroke="#bc8cff" stroke-width="3"/>
+    <text x="348" y="140" font-size="15" font-weight="700" letter-spacing="3" fill="#bc8cff">JOB</text>
+    <text x="398" y="140" font-size="18" font-weight="700" fill="#ffffff">build</text>
+
+    <rect x="348" y="160" width="342" height="52" rx="10" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+    <text x="368" y="192" font-size="13" font-weight="700" letter-spacing="2" fill="#f778ba">STEP 1</text>
+    <text x="440" y="192" font-size="16" fill="#ffffff">uses: actions/checkout</text>
+
+    <rect x="348" y="224" width="342" height="52" rx="10" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+    <text x="368" y="256" font-size="13" font-weight="700" letter-spacing="2" fill="#f778ba">STEP 2</text>
+    <text x="440" y="256" font-size="16" fill="#ffffff">uses: actions/setup-python</text>
+
+    <rect x="348" y="288" width="342" height="52" rx="10" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+    <text x="368" y="320" font-size="13" font-weight="700" letter-spacing="2" fill="#f778ba">STEP 3</text>
+    <text x="440" y="320" font-size="16" fill="#ffffff">run: python -m unittest</text>
+
+    <rect x="348" y="364" width="342" height="52" rx="10" fill="#0f2d17" stroke="#3fb950" stroke-width="2"/>
+    <text x="368" y="396" font-size="13" font-weight="700" letter-spacing="2" fill="#3fb950">RUNNER</text>
+    <text x="446" y="396" font-size="16" fill="#ffffff">ubuntu-latest (fresh VM)</text>
+
+    <!-- arrow between jobs -->
+    <line x1="718" y1="268" x2="760" y2="268" stroke="#8b949e" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="739" y="254" text-anchor="middle" font-size="13" fill="#8b949e">needs</text>
+
+    <!-- JOB 2 -->
+    <rect x="766" y="104" width="366" height="330" rx="16" fill="#22123f" stroke="#bc8cff" stroke-width="3"/>
+    <text x="790" y="140" font-size="15" font-weight="700" letter-spacing="3" fill="#bc8cff">JOB</text>
+    <text x="840" y="140" font-size="18" font-weight="700" fill="#ffffff">deploy</text>
+
+    <rect x="790" y="160" width="318" height="52" rx="10" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+    <text x="810" y="192" font-size="13" font-weight="700" letter-spacing="2" fill="#f778ba">STEP 1</text>
+    <text x="882" y="192" font-size="16" fill="#ffffff">download artifact</text>
+
+    <rect x="790" y="224" width="318" height="52" rx="10" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+    <text x="810" y="256" font-size="13" font-weight="700" letter-spacing="2" fill="#f778ba">STEP 2</text>
+    <text x="882" y="256" font-size="16" fill="#ffffff">run: ./deploy.sh</text>
+
+    <rect x="790" y="364" width="318" height="52" rx="10" fill="#0f2d17" stroke="#3fb950" stroke-width="2"/>
+    <text x="810" y="396" font-size="13" font-weight="700" letter-spacing="2" fill="#3fb950">RUNNER</text>
+    <text x="888" y="396" font-size="16" fill="#ffffff">another fresh VM</text>
+
+    <!-- legend line -->
+    <text x="728" y="482" text-anchor="middle" font-size="16" fill="#c9d1d9">Steps run top to bottom and share one machine. Jobs each get their own.</text>
+  </g>
+</svg>

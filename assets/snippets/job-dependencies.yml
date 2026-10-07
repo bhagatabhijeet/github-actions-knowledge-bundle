@@ -1,0 +1,26 @@
+# Jobs run in parallel unless `needs` puts them in order.
+# This is how a workflow becomes a pipeline with stages.
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "checking style"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "running tests"
+
+  package:
+    needs: [lint, test]        # waits for both; skipped if either fails
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "building the artifact"
+
+  deploy:
+    needs: package
+    runs-on: ubuntu-latest
+    environment: production    # can require a human approval
+    steps:
+      - run: echo "shipping it"

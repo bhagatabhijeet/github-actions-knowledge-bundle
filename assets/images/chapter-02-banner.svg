@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" width="1200" height="220" role="img" aria-label="Chapter 2: Basics of CI/CD">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a0d3a"/>
+      <stop offset="1" stop-color="#8a3a0a"/>
+    </linearGradient>
+    <linearGradient id="num" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9bce"/>
+      <stop offset="1" stop-color="#ffa657"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="220" rx="20" fill="url(#bg)"/>
+  <circle cx="1060" cy="40" r="150" fill="#f778ba" opacity="0.14"/>
+  <circle cx="1130" cy="190" r="90" fill="#ffa657" opacity="0.20"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="64" y="150" font-size="130" font-weight="800" fill="url(#num)">02</text>
+    <text x="260" y="84" font-size="18" font-weight="700" letter-spacing="5" fill="#ff9bce">CHAPTER TWO</text>
+    <text x="260" y="134" font-size="44" font-weight="800" fill="#ffffff">Basics of CI/CD</text>
+    <text x="260" y="172" font-size="22" font-weight="500" fill="#f0d9cf">Ship small, ship often, sleep well</text>
+  </g>
+
+  <!-- infinity loop glyph -->
+  <g transform="translate(1040 110)" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round">
+    <path d="M0 0 C -18 -34, -62 -34, -62 0 C -62 34, -18 34, 0 0 C 18 -34, 62 -34, 62 0 C 62 34, 18 34, 0 0 Z" opacity="0.92"/>
+  </g>
+</svg>

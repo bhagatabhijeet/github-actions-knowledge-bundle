@@ -1,0 +1,12 @@
+# The smallest useful workflow: one event, one job, one step.
+# Save as .github/workflows/<anything>.yml
+
+name: Skeleton              # shown in the Actions tab
+
+on: push                    # WHEN: the event that starts a run
+
+jobs:                       # WHAT: one or more jobs
+  greet:                    # job id (you choose it)
+    runs-on: ubuntu-latest  # WHERE: the runner
+    steps:                  # HOW: ordered list of steps
+      - run: echo "Hello from GitHub Actions"

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-label="GitHub Actions: The Knowledge Bundle">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="0.55" stop-color="#161b33"/>
+      <stop offset="1" stop-color="#2a1245"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="0.45" stop-color="#bc8cff"/>
+      <stop offset="0.75" stop-color="#f778ba"/>
+      <stop offset="1" stop-color="#ffa657"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="0.33" stop-color="#bc8cff"/>
+      <stop offset="0.66" stop-color="#f778ba"/>
+      <stop offset="1" stop-color="#3fb950"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#58a6ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f778ba" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#f778ba" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="380" rx="24" fill="url(#bg)"/>
+  <circle cx="140" cy="60" r="220" fill="url(#glowA)"/>
+  <circle cx="1080" cy="330" r="240" fill="url(#glowB)"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="78" font-size="18" font-weight="600" letter-spacing="6" fill="#8b949e">AN OKF KNOWLEDGE BUNDLE</text>
+    <text x="600" y="150" font-size="68" font-weight="800" fill="url(#title)">GitHub Actions</text>
+    <text x="600" y="198" font-size="26" font-weight="500" fill="#e6edf3">From your first workflow to pipelines you can trust</text>
+  </g>
+
+  <!-- pipeline -->
+  <line x1="180" y1="280" x2="1020" y2="280" stroke="url(#line)" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 12"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle" font-size="16" font-weight="600" fill="#e6edf3">
+    <g>
+      <circle cx="180" cy="280" r="26" fill="#0d1117" stroke="#58a6ff" stroke-width="4"/>
+      <path d="M170 280 l7 7 l14 -15" fill="none" stroke="#58a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="180" y="338">Push</text>
+    </g>
+    <g>
+      <circle cx="390" cy="280" r="26" fill="#0d1117" stroke="#bc8cff" stroke-width="4"/>
+      <path d="M380 280 l7 7 l14 -15" fill="none" stroke="#bc8cff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="390" y="338">Build</text>
+    </g>
+    <g>
+      <circle cx="600" cy="280" r="26" fill="#0d1117" stroke="#f778ba" stroke-width="4"/>
+      <path d="M590 280 l7 7 l14 -15" fill="none" stroke="#f778ba" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="600" y="338">Test</text>
+    </g>
+    <g>
+      <circle cx="810" cy="280" r="26" fill="#0d1117" stroke="#ffa657" stroke-width="4"/>
+      <path d="M800 280 l7 7 l14 -15" fill="none" stroke="#ffa657" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="810" y="338">Package</text>
+    </g>
+    <g>
+      <circle cx="1020" cy="280" r="26" fill="#0d1117" stroke="#3fb950" stroke-width="4"/>
+      <path d="M1010 280 l7 7 l14 -15" fill="none" stroke="#3fb950" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="1020" y="338">Deploy</text>
+    </g>
+  </g>
+
+  <!-- travelling commit -->
+  <circle r="8" cy="280" fill="#ffffff">
+    <animate attributeName="cx" values="180;1020" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" dur="5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

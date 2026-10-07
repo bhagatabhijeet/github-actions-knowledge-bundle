@@ -1,0 +1,53 @@
+# Chapter 1 companion workflow.
+# Walkthrough: 01-introduction-to-github-actions/04-your-first-workflow.md
+
+name: 01 - Hello, Actions
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      who:
+        description: Who should we greet?
+        required: false
+        default: World
+
+permissions:
+  contents: read
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet
+        env:
+          WHO: ${{ inputs.who || 'World' }}
+        run: echo "Hello, $WHO! This runner is all yours."
+
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Look around
+        run: |
+          echo "Triggered by : $GITHUB_EVENT_NAME"
+          echo "Repository   : $GITHUB_REPOSITORY"
+          echo "Branch       : $GITHUB_REF_NAME"
+          echo "Commit       : $GITHUB_SHA"
+          echo "Runner OS    : $RUNNER_OS"
+          echo "--- files in the workspace ---"
+          ls -1
+
+      - name: Write a job summary
+        env:
+          WHO: ${{ inputs.who || 'World' }}
+        run: |
+          {
+            echo "## Hello, $WHO!"
+            echo ""
+            echo "| | |"
+            echo "|---|---|"
+            echo "| Event | \`$GITHUB_EVENT_NAME\` |"
+            echo "| Branch | \`$GITHUB_REF_NAME\` |"
+            echo "| Runner | \`$RUNNER_OS\` |"
+          } >> "$GITHUB_STEP_SUMMARY"

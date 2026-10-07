@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" width="1200" height="220" role="img" aria-label="Chapter 1: Introduction to GitHub Actions">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1f4d"/>
+      <stop offset="1" stop-color="#3b1d8f"/>
+    </linearGradient>
+    <linearGradient id="num" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#79c0ff"/>
+      <stop offset="1" stop-color="#bc8cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="220" rx="20" fill="url(#bg)"/>
+  <circle cx="1060" cy="40" r="150" fill="#58a6ff" opacity="0.12"/>
+  <circle cx="1130" cy="190" r="90" fill="#bc8cff" opacity="0.18"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="64" y="150" font-size="130" font-weight="800" fill="url(#num)">01</text>
+    <text x="260" y="84" font-size="18" font-weight="700" letter-spacing="5" fill="#79c0ff">CHAPTER ONE</text>
+    <text x="260" y="134" font-size="44" font-weight="800" fill="#ffffff">Introduction to GitHub Actions</text>
+    <text x="260" y="172" font-size="22" font-weight="500" fill="#c9d1d9">Meet the robot that lives in your repository</text>
+  </g>
+
+  <!-- play glyph -->
+  <g transform="translate(1040 110)">
+    <circle r="46" fill="none" stroke="#ffffff" stroke-width="5" opacity="0.9"/>
+    <path d="M-14 -22 L24 0 L-14 22 Z" fill="#ffffff"/>
+  </g>
+</svg>

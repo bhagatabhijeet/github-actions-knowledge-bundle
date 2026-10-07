@@ -1,0 +1,20 @@
+# A step does exactly one of two things.
+
+steps:
+  # 1) `uses` runs an ACTION: packaged, reusable logic someone already wrote.
+  - name: Check out the code
+    uses: actions/checkout@v7      # owner/repo@version
+
+  - name: Install Python
+    uses: actions/setup-python@v7
+    with:                          # inputs for the action
+      python-version: '3.13'
+
+  # 2) `run` runs SHELL COMMANDS: your own script, typed right here.
+  - name: Run the tests
+    run: python -m unittest discover -v
+
+  - name: Several commands at once
+    run: |
+      echo "The pipe character starts a multi-line script"
+      python --version
