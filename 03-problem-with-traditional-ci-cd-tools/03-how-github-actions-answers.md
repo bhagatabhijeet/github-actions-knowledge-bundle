@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: How GitHub Actions Answers the Problem
-description: The team's wish list checked against GitHub Actions line by line - hosted runners, fresh machines, actions instead of plugins - with the honest trade-offs and when a traditional tool is still the right call.
+description: The install list and the six pains checked against GitHub Actions line by line - hosted runners, fresh machines, actions instead of plugins - with the honest trade-offs and when a traditional tool is still the right call.
 tags: [github-actions, ci-cd, hosted-runners, self-hosted-runners, jenkins, comparison, migration]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
@@ -12,6 +12,9 @@ sources:
   - id: gh-self-hosted-runners
     resource: https://docs.github.com/en/actions/concepts/runners/self-hosted-runners
     title: Self-hosted runners
+  - id: gh-runner-images
+    resource: https://github.com/actions/runner-images
+    title: GitHub Actions runner images (preinstalled software lists)
   - id: gh-migrate-jenkins
     resource: https://docs.github.com/en/actions/tutorials/migrate-to-github-actions/manual-migrations/migrate-from-jenkins
     title: Migrating from Jenkins to GitHub Actions
@@ -29,7 +32,7 @@ sources:
 
 # 🛟 How GitHub Actions Answers the Problem
 
-[Lesson 2](02-hidden-costs-of-self-hosted-ci.md) listed six pains. They share one root: **you were running a tool**. GitHub Actions changes the deal. You stop running a tool and start using a service.
+[Lesson 1](01-the-problem-statement.md) ended with Abhijeet choosing GitHub Actions. [Lesson 2](02-hidden-costs-of-self-hosted-ci.md) listed the six pains he avoided. They share one root: **you were running a tool**. GitHub Actions changes the deal. You stop running a tool and start using a service.
 
 ## 🎯 The shift in one picture
 
@@ -39,20 +42,71 @@ sources:
 
 On the left, every layer is yours. On the right, you keep the one layer that is actually about your product: **the pipeline definition**. That is the workflow file you learned to read in [Chapter 1](../01-introduction-to-github-actions/03-anatomy-of-a-workflow.md).
 
-## ✅ Checking the wish list
+## 🧾 Abhijeet's install list, revisited
 
-Here is the team's list from [Lesson 1](01-the-problem-statement.md), held up against GitHub Actions.
+Here are the seven tasks from [Lesson 1](01-the-problem-statement.md), and what becomes of each.
 
-| | They wanted | GitHub Actions gives you | Meet it in |
+| | With a self-hosted CI server | With GitHub Actions |
+|---|---|---|
+| 1 | Provision and maintain a virtual machine | `runs-on: ubuntu-latest`. GitHub provides the machine |
+| 2 | Install Java, firewall rules, CI plugins | Nothing. There is no server |
+| 3 | Install Node.js and npm | `actions/setup-node` picks the version in one step |
+| 4 | Keep several Node.js versions side by side | A **matrix**: each version gets its own clean machine |
+| 5 | Install Docker | Already on the Ubuntu runner |
+| 6 | Install kubectl and Helm | Already on the Ubuntu runner |
+| 7 | Install CLIs for test and reporting tools | An action or an install step, in the workflow that needs it |
+
+Task 4, the one that causes version conflicts on a shared machine, becomes a few lines of YAML:
+
+```yaml
+jobs:
+  unit-testing:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm test
+```
+
+Three versions, three separate machines, running at the same time. They can't conflict because they never share a disk.
+
+The "and it grows" list shrinks the same way:
+
+| | Later need | On a GitHub-hosted Ubuntu runner |
+|---|---|---|
+| ☕ | Java and Maven | Preinstalled. `actions/setup-java` selects a specific version |
+| 🐍 | Python | Preinstalled. `actions/setup-python` selects a specific version |
+| ☁️ | AWS CLI and Azure CLI | Preinstalled |
+| 🛡️ | Trivy, kubesec | Not preinstalled. Add an action or an install step where you need them |
+
+> [!NOTE]
+> The preinstalled list changes over time. The exact contents of every runner image are published in the [actions/runner-images](https://github.com/actions/runner-images) repository.
+
+**Against his two criteria:**
+
+| | Criterion | Verdict |
+|---|---|---|
+| 1️⃣ | Simple to set up, nothing to install | ✅ Commit a YAML file and it runs |
+| 2️⃣ | Pipelines, not infrastructure or scale | ✅ GitHub provisions and scales the runners |
+
+## ✅ Six pains, six answers
+
+And the day-two pains from [Lesson 2](02-hidden-costs-of-self-hosted-ci.md):
+
+| | Pain | GitHub Actions gives you | Meet it in |
 |---|---|---|---|
-| ⏳ | Capacity on demand | Each job gets its own **GitHub-hosted runner**. Nine jobs means nine machines | [1.2](../01-introduction-to-github-actions/02-core-concepts.md) |
-| 🤷 | A clean, predictable machine | A **fresh virtual machine per job**, thrown away afterwards. Tool versions are declared in the workflow | [2.5](../02-basics-of-ci-cd/05-your-first-ci-pipeline.md) |
-| 💾 | Nothing to install, patch or monitor | No server. GitHub runs the service and maintains the runner images | [1.1](../01-introduction-to-github-actions/01-what-is-github-actions.md) |
-| 🧩 | Integrations that don't hold the system hostage | **Actions** are chosen per workflow and per version, not installed server-wide | [1.3](../01-introduction-to-github-actions/03-anatomy-of-a-workflow.md) |
-| 🏝️ | Configuration in the repository | Workflows are **YAML files in `.github/workflows/`**, reviewed in pull requests | [1.3](../01-introduction-to-github-actions/03-anatomy-of-a-workflow.md) |
-| 💸 | Pay for what you use | Billed **per minute** of job time. Free on public repositories with standard runners | [1.1](../01-introduction-to-github-actions/01-what-is-github-actions.md#-what-does-it-cost) |
-
-And the glue from pain 5 simply disappears. Your code and your CI live in the same place, so there is no webhook to configure, no clone token to rotate and no separate set of user accounts. Results show up on the pull request without any setup.
+| 1️⃣ | Server upkeep | No server. GitHub runs the service and maintains the runner images | [1.1](../01-introduction-to-github-actions/01-what-is-github-actions.md) |
+| 2️⃣ | Snowflake agents | A **fresh virtual machine per job**, thrown away afterwards. Tool versions are declared in the workflow | [2.5](../02-basics-of-ci-cd/05-your-first-ci-pipeline.md) |
+| 3️⃣ | Queues and idle cost | Each job gets its own **GitHub-hosted runner**, billed **per minute**. Free on public repositories with standard runners | [1.2](../01-introduction-to-github-actions/02-core-concepts.md) |
+| 4️⃣ | Fragile plugins | **Actions** are chosen per workflow and per version, not installed server-wide | [1.3](../01-introduction-to-github-actions/03-anatomy-of-a-workflow.md) |
+| 5️⃣ | Integration glue | Code and CI live in the same place. No webhook, no clone token, no second set of accounts | [1.1](../01-introduction-to-github-actions/01-what-is-github-actions.md#-where-it-lives) |
+| 6️⃣ | Knowledge in one head | Workflows are **YAML files in `.github/workflows/`**, reviewed in pull requests | [1.3](../01-introduction-to-github-actions/03-anatomy-of-a-workflow.md) |
 
 ## 🧩 Plugins vs actions
 
@@ -76,7 +130,7 @@ The upgrade trap from Lesson 2 can't happen. There is no server to upgrade, and 
 
 ## 🔍 Same pipeline, two worlds
 
-Here is a lint-and-test pipeline for the [sample app](../sample-app/) written for Jenkins:
+Tessaloop's Node.js project isn't in this repository, but a small Python [sample app](../sample-app/) is. Here is a lint-and-test pipeline for it, written for Jenkins:
 
 ```groovy
 pipeline {
@@ -251,6 +305,7 @@ A self-hosted runner inside that network, or another way of giving hosted runner
 ## 🎯 What you learned
 
 - GitHub Actions swaps **running a tool** for **using a service**: you keep only the pipeline definition
+- Abhijeet's seven-task install list collapses into **`runs-on`, a setup action and a matrix**
 - Hosted runners answer the queue, snowflake and upkeep problems with a **fresh machine per job**
 - **Actions** are versioned per workflow, so upgrades are local and safe
 - You still own workflows, secrets, action hygiene and cost

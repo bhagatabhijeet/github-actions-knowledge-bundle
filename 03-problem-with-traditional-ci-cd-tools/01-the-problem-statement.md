@@ -1,11 +1,14 @@
 ---
 type: Tutorial
 title: The Problem Statement
-description: A Monday meeting about a build server that keeps breaking - the complaints that add up to the case against traditional, self-hosted CI/CD tools.
-tags: [ci-cd, problem-statement, self-hosted, jenkins, beginner]
+description: A new DevOps lead plans a pipeline for a Node.js project, picks a traditional CI server, and discovers how much he must install and maintain before the first build - the case that leads to GitHub Actions.
+tags: [ci-cd, problem-statement, devops, self-hosted, jenkins, beginner]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
 sources:
+  - id: jenkins-install
+    resource: https://www.jenkins.io/doc/book/installing/
+    title: Installing Jenkins (Jenkins User Handbook)
   - id: jenkins-scale
     resource: https://www.jenkins.io/doc/book/scaling/architecting-for-scale/
     title: Architecting for Scale (Jenkins User Handbook)
@@ -19,31 +22,116 @@ sources:
 </p>
 
 <p align="center">
-  <b>Lesson 1 of 4</b> &nbsp;·&nbsp; ⏱️ 6 min read &nbsp;·&nbsp; 🟢 No experience needed
+  <b>Lesson 1 of 4</b> &nbsp;·&nbsp; ⏱️ 7 min read &nbsp;·&nbsp; 🟢 No experience needed
 </p>
 
 # 🧯 The Problem Statement
 
 Chapter 2 convinced you that CI/CD is worth doing. It skipped one awkward question: **what does the pipeline run on?**
 
-For years the answer was "a server we look after ourselves". This chapter is about what that costs. Once you've felt the pain, nearly every design decision in GitHub Actions will make sense.
+For years the answer was "a server we look after ourselves". This chapter is about what that costs. To make it concrete, we'll follow one person through the decision.
 
-## 🗓️ Monday, 10:00 am: "Why is the build red again?"
+## 🏢 Meet Tessaloop Technologies
 
-Remember the team of five from [Chapter 2](../02-basics-of-ci-cd/01-what-is-ci-cd.md), the ones with the 43-step deploy document? They learned their lesson. A year ago they installed a popular open-source CI server on a spare virtual machine, wired it to their repository, and automated everything.
+> [!NOTE]
+> Tessaloop Technologies is a made-up company. Its situation is not: you'll find this story inside most software teams.
 
-It was wonderful for about three months. Today they've booked a meeting room to talk about it.
+Tessaloop is a software provider. Its platform connects data, applications and devices for businesses that run their systems on-premises.
 
-| | Who | What they said |
+Its R&D team wants to move those services to the **cloud** and run them in **containers**. They'll start small, with one **Node.js** project, and roll the same approach out to the rest once it works.
+
+To make that happen, Tessaloop has formed a DevOps team, led by **Abhijeet**. His brief:
+
+| | His brief | In practice |
 |---|---|---|
-| ⏳ | **Asha** | "My pull request waited 50 minutes for a build. There were three ahead of it and we have one build machine." |
-| 🤷 | **Ben** | "It passes on my laptop and fails on the server. The server has Node 16. I need Node 20, and I'm scared to upgrade it because the other project still needs 16." |
-| 💾 | **The team lead** | "The disk filled up on Saturday. Every build failed for two days and nobody knew until this morning." |
-| 🧩 | **The newest hire** | "There's a security update for the CI server, but installing it breaks two plugins we depend on. So we're three versions behind." |
-| 🏝️ | **Asha** | "Only Ben knows how it's all configured. Ben is on holiday next month." |
-| 💸 | **Whoever pays the bills** | "That machine runs 24 hours a day. We build for about three of them." |
+| 🏗️ | Build the pipeline from day one | No legacy to inherit, and no excuses either |
+| 📏 | Follow industry good practice | Automated, repeatable, reviewed |
+| ☁️ | Work across more than one cloud | AWS and Azure are both on the roadmap |
+| 🐳 | Package with Docker | Every service ships as a container image |
+| ☸️ | Run on Kubernetes | Containers are deployed and managed there |
 
-Nobody in that room is complaining about CI/CD. They still love the green ticks. They are complaining about **the thing that produces the green ticks**.
+## 🔎 What Abhijeet found
+
+Before designing anything, he takes a quick look at how the Node.js project has been built so far.
+
+| | What he found | What it leads to |
+|---|---|---|
+| 📂 | No shared version control. Code is combined by hand | Nobody is sure which copy is the real one |
+| 🧪 | Tests are run by hand | They are slow, so they get skipped |
+| 🏝️ | Developers work alone for long stretches | Their changes collide when they finally meet |
+| 📦 | Integration and testing happen rarely | Every release is large, and risky |
+| 🖐️ | Deployments to dev, staging and production are manual | Each environment ends up slightly different |
+
+If that sounds like "life before CI/CD" from [Chapter 2](../02-basics-of-ci-cd/01-what-is-ci-cd.md), it is. Same disease, different company.
+
+## 🗺️ His four-step plan
+
+Abhijeet writes down a plan that addresses every finding:
+
+```mermaid
+flowchart LR
+    A["1️⃣ GitHub<br/>version control<br/>and collaboration"]:::blue --> B["2️⃣ Unit tests<br/>and code coverage"]:::purple
+    B --> C["3️⃣ Docker build and push,<br/>deploy to Kubernetes"]:::orange
+    C --> D["4️⃣ Automated<br/>integration tests"]:::green
+
+    classDef blue fill:#0c1d3a,stroke:#58a6ff,color:#fff,stroke-width:2px
+    classDef purple fill:#22123f,stroke:#bc8cff,color:#fff,stroke-width:2px
+    classDef orange fill:#3d1d00,stroke:#ffa657,color:#fff,stroke-width:2px
+    classDef green fill:#0f2d17,stroke:#3fb950,color:#fff,stroke-width:2px
+```
+
+| | Step | Fixes |
+|---|---|---|
+| 1️⃣ | **GitHub** for version control and collaboration | Hand-merged code, isolated developers |
+| 2️⃣ | **Unit tests and code coverage** on every change | Slow manual testing, bugs found late |
+| 3️⃣ | **Docker build and push**, then **deploy to Kubernetes** | Manual, inconsistent deployments |
+| 4️⃣ | **Automated integration tests** as the final gate | Risky releases |
+
+It's a good plan. It leaves one question open.
+
+## 🤔 Which tool will run all this?
+
+Something has to execute those four steps every time code changes. There is no shortage of candidates: Jenkins, Travis CI, Bamboo, Spinnaker, CircleCI and more.
+
+After comparing a few, Abhijeet leans towards **Jenkins**. It is open source, hugely popular, and can be extended to do almost anything. A sensible first choice.
+
+Then he lists what he'd have to do before the first build could run.
+
+## 🧾 The bill before the first build
+
+| | Task | Why it's needed |
+|---|---|---|
+| 1 | Provision and maintain a **virtual machine** with enough CPU, memory and disk | Jenkins has to live somewhere |
+| 2 | Install a **Java JDK**, open **firewall rules**, install **Jenkins plugins** | Jenkins runs on Java and does little without plugins |
+| 3 | Install **Node.js and npm** | The project is a Node.js app |
+| 4 | Install **several Node.js versions** side by side, without conflicts | Unit tests must pass on every supported version |
+| 5 | Install **Docker** | To build and push container images |
+| 6 | Install **kubectl, Helm** and friends | To deploy to Kubernetes |
+| 7 | Install the **CLIs for testing and reporting tools** | Integration tests call external tools |
+
+And that is only the first project.
+
+| | When this arrives... | ...the machine also needs |
+|---|---|---|
+| ☕ | Java projects | A JDK for the apps, plus Maven |
+| 🐍 | Python projects | Python and its package tooling |
+| ☁️ | Deployments to AWS and Azure | The AWS CLI and the Azure CLI |
+| 🛡️ | DevSecOps scanning | Tools such as Trivy and kubesec |
+
+One more fact makes the list heavier: **the team is new**. Most of its members haven't worked with half of these tools, never mind kept them all running on one server.
+
+```mermaid
+flowchart LR
+    A[🎯 Goal:<br/>build a pipeline]:::green --> B[🔧 Stand up a<br/>CI server]:::blue
+    B --> C[🧩 Install plugins,<br/>runtimes, CLIs]:::orange
+    C --> D[🚨 Patch, scale,<br/>fix, repeat]:::red
+    D --> E[⌛ Less time for<br/>the pipeline]:::red
+
+    classDef green fill:#0f2d17,stroke:#3fb950,color:#fff,stroke-width:2px
+    classDef blue fill:#0c1d3a,stroke:#58a6ff,color:#fff,stroke-width:2px
+    classDef orange fill:#3d1d00,stroke:#ffa657,color:#fff,stroke-width:2px
+    classDef red fill:#4a0d0d,stroke:#f85149,color:#fff,stroke-width:2px
+```
 
 ## 🧱 What "traditional CI/CD tool" means here
 
@@ -64,41 +152,25 @@ Every one of those parts is software running on a machine that **somebody on you
 
 ## 📝 The problem statement
 
-Boil the meeting down to one sentence and you get this:
+Put Abhijeet's list into one sentence and you get this:
 
 > [!IMPORTANT]
-> **We adopted CI/CD to spend less time on releases. We now spend that time looking after the CI/CD tool.**
+> **Before the team can automate a single test, it has to build, secure and maintain the system that does the automating.**
 
-The team wanted to ship an online shop. Without anyone deciding it, they also became the operators of a small build farm.
+He was asked to deliver a pipeline. The tool is asking him to run a small build farm first.
 
-```mermaid
-flowchart LR
-    A[🎯 Goal:<br/>ship the product]:::green --> B[🔧 Install a CI server]:::blue
-    B --> C[🧩 Add plugins,<br/>agents, tools]:::orange
-    C --> D[🚨 Patch, scale,<br/>fix, repeat]:::red
-    D --> E[⌛ Less time for<br/>the product]:::red
+## 🎯 Abhijeet's two criteria
 
-    classDef green fill:#0f2d17,stroke:#3fb950,color:#fff,stroke-width:2px
-    classDef blue fill:#0c1d3a,stroke:#58a6ff,color:#fff,stroke-width:2px
-    classDef orange fill:#3d1d00,stroke:#ffa657,color:#fff,stroke-width:2px
-    classDef red fill:#4a0d0d,stroke:#f85149,color:#fff,stroke-width:2px
-```
+So he goes looking again, this time with two requirements written at the top of the page:
 
-## 🛒 The wish list
-
-Before the meeting ends, the team lead turns each complaint into a requirement. This is what they want from whatever comes next:
-
-| | Complaint | Requirement |
+| | Criterion | What it rules out |
 |---|---|---|
-| ⏳ | Builds queue behind each other | **Capacity on demand**: ten builds at once should be as easy as one |
-| 🤷 | "Works on my machine" | **A clean, predictable machine** for every build |
-| 💾 | The server fell over unnoticed | **Nothing to install, patch or monitor** |
-| 🧩 | Upgrades break plugins | **Integrations that don't hold the whole system hostage** |
-| 🏝️ | Only one person understands it | **Configuration in the repository**, reviewed like code |
-| 💸 | Paying for an idle machine | **Pay for what you use** |
+| 1️⃣ | **Simple to set up and start**, with no long list of services to install and configure | The seven-task list above |
+| 2️⃣ | **Lets the team focus on building pipelines**, not on managing infrastructure or worrying about scale | Owning servers and agents |
 
-> [!TIP]
-> Keep this list in mind. In [Lesson 3](03-how-github-actions-answers.md) we hold it up against GitHub Actions, line by line.
+After evaluating several tools against those two lines, he decides to explore and adopt **GitHub Actions**.
+
+The next two lessons explain why. [Lesson 2](02-hidden-costs-of-self-hosted-ci.md) shows that his list was only the down payment. [Lesson 3](03-how-github-actions-answers.md) holds GitHub Actions up against it, line by line.
 
 ## ✅ Checkpoint
 
@@ -112,28 +184,39 @@ A CI server that you install and run on your own machines, made of a central ser
 </details>
 
 <details>
-<summary><b>Was the team unhappy with CI/CD itself?</b></summary>
+<summary><b>Was anything wrong with Abhijeet's four-step plan?</b></summary>
 
 <br>
 
-No. They were unhappy with the cost of operating the tool that runs it: queues, version drift, outages, risky upgrades and knowledge held by one person.
+No. Version control, automated tests, containerised deploys and integration tests are exactly right. The problem was the cost of the tool that would run the plan.
 
 </details>
 
 <details>
-<summary><b>State the problem in one sentence.</b></summary>
+<summary><b>Why did the install list keep growing?</b></summary>
 
 <br>
 
-The time CI/CD was supposed to save is being spent on maintaining the CI/CD tool.
+Every new language, cloud and security tool the company adopts has to be installed and maintained on the build machine: Java and Maven, Python, cloud CLIs, scanners.
+
+</details>
+
+<details>
+<summary><b>What were Abhijeet's two criteria for a better tool?</b></summary>
+
+<br>
+
+Simple to set up without installing and configuring many services, and a focus on building pipelines instead of managing infrastructure and scale.
 
 </details>
 
 ## 🎯 What you learned
 
 - A traditional CI/CD tool is a **server you operate**: central server, build agents, plugins
-- The practice of CI/CD was never the problem; **running the infrastructure** was
-- The team's complaints turn into six requirements: on-demand capacity, clean machines, nothing to maintain, safe integrations, config as code, pay per use
+- A good pipeline plan can still stall on **the cost of the tool that runs it**
+- The setup list grows with **every language, cloud and scanner** you add
+- The practice of CI/CD was never the problem; **running the infrastructure** is
+- Abhijeet's criteria: **easy to start**, and **pipelines, not infrastructure**
 
 ---
 

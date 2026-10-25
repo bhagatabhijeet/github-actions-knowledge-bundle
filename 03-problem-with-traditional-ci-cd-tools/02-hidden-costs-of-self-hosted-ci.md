@@ -26,7 +26,7 @@ sources:
 
 # 🧊 The Hidden Costs of Running Your Own CI Server
 
-The meeting in [Lesson 1](01-the-problem-statement.md) produced six complaints. Each one is a symptom. This lesson looks at the cause behind each, so that you can recognise them in any tool, not just one.
+Abhijeet's list in [Lesson 1](01-the-problem-statement.md) covered **day one**: what he'd have to install before the first build. This lesson is about **day two and every day after**. Suppose he had gone ahead. Here are the six pains his team would have met, and you'll recognise them in any self-hosted CI tool, not just one.
 
 ## 🏗️ How a traditional setup is built
 
@@ -64,7 +64,7 @@ The CI server is an application like any other. It needs everything a production
 | 🩹 | Operating system patches | Known vulnerabilities on a machine that holds your deploy keys |
 | ⬆️ | CI server upgrades | You fall behind on security fixes |
 | 💾 | Backups | One dead disk erases every pipeline and its history |
-| 📈 | Monitoring disk, memory, CPU | Saturday's full disk, discovered on Monday |
+| 📈 | Monitoring disk, memory, CPU | The disk fills up on Saturday and nobody notices until Monday |
 | 🔐 | User accounts, TLS certificates | An expired certificate stops all builds at once |
 
 > [!WARNING]
@@ -72,7 +72,7 @@ The CI server is an application like any other. It needs everything a production
 
 ## 2️⃣ Agents turn into snowflakes
 
-A build agent is usually a long-lived machine. Somebody installed Java on it in March, Node in June, and a newer Node in September "just for one project".
+A build agent is usually a long-lived machine. Somebody installed Java on it in March, Node in June, and a newer Node in September "just for one project". This is task 4 on Abhijeet's list, several Node.js versions side by side, a year later.
 
 Two problems follow.
 
@@ -150,7 +150,7 @@ Over time the setup becomes a collection of decisions made through an admin scre
 
 | | Question | Answer on many teams |
 |---|---|---|
-| ❓ | Why does agent 3 have that environment variable? | "Ask Ben" |
+| ❓ | Why does agent 3 have that environment variable? | "Ask whoever set it up" |
 | ❓ | Who changed the deploy job last week? | "Not sure, it isn't in Git" |
 | ❓ | Could we rebuild this server from scratch? | "Please don't make us find out" |
 
@@ -175,7 +175,7 @@ Most of these tools are free to download. That is the part above the water.
 
 ## ⚖️ To be fair
 
-Plenty of organisations run traditional CI tools extremely well. They usually have something the team of five does not: **a dedicated platform team** whose whole job is the build system. With that investment you get total control over hardware, network and configuration.
+Plenty of organisations run traditional CI tools extremely well. They usually have something Abhijeet's brand-new team does not: **a dedicated platform team** whose whole job is the build system. With that investment you get total control over hardware, network and configuration.
 
 The problem statement is not "these tools don't work". It is that **for a team whose job is something else, the upkeep is a tax on every sprint**.
 

@@ -23,7 +23,9 @@ sources:
 ## 📝 The problem statement
 
 > [!IMPORTANT]
-> **We adopted CI/CD to spend less time on releases. We now spend that time looking after the CI/CD tool.**
+> **Before the team can automate a single test, it has to build, secure and maintain the system that does the automating.**
+
+**The two criteria for something better:** simple to set up with nothing to install, and a focus on pipelines instead of infrastructure and scale.
 
 ## 🧱 Anatomy of a traditional CI/CD tool
 
@@ -154,7 +156,7 @@ They give you your own network and hardware while GitHub still handles schedulin
 
 | Score | Verdict |
 |---|---|
-| 8 | 🏆 You could chair that Monday meeting |
+| 8 | 🏆 Abhijeet would hire you |
 | 5 to 7 | 💪 Strong. Revisit the lessons you missed |
 | 0 to 4 | 🔁 Reread [The Hidden Costs](02-hidden-costs-of-self-hosted-ci.md); the rest follows from it |
 
@@ -162,15 +164,14 @@ They give you your own network and hardware while GitHub still handles schedulin
 
 You can state the problem with traditional CI/CD tools, name the six pains behind it, and explain what GitHub Actions changes and what it costs you in return.
 
-> [!NOTE]
-> **More chapters are on the way.** This guide grows one topic at a time. Check the [change log](../log.md) to see what's new.
+Next up: the tool Abhijeet chose, opened up. **Workflows, jobs, steps and runners**, followed through a real run.
 
 ---
 
 <p align="center">
   <a href="03-how-github-actions-answers.md">⬅️ How GitHub Actions Answers</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="index.md">📚 Chapter 3</a>
+  <a href="../README.md">🏠 Home</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="../README.md"><b>🏠 Back to Home</b></a>
+  <a href="../04-github-actions-core-components/01-the-core-components.md"><b>Next: Chapter 4, Core Components ➡️</b></a>
 </p>
