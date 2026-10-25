@@ -84,6 +84,8 @@ Most people meet GitHub Actions through CI/CD (testing and shipping code), and [
 | 🔘 | Give teammates a "Deploy" button | `workflow_dispatch` |
 | 👋 | Welcome first-time contributors | `pull_request_target` |
 
+👉 [Lesson 2](02-core-concepts.md#-beyond-cicd-automating-the-repository-itself) maps the repository events you can automate, and their activity types.
+
 ## 🧭 Where it lives
 
 There is nothing to install and no server to rent. Two places matter:

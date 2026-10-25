@@ -13,3 +13,4 @@
 * [triggers.yml](../assets/snippets/triggers.yml) - Common events for the `on:` key.
 * [run-vs-uses.yml](../assets/snippets/run-vs-uses.yml) - The two kinds of step, side by side.
 * [job-dependencies.yml](../assets/snippets/job-dependencies.yml) - Ordering jobs with `needs`.
+* [repo-automation-events.svg](../assets/images/repo-automation-events.svg) - Repository events beyond CI/CD and their activity types.

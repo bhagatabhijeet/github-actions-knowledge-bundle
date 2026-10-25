@@ -72,7 +72,7 @@ flowchart LR
 | # | Lesson | You'll be able to... | ⏱️ |
 |:---:|---|---|:---:|
 | 1.1 | 🤖 [**What is GitHub Actions?**](01-introduction-to-github-actions/01-what-is-github-actions.md) | Explain it to a colleague in one sentence | 6 min |
-| 1.2 | 🧩 [**The Six Core Concepts**](01-introduction-to-github-actions/02-core-concepts.md) | Name every moving part: event, workflow, job, step, action, runner | 8 min |
+| 1.2 | 🧩 [**The Six Core Concepts**](01-introduction-to-github-actions/02-core-concepts.md) | Name every moving part: event, workflow, job, step, action, runner | 11 min |
 | 1.3 | 🔬 [**Anatomy of a Workflow File**](01-introduction-to-github-actions/03-anatomy-of-a-workflow.md) | Read any workflow YAML aloud in plain English | 9 min |
 | 1.4 | 🚀 [**Your First Workflow**](01-introduction-to-github-actions/04-your-first-workflow.md) 🛠️ | Run, inspect and deliberately break a live workflow | 15 min |
 | 1.5 | 📋 [**Cheat Sheet & Quiz**](01-introduction-to-github-actions/05-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |

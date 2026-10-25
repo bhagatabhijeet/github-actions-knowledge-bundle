@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720" role="img" aria-label="GitHub Actions can automate repository activity, not just CI/CD. Pull request, issues, release, registry package and community events each have activity types such as opened, labeled, published or updated that can start a workflow">
+<rect width="1400" height="720" rx="20" fill="#0d1117"/>
+<g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+<text x="700" y="52" font-size="28" font-weight="800" fill="#e6edf3">Beyond CI/CD: automate anything that happens in your repo</text>
+<text x="700" y="84" font-size="16" fill="#8b949e">Each event has activity types. Pick the ones that should start your workflow.</text>
+<rect x="520" y="110" width="360" height="70" rx="16" fill="#161b22" stroke="#bc8cff" stroke-width="3"/>
+<text x="700" y="143" font-size="22" font-weight="800" fill="#e6edf3">⚡ Automate repo activity</text>
+<text x="700" y="166" font-size="14" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">on: &lt;event&gt; → types: [...]</text>
+<path d="M700 180 V214 M140.0 214 H1260.0" stroke="#30363d" stroke-width="3" fill="none"/>
+<path d="M140.0 214 V240" stroke="#30363d" stroke-width="3"/>
+<rect x="22.0" y="240" width="236" height="170" rx="18" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+<circle cx="140.0" cy="296" r="42" fill="#58a6ff" opacity="0.3"/><circle cx="140.0" cy="296" r="34" fill="#0c1d3a" stroke="#58a6ff" stroke-width="3"/>
+<text x="140.0" y="307" font-size="30">🔀</text>
+<text x="140.0" y="364" font-size="19" font-weight="800" fill="#e6edf3">Pull request</text>
+<text x="140.0" y="390" font-size="12" fill="#58a6ff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">pull_request</text>
+<path d="M140.0 410 V436" stroke="#30363d" stroke-width="3"/>
+<rect x="30.0" y="446" width="220" height="52" rx="26" fill="#0c1d3a" stroke="#58a6ff" stroke-width="1.5"/>
+<text x="60.0" y="479" font-size="20">🟢</text>
+<text x="154.0" y="478" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">opened</text>
+<rect x="30.0" y="510" width="220" height="52" rx="26" fill="#0c1d3a" stroke="#58a6ff" stroke-width="1.5"/>
+<text x="60.0" y="543" font-size="20">✅</text>
+<text x="154.0" y="542" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">closed + merged</text>
+<rect x="30.0" y="574" width="220" height="52" rx="26" fill="#0c1d3a" stroke="#58a6ff" stroke-width="1.5"/>
+<text x="60.0" y="607" font-size="20">👀</text>
+<text x="154.0" y="606" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">review_requested</text>
+<path d="M420.0 214 V240" stroke="#30363d" stroke-width="3"/>
+<rect x="302.0" y="240" width="236" height="170" rx="18" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+<circle cx="420.0" cy="296" r="42" fill="#3fb950" opacity="0.3"/><circle cx="420.0" cy="296" r="34" fill="#0f2d17" stroke="#3fb950" stroke-width="3"/>
+<text x="420.0" y="307" font-size="30">🐞</text>
+<text x="420.0" y="364" font-size="19" font-weight="800" fill="#e6edf3">Issues</text>
+<text x="420.0" y="390" font-size="12" fill="#3fb950" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">issues</text>
+<path d="M420.0 410 V436" stroke="#30363d" stroke-width="3"/>
+<rect x="310.0" y="446" width="220" height="52" rx="26" fill="#0f2d17" stroke="#3fb950" stroke-width="1.5"/>
+<text x="340.0" y="479" font-size="20">🆕</text>
+<text x="434.0" y="478" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">opened</text>
+<rect x="310.0" y="510" width="220" height="52" rx="26" fill="#0f2d17" stroke="#3fb950" stroke-width="1.5"/>
+<text x="340.0" y="543" font-size="20">🏷️</text>
+<text x="434.0" y="542" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">labeled</text>
+<rect x="310.0" y="574" width="220" height="52" rx="26" fill="#0f2d17" stroke="#3fb950" stroke-width="1.5"/>
+<text x="340.0" y="607" font-size="20">🔒</text>
+<text x="434.0" y="606" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">locked</text>
+<path d="M700.0 214 V240" stroke="#30363d" stroke-width="3"/>
+<rect x="582.0" y="240" width="236" height="170" rx="18" fill="#161b22" stroke="#f778ba" stroke-width="2"/>
+<circle cx="700.0" cy="296" r="42" fill="#f778ba" opacity="0.3"/><circle cx="700.0" cy="296" r="34" fill="#3a0f2b" stroke="#f778ba" stroke-width="3"/>
+<text x="700.0" y="307" font-size="30">🚀</text>
+<text x="700.0" y="364" font-size="19" font-weight="800" fill="#e6edf3">Release</text>
+<text x="700.0" y="390" font-size="12" fill="#f778ba" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">release</text>
+<path d="M700.0 410 V436" stroke="#30363d" stroke-width="3"/>
+<rect x="590.0" y="446" width="220" height="52" rx="26" fill="#3a0f2b" stroke="#f778ba" stroke-width="1.5"/>
+<text x="620.0" y="479" font-size="20">📣</text>
+<text x="714.0" y="478" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">published</text>
+<rect x="590.0" y="510" width="220" height="52" rx="26" fill="#3a0f2b" stroke="#f778ba" stroke-width="1.5"/>
+<text x="620.0" y="543" font-size="20">✏️</text>
+<text x="714.0" y="542" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created</text>
+<rect x="590.0" y="574" width="220" height="52" rx="26" fill="#3a0f2b" stroke="#f778ba" stroke-width="1.5"/>
+<text x="620.0" y="607" font-size="20">🧪</text>
+<text x="714.0" y="606" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">prereleased</text>
+<path d="M980.0 214 V240" stroke="#30363d" stroke-width="3"/>
+<rect x="862.0" y="240" width="236" height="170" rx="18" fill="#161b22" stroke="#ffa657" stroke-width="2"/>
+<circle cx="980.0" cy="296" r="42" fill="#ffa657" opacity="0.3"/><circle cx="980.0" cy="296" r="34" fill="#3d1d00" stroke="#ffa657" stroke-width="3"/>
+<text x="980.0" y="307" font-size="30">📦</text>
+<text x="980.0" y="364" font-size="19" font-weight="800" fill="#e6edf3">Registry package</text>
+<text x="980.0" y="390" font-size="12" fill="#ffa657" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">registry_package</text>
+<path d="M980.0 410 V436" stroke="#30363d" stroke-width="3"/>
+<rect x="870.0" y="446" width="220" height="52" rx="26" fill="#3d1d00" stroke="#ffa657" stroke-width="1.5"/>
+<text x="900.0" y="479" font-size="20">⬆️</text>
+<text x="994.0" y="478" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">published</text>
+<rect x="870.0" y="510" width="220" height="52" rx="26" fill="#3d1d00" stroke="#ffa657" stroke-width="1.5"/>
+<text x="900.0" y="543" font-size="20">🔄</text>
+<text x="994.0" y="542" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">updated</text>
+<path d="M1260.0 214 V240" stroke="#30363d" stroke-width="3"/>
+<rect x="1142.0" y="240" width="236" height="170" rx="18" fill="#161b22" stroke="#d2a8ff" stroke-width="2"/>
+<circle cx="1260.0" cy="296" r="42" fill="#d2a8ff" opacity="0.3"/><circle cx="1260.0" cy="296" r="34" fill="#22123f" stroke="#d2a8ff" stroke-width="3"/>
+<text x="1260.0" y="307" font-size="30">💬</text>
+<text x="1260.0" y="364" font-size="19" font-weight="800" fill="#e6edf3">Community</text>
+<text x="1260.0" y="390" font-size="12" fill="#d2a8ff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">discussion · issue_comment · watch</text>
+<path d="M1260.0 410 V436" stroke="#30363d" stroke-width="3"/>
+<rect x="1150.0" y="446" width="220" height="52" rx="26" fill="#22123f" stroke="#d2a8ff" stroke-width="1.5"/>
+<text x="1180.0" y="479" font-size="20">💭</text>
+<text x="1274.0" y="478" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">discussion</text>
+<rect x="1150.0" y="510" width="220" height="52" rx="26" fill="#22123f" stroke="#d2a8ff" stroke-width="1.5"/>
+<text x="1180.0" y="543" font-size="20">🗨️</text>
+<text x="1274.0" y="542" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">comment</text>
+<rect x="1150.0" y="574" width="220" height="52" rx="26" fill="#22123f" stroke="#d2a8ff" stroke-width="1.5"/>
+<text x="1180.0" y="607" font-size="20">⭐</text>
+<text x="1274.0" y="606" font-size="15" font-weight="600" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">starred</text>
+<text x="700" y="700" font-size="14" fill="#8b949e">A few highlights. Each event has more activity types: see the table below the picture.</text></g></svg>
