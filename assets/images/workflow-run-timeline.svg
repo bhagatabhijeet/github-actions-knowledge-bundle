@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 590" width="1200" height="590" role="img" aria-label="One push starts three jobs in parallel on Ubuntu, Windows and macOS runners. Each runs its steps in series and finishes at a different time. The workflow passes only when all three pass">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#8b949e"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="590" rx="20" fill="#0d1117"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="56" font-size="22" font-weight="800" fill="#ffffff">One push, three runners, one result</text>
+
+    <!-- event -->
+    <rect x="40" y="240" width="120" height="100" rx="14" fill="#3d2a00" stroke="#e3b341" stroke-width="3"/>
+    <text x="100" y="278" font-size="13" font-weight="700" letter-spacing="3" fill="#e3b341">EVENT</text>
+    <text x="100" y="310" font-size="20" font-weight="700" fill="#ffffff">push</text>
+
+    <g stroke="#8b949e" stroke-width="3" marker-end="url(#arrow)">
+      <line x1="164" y1="270" x2="196" y2="156"/>
+      <line x1="164" y1="290" x2="196" y2="290"/>
+      <line x1="164" y1="310" x2="196" y2="424"/>
+    </g>
+
+    <!-- lanes -->
+    <g fill="#161b22" stroke="#30363d" stroke-width="2">
+      <rect x="200" y="100" width="800" height="100" rx="14"/>
+      <rect x="200" y="240" width="800" height="100" rx="14"/>
+      <rect x="200" y="380" width="800" height="100" rx="14"/>
+    </g>
+
+    <g text-anchor="start">
+      <text x="220" y="144" font-size="13" font-weight="700" letter-spacing="2" fill="#3fb950">RUNNER 1</text>
+      <text x="220" y="170" font-size="17" font-weight="700" fill="#ffffff">ubuntu-latest</text>
+      <text x="220" y="284" font-size="13" font-weight="700" letter-spacing="2" fill="#3fb950">RUNNER 2</text>
+      <text x="220" y="310" font-size="17" font-weight="700" fill="#ffffff">windows-latest</text>
+      <text x="220" y="424" font-size="13" font-weight="700" letter-spacing="2" fill="#3fb950">RUNNER 3</text>
+      <text x="220" y="450" font-size="17" font-weight="700" fill="#ffffff">macos-latest</text>
+    </g>
+
+    <g font-size="14" font-weight="700" fill="#ffffff">
+      <!-- ubuntu: 380 to 760 -->
+      <rect x="380" y="130" width="60" height="40" rx="8" fill="#21262d" stroke="#8b949e" stroke-width="2"/>
+      <text x="410" y="155">boot</text>
+      <rect x="444" y="130" width="76" height="40" rx="8" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+      <text x="482" y="155">checkout</text>
+      <rect x="524" y="130" width="116" height="40" rx="8" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+      <text x="582" y="155">setup-python</text>
+      <rect x="644" y="130" width="116" height="40" rx="8" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+      <text x="702" y="155">unit tests</text>
+
+      <!-- windows: 380 to 960 -->
+      <rect x="380" y="270" width="100" height="40" rx="8" fill="#21262d" stroke="#8b949e" stroke-width="2"/>
+      <text x="430" y="295">boot</text>
+      <rect x="484" y="270" width="96" height="40" rx="8" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+      <text x="532" y="295">checkout</text>
+      <rect x="584" y="270" width="176" height="40" rx="8" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+      <text x="672" y="295">setup-python</text>
+      <rect x="764" y="270" width="176" height="40" rx="8" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+      <text x="852" y="295">unit tests</text>
+
+      <!-- macos: 380 to 860 -->
+      <rect x="380" y="410" width="80" height="40" rx="8" fill="#21262d" stroke="#8b949e" stroke-width="2"/>
+      <text x="420" y="435">boot</text>
+      <rect x="464" y="410" width="86" height="40" rx="8" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+      <text x="507" y="435">checkout</text>
+      <rect x="554" y="410" width="146" height="40" rx="8" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+      <text x="627" y="435">setup-python</text>
+      <rect x="704" y="410" width="146" height="40" rx="8" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+      <text x="777" y="435">unit tests</text>
+    </g>
+
+    <!-- job finished markers -->
+    <g>
+      <circle cx="786" cy="150" r="15" fill="#0f2d17" stroke="#3fb950" stroke-width="3"/>
+      <path d="M779 150 L784 156 L794 144" fill="none" stroke="#3fb950" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="840" y="155" font-size="14" fill="#7ee787">job passed</text>
+
+      <circle cx="966" cy="290" r="15" fill="#0f2d17" stroke="#3fb950" stroke-width="3"/>
+      <path d="M959 290 L964 296 L974 284" fill="none" stroke="#3fb950" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <circle cx="876" cy="430" r="15" fill="#0f2d17" stroke="#3fb950" stroke-width="3"/>
+      <path d="M869 430 L874 436 L884 424" fill="none" stroke="#3fb950" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="930" y="435" font-size="14" fill="#7ee787">job passed</text>
+    </g>
+
+    <!-- roll-up bracket -->
+    <g stroke="#8b949e" stroke-width="3" fill="none">
+      <path d="M1004 150 L1022 150 L1022 430 L1004 430"/>
+      <line x1="1004" y1="290" x2="1022" y2="290"/>
+      <line x1="1022" y1="290" x2="1046" y2="290" marker-end="url(#arrow)"/>
+    </g>
+
+    <!-- result -->
+    <rect x="1050" y="230" width="116" height="120" rx="14" fill="#0c1d3a" stroke="#58a6ff" stroke-width="3"/>
+    <text x="1108" y="264" font-size="12" font-weight="700" letter-spacing="2" fill="#58a6ff">WORKFLOW</text>
+    <text x="1108" y="296" font-size="16" font-weight="700" fill="#ffffff">passes when</text>
+    <text x="1108" y="320" font-size="16" font-weight="700" fill="#ffffff">all 3 pass</text>
+
+    <!-- time axis -->
+    <line x1="380" y1="514" x2="996" y2="514" stroke="#8b949e" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="688" y="506" font-size="13" fill="#8b949e">time</text>
+    <text x="600" y="556" font-size="16" fill="#c9d1d9">Jobs run in parallel on separate runners. Steps inside a job run one after another.</text>
+  </g>
+</svg>

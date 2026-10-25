@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-label="GitHub-hosted runners are maintained by GitHub, give a clean VM per job and run in the public cloud. Self-hosted runners are maintained by you, keep their state between jobs and run inside your network">
+  <rect width="1200" height="540" rx="20" fill="#0d1117"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+
+    <!-- column headings -->
+    <rect x="280" y="30" width="430" height="54" rx="14" fill="#0f2d17" stroke="#3fb950" stroke-width="3"/>
+    <text x="495" y="65" font-size="21" font-weight="800" fill="#7ee787">GitHub-hosted runner</text>
+    <rect x="730" y="30" width="430" height="54" rx="14" fill="#3d1d00" stroke="#ffa657" stroke-width="3"/>
+    <text x="945" y="65" font-size="21" font-weight="800" fill="#ffa657">Self-hosted runner</text>
+
+    <!-- row backgrounds -->
+    <g fill="#161b22" stroke="#30363d" stroke-width="2">
+      <rect x="40" y="100" width="1120" height="72" rx="12"/>
+      <rect x="40" y="182" width="1120" height="72" rx="12"/>
+      <rect x="40" y="264" width="1120" height="72" rx="12"/>
+      <rect x="40" y="346" width="1120" height="72" rx="12"/>
+      <rect x="40" y="428" width="1120" height="72" rx="12"/>
+    </g>
+
+    <!-- row labels -->
+    <g font-size="16" font-weight="700" fill="#c9d1d9" text-anchor="start">
+      <text x="62" y="142">Who looks after it</text>
+      <text x="62" y="224">Machine for each job</text>
+      <text x="62" y="306">Customising</text>
+      <text x="62" y="388">Network</text>
+      <text x="62" y="470">Cost</text>
+    </g>
+
+    <!-- hosted column -->
+    <g font-size="16" fill="#ffffff">
+      <text x="495" y="142" font-weight="700">GitHub</text>
+      <text x="495" y="224">A new, clean VM every time</text>
+      <text x="495" y="296">Pick an image and a size;</text>
+      <text x="495" y="320">install extra tools in steps</text>
+      <text x="495" y="388">Public cloud, outside your network</text>
+      <text x="495" y="460">Free on public repositories;</text>
+      <text x="495" y="484">metered on private ones</text>
+    </g>
+
+    <!-- self-hosted column -->
+    <g font-size="16" fill="#ffffff">
+      <text x="945" y="142" font-weight="700">You</text>
+      <text x="945" y="214">The same machine again,</text>
+      <text x="945" y="238">unless you reset it</text>
+      <text x="945" y="306">Anything: your OS, tools and hardware</text>
+      <text x="945" y="388">Inside your own network</text>
+      <text x="945" y="470">You pay for and run the machines</text>
+    </g>
+
+    <!-- column dividers -->
+    <g stroke="#30363d" stroke-width="2">
+      <line x1="270" y1="100" x2="270" y2="500"/>
+      <line x1="720" y1="100" x2="720" y2="500"/>
+    </g>
+  </g>
+</svg>

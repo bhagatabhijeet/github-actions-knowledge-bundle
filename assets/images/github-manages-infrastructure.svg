@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-label="With GitHub-hosted runners, GitHub handles three jobs for you: setting up servers, scaling resources, and managing the execution environment. Out of the box you can run on Ubuntu, Windows or macOS">
+  <defs>
+    <linearGradient id="gOrange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f85149"/><stop offset="1" stop-color="#ffa657"/>
+    </linearGradient>
+    <linearGradient id="gPink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#bc8cff"/><stop offset="1" stop-color="#f778ba"/>
+    </linearGradient>
+    <linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#238636"/><stop offset="1" stop-color="#7ee787"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="640" rx="20" fill="#0d1117"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <!-- title -->
+    <text x="600" y="62" font-size="28" font-weight="800" fill="#e6edf3">You write the workflow. GitHub runs the machines.</text>
+    <text x="600" y="96" font-size="17" fill="#8b949e">Three jobs that disappear when you use a GitHub-hosted runner</text>
+
+    <!-- cards -->
+    <g stroke-width="2">
+      <rect x="60"  y="130" width="340" height="330" rx="22" fill="#161b22" stroke="#ffa657"/>
+      <rect x="430" y="130" width="340" height="330" rx="22" fill="#161b22" stroke="#d2a8ff"/>
+      <rect x="800" y="130" width="340" height="330" rx="22" fill="#161b22" stroke="#3fb950"/>
+    </g>
+
+    <!-- numbers -->
+    <g font-size="20" font-weight="800">
+      <text x="230" y="172" fill="#ffa657">01</text>
+      <text x="600" y="172" fill="#d2a8ff">02</text>
+      <text x="970" y="172" fill="#7ee787">03</text>
+    </g>
+
+    <!-- glows + circles -->
+    <circle cx="230" cy="250" r="58" fill="#ffa657" opacity="0.35" filter="url(#glow)"/>
+    <circle cx="600" cy="250" r="58" fill="#d2a8ff" opacity="0.35" filter="url(#glow)"/>
+    <circle cx="970" cy="250" r="58" fill="#3fb950" opacity="0.35" filter="url(#glow)"/>
+    <circle cx="230" cy="250" r="58" fill="url(#gOrange)"/>
+    <circle cx="600" cy="250" r="58" fill="url(#gPink)"/>
+    <circle cx="970" cy="250" r="58" fill="url(#gGreen)"/>
+
+    <!-- icon 1: server stack -->
+    <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="200" y="222" width="60" height="22" rx="5"/>
+      <rect x="200" y="252" width="60" height="22" rx="5"/>
+      <line x1="210" y1="233" x2="222" y2="233"/>
+      <line x1="210" y1="263" x2="222" y2="263"/>
+    </g>
+    <g fill="#ffffff">
+      <circle cx="244" cy="233" r="3"/><circle cx="252" cy="233" r="3"/>
+      <circle cx="244" cy="263" r="3"/><circle cx="252" cy="263" r="3"/>
+    </g>
+
+    <!-- icon 2: scale up -->
+    <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M592 222 H628 V278 H572 V258"/>
+      <rect x="572" y="258" width="20" height="20" rx="3"/>
+      <line x1="600" y1="250" x2="622" y2="228"/>
+      <polyline points="608,228 622,228 622,242"/>
+    </g>
+
+    <!-- icon 3: gear with nodes -->
+    <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round">
+      <circle cx="970" cy="250" r="16"/>
+      <circle cx="970" cy="250" r="6"/>
+      <g stroke-width="3">
+        <line x1="970" y1="226" x2="970" y2="214"/><line x1="970" y1="274" x2="970" y2="286"/>
+        <line x1="946" y1="250" x2="934" y2="250"/><line x1="994" y1="250" x2="1006" y2="250"/>
+        <line x1="953" y1="233" x2="945" y2="225"/><line x1="987" y1="267" x2="995" y2="275"/>
+        <line x1="987" y1="233" x2="995" y2="225"/><line x1="953" y1="267" x2="945" y2="275"/>
+      </g>
+    </g>
+    <g fill="#ffffff">
+      <circle cx="970" cy="212" r="4"/><circle cx="970" cy="288" r="4"/>
+      <circle cx="932" cy="250" r="4"/><circle cx="1008" cy="250" r="4"/>
+      <circle cx="943" cy="223" r="4"/><circle cx="997" cy="277" r="4"/>
+      <circle cx="997" cy="223" r="4"/><circle cx="943" cy="277" r="4"/>
+    </g>
+
+    <!-- titles -->
+    <g font-size="23" font-weight="800" fill="#e6edf3">
+      <text x="230" y="350">Setting up servers</text>
+      <text x="600" y="350">Scaling resources</text>
+      <text x="970" y="350">Managing the</text>
+      <text x="970" y="378">execution environment</text>
+    </g>
+
+    <!-- detail -->
+    <g font-size="15" fill="#8b949e">
+      <text x="230" y="390">No hardware to buy, rack</text>
+      <text x="230" y="412">or patch. A fresh VM boots</text>
+      <text x="230" y="434">for every job.</text>
+      <text x="600" y="390">Ten jobs get ten machines.</text>
+      <text x="600" y="412">No capacity planning,</text>
+      <text x="600" y="434">no idle servers to pay for.</text>
+      <text x="970" y="412">OS images, tools and updates</text>
+      <text x="970" y="434">kept current by GitHub.</text>
+    </g>
+
+    <!-- OS strip -->
+    <rect x="60" y="490" width="1080" height="110" rx="18" fill="#0f2d17" stroke="#3fb950" stroke-width="2"/>
+    <text x="600" y="524" font-size="16" font-weight="700" fill="#7ee787" letter-spacing="1">AVAILABLE OUT OF THE BOX</text>
+    <g font-size="19" font-weight="700">
+      <rect x="170" y="540" width="250" height="44" rx="22" fill="#161b22" stroke="#30363d"/>
+      <text x="295" y="569" fill="#e6edf3">🐧 ubuntu-latest</text>
+      <rect x="475" y="540" width="250" height="44" rx="22" fill="#161b22" stroke="#30363d"/>
+      <text x="600" y="569" fill="#e6edf3">🪟 windows-latest</text>
+      <rect x="780" y="540" width="250" height="44" rx="22" fill="#161b22" stroke="#30363d"/>
+      <text x="905" y="569" fill="#e6edf3">🍎 macos-latest</text>
+    </g>
+  </g>
+</svg>

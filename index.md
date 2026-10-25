@@ -11,11 +11,13 @@ okf_version: "0.2"
 * [01 - Introduction to GitHub Actions](01-introduction-to-github-actions/) - What GitHub Actions is, its six core concepts, how to read workflow YAML, and a first hands-on workflow.
 * [02 - Basics of CI/CD](02-basics-of-ci-cd/) - Why CI/CD exists, continuous integration, delivery versus deployment, pipeline anatomy, and a first hands-on CI pipeline.
 * [03 - The Problem with Traditional CI/CD Tools](03-problem-with-traditional-ci-cd-tools/) - The problem statement for self-hosted CI servers, their six hidden costs, and how GitHub Actions answers each one, trade-offs included.
+* [04 - GitHub Actions Core Components](04-github-actions-core-components/) - Workflow, job, step and runner in motion, a hands-on run across three operating systems, and GitHub-hosted versus self-hosted runners.
 
 # Sample Workflows
 
 * [01 - Hello, Actions](.github/workflows/01-hello-world.yml) - Push and manual triggers, an input, run versus uses, default variables and a job summary.
 * [02 - CI Basics](.github/workflows/02-ci-basics.yml) - A lint, test and package pipeline with a Python version matrix, pip caching and an uploaded artifact.
+* [04 - Core Components](.github/workflows/04-core-components.yml) - One unit-testing job fanned out across Ubuntu, Windows and macOS with an OS matrix, uploading a test report from each runner.
 
 # Assets
 

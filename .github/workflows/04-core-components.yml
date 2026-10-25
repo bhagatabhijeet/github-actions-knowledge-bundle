@@ -1,0 +1,46 @@
+# Chapter 4 companion workflow.
+# Walkthrough: 04-github-actions-core-components/02-life-of-a-workflow-run.md
+
+name: 04 - Core Components
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/04-core-components.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+    working-directory: sample-app
+
+jobs:
+  unit-testing:
+    name: unit-testing (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Run unit tests
+        run: python -m unittest discover -v 2>&1 | tee test-report.txt
+
+      - name: Upload the test report
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-report-${{ runner.os }}
+          path: sample-app/test-report.txt
+          retention-days: 7

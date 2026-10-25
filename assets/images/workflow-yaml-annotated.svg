@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" width="1200" height="580" role="img" aria-label="A workflow file with each part labelled: the whole file is the workflow, the on key is the event, the unit-testing block is the job, runs-on and matrix choose the runner, and the list under steps holds the steps">
+  <rect width="1200" height="580" rx="20" fill="#0d1117"/>
+
+  <!-- code panel = the workflow -->
+  <rect x="40" y="40" width="600" height="500" rx="16" fill="#0c1d3a" stroke="#58a6ff" stroke-width="3"/>
+
+  <!-- event band: line 2 -->
+  <rect x="54" y="100" width="566" height="28" rx="6" fill="#e3b341" fill-opacity="0.18" stroke="#e3b341" stroke-width="2"/>
+  <!-- job outline: lines 5 to 13 -->
+  <rect x="54" y="182" width="566" height="262" rx="10" fill="#bc8cff" fill-opacity="0.10" stroke="#bc8cff" stroke-width="2"/>
+  <!-- runner band: lines 6 to 9 -->
+  <rect x="86" y="213" width="522" height="108" rx="8" fill="#3fb950" fill-opacity="0.16" stroke="#3fb950" stroke-width="2"/>
+  <!-- steps band: lines 10 to 13 -->
+  <rect x="86" y="327" width="522" height="108" rx="8" fill="#f778ba" fill-opacity="0.16" stroke="#f778ba" stroke-width="2"/>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" fill="#e6edf3">
+    <text x="68" y="92">name: Unit Tests</text>
+    <text x="68" y="120">on: push</text>
+    <text x="68" y="176">jobs:</text>
+    <text x="86" y="204">unit-testing:</text>
+    <text x="104" y="232">runs-on: ${{ matrix.os }}</text>
+    <text x="104" y="260">strategy:</text>
+    <text x="122" y="288">matrix:</text>
+    <text x="140" y="316">os: [ubuntu-latest, windows-latest, macos-latest]</text>
+    <text x="104" y="346">steps:</text>
+    <text x="122" y="374">- uses: actions/checkout@v7</text>
+    <text x="122" y="402">- uses: actions/setup-python@v7</text>
+    <text x="122" y="430">- run: python -m unittest discover</text>
+  </g>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="68" y="514" font-size="15" fill="#9fc6f5">.github/workflows/unit-tests.yml</text>
+
+    <!-- connectors -->
+    <g stroke="#8b949e" stroke-width="2" fill="none">
+      <line x1="640" y1="86" x2="700" y2="82"/>
+      <line x1="620" y1="114" x2="700" y2="182"/>
+      <line x1="620" y1="198" x2="700" y2="282"/>
+      <line x1="608" y1="268" x2="700" y2="382"/>
+      <line x1="608" y1="382" x2="700" y2="482"/>
+    </g>
+
+    <!-- cards -->
+    <rect x="700" y="40" width="460" height="84" rx="14" fill="#0c1d3a" stroke="#58a6ff" stroke-width="3"/>
+    <text x="724" y="74" font-size="15" font-weight="700" letter-spacing="3" fill="#58a6ff">WORKFLOW</text>
+    <text x="724" y="102" font-size="16" fill="#ffffff">The whole file: one automated process</text>
+
+    <rect x="700" y="140" width="460" height="84" rx="14" fill="#3d2a00" stroke="#e3b341" stroke-width="3"/>
+    <text x="724" y="174" font-size="15" font-weight="700" letter-spacing="3" fill="#e3b341">EVENT</text>
+    <text x="724" y="202" font-size="16" fill="#ffffff">What starts it. Here, any push</text>
+
+    <rect x="700" y="240" width="460" height="84" rx="14" fill="#22123f" stroke="#bc8cff" stroke-width="3"/>
+    <text x="724" y="274" font-size="15" font-weight="700" letter-spacing="3" fill="#bc8cff">JOB</text>
+    <text x="724" y="302" font-size="16" fill="#ffffff">A group of steps that share one runner</text>
+
+    <rect x="700" y="340" width="460" height="84" rx="14" fill="#0f2d17" stroke="#3fb950" stroke-width="3"/>
+    <text x="724" y="374" font-size="15" font-weight="700" letter-spacing="3" fill="#3fb950">RUNNER</text>
+    <text x="724" y="402" font-size="16" fill="#ffffff">The machine. This matrix asks for three</text>
+
+    <rect x="700" y="440" width="460" height="84" rx="14" fill="#3a0f2b" stroke="#f778ba" stroke-width="3"/>
+    <text x="724" y="474" font-size="15" font-weight="700" letter-spacing="3" fill="#f778ba">STEPS</text>
+    <text x="724" y="502" font-size="16" fill="#ffffff">Tasks in order: an action or a command</text>
+  </g>
+</svg>
