@@ -19,7 +19,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 2 of 6</b> &nbsp;·&nbsp; ⏱️ 8 min read &nbsp;·&nbsp; 🟢 Beginner
+  <b>Lesson 2 of 6</b> &nbsp;·&nbsp; ⏱️ 9 min read &nbsp;·&nbsp; 🟢 Beginner
 </p>
 
 # 🧪 Continuous Integration
@@ -61,6 +61,43 @@ sequenceDiagram
 ```
 
 Notice step 4. The failure reached the author within minutes, while the change was still fresh in their head, and before a reviewer spent any time on it. That **fast feedback** is the whole value of CI.
+
+## 👯 Two developers, one `main`
+
+Real teams have several changes in flight at once. Follow two of them.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor D1 as 🧑‍💻 Developer 1
+    actor D2 as 👩‍💻 Developer 2
+    participant M as 🌳 main
+    participant CI as 🤖 CI
+
+    D1->>CI: Pull request from branch A
+    CI-->>D1: ✅ A passes
+    D2->>CI: Pull request from branch B
+    CI-->>D2: ✅ B passes
+    D1->>M: Merge A
+    M->>CI: push event
+    CI-->>M: ✅ main with A passes
+    D2->>M: Merge B
+    M->>CI: push event
+    CI-->>M: ✅ or ❌ main with A and B
+```
+
+Every pull request was tested. So why does CI run **again** after each merge?
+
+| | Run | What it actually tested |
+|---|---|---|
+| 1 | Pull request A | `main` as it was, plus A |
+| 2 | Pull request B | `main` as it was, plus B |
+| 3 | After both merges | `main` plus A **plus B**: a combination nobody has tested before |
+
+Developer 1 renamed a function. Developer 2 added a new call to the old name. Each branch is green on its own. Together they're broken, and only the run on `main` can see it.
+
+> [!IMPORTANT]
+> **A pull request run tests one change. A run on `main` tests how the changes work together.** That second run is the "integration" in continuous integration, which is why the minimal workflow below listens for both `pull_request` and `push`.
 
 ## 🔍 What does a CI run check?
 
@@ -161,6 +198,15 @@ Fourteen lines stand between you and "nobody can merge broken code".
 <br>
 
 No. They have automated testing, but they aren't *integrating* continuously. After three weeks, merging is still a painful event.
+
+</details>
+
+<details>
+<summary><b>Both pull requests passed CI. Why run it again on <code>main</code> after merging?</b></summary>
+
+<br>
+
+Each pull request was tested separately. After both are merged, `main` holds a combination of changes that has never been tested together. The run on `main` is the first to check it.
 
 </details>
 
