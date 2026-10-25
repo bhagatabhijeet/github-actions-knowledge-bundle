@@ -1,5 +1,9 @@
 # Bundle Update Log
 
+## 2026-10-25
+* **Update**: [The Six Core Concepts](/01-introduction-to-github-actions/02-core-concepts.md) gains a "Beyond CI/CD" section on repository events and their activity types, with the new `repo-automation-events.svg`.
+* **Update**: [GitHub-Hosted vs Self-Hosted Runners](/04-github-actions-core-components/03-github-hosted-vs-self-hosted-runners.md) gains "What GitHub takes off your plate", with the new `github-manages-infrastructure.svg`.
+
 ## 2026-10-07
 * **Creation**: Added Chapter 4, [GitHub Actions Core Components](/04-github-actions-core-components/), with four lessons: [The Core Components](/04-github-actions-core-components/01-the-core-components.md), [Life of a Workflow Run](/04-github-actions-core-components/02-life-of-a-workflow-run.md), [GitHub-Hosted vs Self-Hosted Runners](/04-github-actions-core-components/03-github-hosted-vs-self-hosted-runners.md) and a [cheat sheet and quiz](/04-github-actions-core-components/04-cheat-sheet-and-quiz.md). Added the live workflow `04-core-components.yml` and four images under `assets/images/`: `chapter-04-banner.svg`, `workflow-yaml-annotated.svg`, `workflow-run-timeline.svg` and `hosted-vs-self-hosted.svg`.
 * **Update**: Rewrote [The Problem Statement](/03-problem-with-traditional-ci-cd-tools/01-the-problem-statement.md) around a new scenario (a DevOps lead planning a Node.js pipeline at the fictitious Tessaloop Technologies) and aligned the other Chapter 3 lessons with it; [How GitHub Actions Answers the Problem](/03-problem-with-traditional-ci-cd-tools/03-how-github-actions-answers.md) gains an install-list comparison and a Node.js matrix example. The [Chapter 3 quiz](/03-problem-with-traditional-ci-cd-tools/04-cheat-sheet-and-quiz.md) now links forward to Chapter 4.
