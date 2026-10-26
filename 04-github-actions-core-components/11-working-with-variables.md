@@ -21,7 +21,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 11 of 12</b> &nbsp;·&nbsp; ⏱️ 20 min &nbsp;·&nbsp; 🛠️ Hands-on &nbsp;·&nbsp; ⭐ Fundamental
+  <b>Lesson 11 of 12</b> &nbsp;·&nbsp; ⏱️ 25 min &nbsp;·&nbsp; 🛠️ Hands-on &nbsp;·&nbsp; ⭐ Fundamental
 </p>
 
 # 🔤 Working with Variables
@@ -217,6 +217,91 @@ There are two ways to read a variable, and they work at different moments:
 > [!WARNING]
 > **`env` doesn't work everywhere.** It isn't available in `runs-on:` or in a job-level `if:`, because GitHub decides those before the job's environment exists. Use `vars`, `inputs` or `github` there instead.
 
+## 🧠 Inside `${{ }}`: the expression language and its contexts
+
+`${{ }}` isn't the shell. It's **GitHub's own expression language**, evaluated by GitHub before anything reaches the runner. It doesn't know your variable names directly. It only knows a fixed set of top-level objects called **contexts**, and every value you read must start with one of them:
+
+```yaml
+run: echo "${{ IMAGE_NAME }}"       # ❌ Unrecognized named-value: 'IMAGE_NAME'
+run: echo "${{ env.IMAGE_NAME }}"   # ✅ context.name
+```
+
+The prefix isn't red tape. The same name can exist in several places at once, and the context says which one you mean:
+
+```yaml
+${{ env.TOKEN }}       # from env: in this YAML
+${{ vars.TOKEN }}      # from Settings → Variables
+${{ secrets.TOKEN }}   # from Settings → Secrets, masked in logs
+```
+
+### 📚 The contexts you'll use
+
+| Context | Holds | Example | Example value |
+|---|---|---|---|
+| 🐙 `github` | Facts about the run and what triggered it | `${{ github.sha }}` | `ffac537e6cbb...` |
+| 🌱 `env` | Variables from `env:` (all levels) and `$GITHUB_ENV` | `${{ env.IMAGE_NAME }}` | `dragon-web` |
+| ⚙️ `vars` | Configuration variables from Settings | `${{ vars.DOCKER_USERNAME }}` | `octocat` |
+| 🔐 `secrets` | Encrypted secrets from Settings, plus `GITHUB_TOKEN` | `${{ secrets.DOCKER_PASSWORD }}` | `***` in logs |
+| 🖥️ `runner` | The machine running the job | `${{ runner.os }}` | `Linux` |
+| 📦 `job` | The current job's status, container and services | `${{ job.status }}` | `success` |
+| 👣 `steps` | Outputs and results of earlier steps **that have an `id`** | `${{ steps.version.outputs.tag }}` | `v1.4.2` |
+| 🔗 `needs` | Outputs and results of the jobs listed in `needs:` | `${{ needs.build.outputs.version }}` | `1.0.42` |
+| ✖️ `matrix` | The current job's matrix values | `${{ matrix.os }}` | `windows-latest` |
+| 🧮 `strategy` | Matrix settings for the job | `${{ strategy.job-index }}` | `2` |
+| 🔘 `inputs` | Values typed into **Run workflow**, or passed to a reusable workflow | `${{ inputs.fail_tests }}` | `true` |
+
+A closer look at each:
+
+- **`github`**: the one you'll use most. `github.sha` (commit), `github.ref_name` (branch or tag), `github.actor` (who triggered it), `github.event_name` (`push`, `pull_request`...), `github.repository` (`owner/repo`), `github.run_number`, and `github.event`, the full webhook payload, such as `github.event.pull_request.title`.
+- **`env`**: everything in `env:` that applies at this point, after the step-beats-job-beats-workflow rule, plus values written to `$GITHUB_ENV` by earlier steps. Same values the shell sees as `$NAME`.
+- **`vars`**: configuration variables, already resolved as environment > repository > organisation. An unset name gives an empty string.
+- **`secrets`**: like `vars`, but encrypted and printed as `***`. Always has `secrets.GITHUB_TOKEN`, the token GitHub creates for each run. Not available inside actions you call unless you pass it in with `with:` or `env:`.
+- **`runner`**: `runner.os` (`Linux`, `Windows`, `macOS`), `runner.arch` (`X64`, `ARM64`), `runner.temp` (a temp folder cleaned after the job).
+- **`job`**: mostly `job.status`, handy in a final step that reports how the job went.
+- **`steps`**: only steps **before** this one, and only those with an `id:`. Each has `.outputs.<name>`, `.outcome` and `.conclusion`.
+- **`needs`**: only jobs listed **directly** in this job's `needs:`. Each has `.outputs.<name>` and `.result`.
+- **`matrix`** and **`strategy`**: only in jobs that use `strategy: matrix:`.
+- **`inputs`**: only in workflows started by `workflow_dispatch` or `workflow_call`. On a push they're empty.
+
+> [!NOTE]
+> **Not every context is available everywhere.** GitHub fills them in at different moments. For example, `runs-on:` can read `github`, `vars`, `inputs`, `matrix` and `needs`, but not `env`, `secrets` or `steps`. Each key's allowed contexts are listed in the [contexts reference](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#context-availability). If you get "Unrecognized named-value" for a context you *did* write, it isn't available there.
+
+### ✍️ Reading a value: dots, brackets and missing names
+
+| You write | Use it when |
+|---|---|
+| `env.IMAGE_NAME` | Normally |
+| `env['IMAGE_NAME']` | The same, with brackets |
+| `env['my-image']` | The name has a dash or other special character |
+| `matrix.config.node` | Values are nested: keep adding dots |
+| `vars.MISSING` | A name that doesn't exist is an **empty string**, not an error |
+
+### 🔧 More than lookups
+
+The expression language can also compare, combine and call a few functions:
+
+| Kind | Example | Result |
+|---|---|---|
+| Fallback | `${{ vars.REGION \|\| 'eu-west-1' }}` | The variable, or the default if it's empty |
+| Compare | `${{ github.ref_name == 'main' }}` | `true` or `false` |
+| Combine | `${{ github.event_name == 'push' && runner.os == 'Linux' }}` | `true` only if both are |
+| Text search | `${{ contains(github.event.head_commit.message, '[skip deploy]') }}` | `true` if the text appears |
+| Starts with | `${{ startsWith(github.ref, 'refs/tags/v') }}` | `true` for version tags |
+| Build text | `${{ format('{0}/{1}:{2}', env.REGISTRY, env.IMAGE, github.sha) }}` | `docker.io/dragon-web:ffac53...` |
+| Status | `${{ failure() }}`, `${{ !cancelled() }}` | Covered in [Lesson 9](09-executing-jobs-in-sequence.md) |
+
+In `if:` you can leave out the `${{ }}`, because GitHub always treats `if:` as an expression: `if: github.ref_name == 'main'` works.
+
+> [!TIP]
+> **Lost? Print the whole context.** `toJSON` turns any context into readable JSON in the log:
+>
+> ```yaml
+> - run: echo '${{ toJSON(github) }}'
+> - run: echo '${{ toJSON(env) }}'
+> ```
+>
+> Never do this with `secrets`. They'd be masked, but there's no reason to risk it.
+
 ## 🎁 Variables you get for free
 
 Every job starts with default variables already set:
@@ -318,6 +403,8 @@ Environment-level variables are how one workflow deploys to **staging** and **pr
 
 | Mistake | What you see | Fix |
 |---|---|---|
+| `${{ IMAGE_NAME }}` without a context | `Unrecognized named-value: 'IMAGE_NAME'` | Add the context: `${{ env.IMAGE_NAME }}` |
+| Reading `steps.build.outputs.x` from a step with no `id: build` | Empty value | Give the step `id: build` |
 | Variable set in one job, read in another | Empty value | Move it to workflow `env`, or pass a job output |
 | `${{ vars.NAME }}` before the variable exists | Empty value, no error | Create it in Settings, or add a `\|\| 'default'` fallback |
 | Using `$VAR` in `with:` | The literal text `$VAR` is passed | Use `${{ env.VAR }}` in `with:` |
@@ -343,6 +430,15 @@ This repository ships a safe version of the example that **prints** the docker c
 <br>
 
 Workflow, job and step. The most specific wins: step beats job beats workflow.
+
+</details>
+
+<details>
+<summary><b><code>run: echo "${{ IMAGE_NAME }}"</code> fails with "Unrecognized named-value". Why, and what's the fix?</b></summary>
+
+<br>
+
+Inside `${{ }}` every value must start with a context, which tells GitHub where to look. Write `${{ env.IMAGE_NAME }}`, or `${{ vars.IMAGE_NAME }}` if it lives in Settings.
 
 </details>
 
@@ -387,6 +483,7 @@ No. Variables are plain text and appear in logs. Use a secret.
 - **Don't repeat values.** Name them once with **`env:`** at the step, job or workflow level
 - **The most specific level wins**, and an override stays inside its own scope
 - **`$VAR`** is read by the shell inside `run:`; **`${{ env.VAR }}`** is filled in by GitHub and works in `with:`, `name:` and `if:`
+- Inside **`${{ }}`** every value starts with a **context**: `github`, `env`, `vars`, `secrets`, `runner`, `job`, `steps`, `needs`, `matrix`, `strategy`, `inputs`
 - GitHub gives you **default variables** like `GITHUB_SHA` and `RUNNER_OS` for free
 - **`$GITHUB_ENV`** sets a variable for **later steps** in the same job
 - **Configuration variables** (`vars`) live in Settings at org, repo or environment level, with **environment winning**
