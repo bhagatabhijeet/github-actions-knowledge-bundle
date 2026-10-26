@@ -124,7 +124,7 @@ flowchart LR
 | 4.8 | 🔗 [**Workflows with Multiple Jobs**](04-github-actions-core-components/08-workflows-with-multiple-jobs.md) 🛠️ | Order jobs with `needs` and pass files between them with artifacts | 18 min |
 | 4.9 | ⛓️ [**Jobs in Sequence with `needs`**](04-github-actions-core-components/09-executing-jobs-in-sequence.md) 🛠️ | Design job graphs, control what runs after a failure, and read results and outputs | 16 min |
 | 4.10 | 📦 [**Storing Workflow Data as Artifacts**](04-github-actions-core-components/10-storing-workflow-data-as-artifacts.md) 🛠️ | Keep files after the runner is gone, name them safely in a matrix, and get them back anywhere | 16 min |
-| 4.11 | 🔤 [**Working with Variables**](04-github-actions-core-components/11-working-with-variables.md) 🛠️ ⭐ | Replace hard-coded values with `env` and `vars`, and know which value wins | 25 min |
+| 4.11 | 🔤 [**Working with Variables**](04-github-actions-core-components/11-working-with-variables.md) 🛠️ ⭐ | Replace hard-coded values with `env` and `vars`, and know which value wins | 32 min |
 | 4.12 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/12-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
 
 > [!NOTE]
