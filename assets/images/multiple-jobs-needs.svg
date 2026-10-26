@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-label="Top: three jobs with no needs start at the same time on three separate runners; test and deploy fail because dragon.txt only exists on the build runner. Bottom: with needs, build runs first and uploads dragon.txt as an artifact, then test downloads and checks it, then deploy downloads and shows it">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#d2a8ff"/></marker>
+  </defs>
+  <rect width="1200" height="700" rx="20" fill="#0d1117"/>
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="52" font-size="28" font-weight="800" fill="#e6edf3">Jobs run in parallel, on separate machines, unless you say otherwise</text>
+    <text x="600" y="84" font-size="16" fill="#8b949e"><tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#d2a8ff">needs:</tspan> sets the order. Artifacts carry the files.</text>
+
+    <!-- top: parallel -->
+    <rect x="40" y="106" width="1120" height="230" rx="18" fill="#161b22" stroke="#f85149" stroke-width="2"/>
+    <text x="70" y="140" font-size="19" font-weight="800" fill="#ff7b72" text-anchor="start">❌ No needs: all three start at once</text>
+    <text x="1130" y="140" font-size="14" fill="#8b949e" text-anchor="end">time →</text>
+    <g font-size="17" font-weight="700" fill="#e6edf3">
+      <rect x="70" y="160" width="300" height="46" rx="12" fill="#0f2d17" stroke="#3fb950"/>
+      <text x="220" y="189">🔨 build ✅  writes dragon.txt</text>
+      <rect x="70" y="216" width="300" height="46" rx="12" fill="#3d0d0d" stroke="#f85149"/>
+      <text x="220" y="245">🧪 test ❌</text>
+      <rect x="70" y="272" width="300" height="46" rx="12" fill="#3d0d0d" stroke="#f85149"/>
+      <text x="220" y="301">🚀 deploy ❌</text>
+    </g>
+    <g font-size="15" fill="#8b949e" text-anchor="start">
+      <text x="400" y="189">🖥️ runner A: has dragon.txt</text>
+      <text x="400" y="245">🖥️ runner B: <tspan fill="#ff7b72" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">grep: dragon.txt: No such file or directory</tspan></text>
+      <text x="400" y="301">🖥️ runner C: <tspan fill="#ff7b72" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">cat: dragon.txt: No such file or directory</tspan></text>
+    </g>
+
+    <!-- bottom: needs chain -->
+    <rect x="40" y="356" width="1120" height="314" rx="18" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+    <text x="70" y="390" font-size="19" font-weight="800" fill="#7ee787" text-anchor="start">✅ With needs and artifacts: one after another, files handed over</text>
+
+    <g font-size="20" font-weight="800" fill="#e6edf3">
+      <rect x="80"  y="420" width="260" height="110" rx="16" fill="#0c1d3a" stroke="#58a6ff" stroke-width="2"/>
+      <text x="210" y="460">🔨 build</text>
+      <rect x="470" y="420" width="260" height="110" rx="16" fill="#22123f" stroke="#d2a8ff" stroke-width="2"/>
+      <text x="600" y="460">🧪 test</text>
+      <rect x="860" y="420" width="260" height="110" rx="16" fill="#0f2d17" stroke="#3fb950" stroke-width="2"/>
+      <text x="990" y="460">🚀 deploy</text>
+    </g>
+    <g font-size="13" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+      <text x="210" y="488">cowsay → dragon.txt</text>
+      <text x="210" y="510">upload-artifact</text>
+      <text x="600" y="488">needs: build</text>
+      <text x="600" y="510">download → grep</text>
+      <text x="990" y="488">needs: test</text>
+      <text x="990" y="510">download → cat</text>
+    </g>
+    <path d="M340 475 H462" stroke="#8b949e" stroke-width="3" marker-end="url(#arr)"/>
+    <path d="M730 475 H852" stroke="#8b949e" stroke-width="3" marker-end="url(#arr)"/>
+
+    <!-- artifact store -->
+    <rect x="400" y="580" width="400" height="64" rx="32" fill="#22123f" stroke="#d2a8ff" stroke-width="2"/>
+    <text x="600" y="608" font-size="17" font-weight="800" fill="#d2a8ff">📦 Artifact storage</text>
+    <text x="600" y="630" font-size="13" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">dragon-text-file / dragon.txt</text>
+    <g fill="none" stroke="#d2a8ff" stroke-width="2.5" stroke-dasharray="7 5">
+      <path d="M210 530 V612 H392" marker-end="url(#arrP)"/>
+      <path d="M600 580 V538" marker-end="url(#arrP)"/>
+      <path d="M800 612 H990 V538" marker-end="url(#arrP)"/>
+    </g>
+    <g font-size="13" fill="#d2a8ff" font-weight="700">
+      <text x="300" y="604">upload</text>
+      <text x="640" y="562">download</text>
+      <text x="900" y="604">download</text>
+    </g>
+  </g>
+</svg>

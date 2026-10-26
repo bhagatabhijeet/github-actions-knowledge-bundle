@@ -24,7 +24,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 3 of 8</b> &nbsp;·&nbsp; ⏱️ 8 min read &nbsp;·&nbsp; 🟢 Beginner
+  <b>Lesson 3 of 9</b> &nbsp;·&nbsp; ⏱️ 8 min read &nbsp;·&nbsp; 🟢 Beginner
 </p>
 
 # 🖥️ GitHub-Hosted vs Self-Hosted Runners

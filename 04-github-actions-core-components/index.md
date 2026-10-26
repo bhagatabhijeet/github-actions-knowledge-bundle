@@ -7,7 +7,8 @@
 * [Configuring the Checkout Action (Hands-On)](05-configuring-the-checkout-action.md) - Why a fresh runner has none of your code, how actions/checkout fixes it, and the inputs you'll actually use - fetch-depth, ref, path, repository, token, submodules, sparse-checkout and persist-credentials.
 * [Multi-line Commands and Third-Party Tools (Hands-On)](06-multiline-commands-and-third-party-tools.md) - Run several commands in one step with YAML's literal and folded blocks, understand how the shell treats them, then install and use a third-party tool on the runner - with apt, pip, npm or a setup action.
 * [Executing Shell Scripts in a Workflow (Hands-On)](07-executing-shell-scripts.md) - Move a workflow's commands into a shell script in the repository and run it in one step - the shebang, set -euo pipefail, the executable bit, LF line endings, passing arguments, and the errors you'll meet on the way.
-* [Chapter 4 Cheat Sheet and Quiz](08-cheat-sheet-and-quiz.md) - The core components on one page - workflow, job, step, runner, how a run unfolds, hosted versus self-hosted - followed by an eight-question self-check.
+* [Workflows with Multiple Jobs (Hands-On)](08-workflows-with-multiple-jobs.md) - Split a workflow into build, test and deploy jobs - why they run in parallel by default, how needs puts them in order, how artifacts carry files between runners, and how to read the job graph.
+* [Chapter 4 Cheat Sheet and Quiz](09-cheat-sheet-and-quiz.md) - The core components on one page - workflow, job, step, runner, how a run unfolds, hosted versus self-hosted - followed by an eight-question self-check.
 
 # Companion Files
 
@@ -19,6 +20,8 @@
 * [github-manages-infrastructure.svg](../assets/images/github-manages-infrastructure.svg) - The three jobs GitHub handles for you, and the three operating systems available out of the box.
 * [04-checkout.yml](../.github/workflows/04-checkout.yml) - Live workflow: the same steps with and without checkout.
 * [04-multiline-commands.yml](../.github/workflows/04-multiline-commands.yml) - Live workflow: install cowsay, use it in a multi-line step, check the result.
+* [04-multiple-jobs.yml](../.github/workflows/04-multiple-jobs.yml) - Live workflow: build, test and deploy jobs chained with needs, passing a file by artifact.
+* [multiple-jobs-needs.svg](../assets/images/multiple-jobs-needs.svg) - Parallel jobs failing versus jobs chained with needs and artifacts.
 * [04-shell-script.yml](../.github/workflows/04-shell-script.yml) - Live workflow: check out, then run one script.
 * [ascii-script.sh](../scripts/ascii-script.sh) - The script it runs.
 * [workflow-to-shell-script.svg](../assets/images/workflow-to-shell-script.svg) - Six inline steps become a two-step workflow and a script file.

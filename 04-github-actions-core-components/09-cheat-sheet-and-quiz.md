@@ -15,7 +15,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 8 of 8</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
+  <b>Lesson 9 of 9</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
 </p>
 
 # 📋 Chapter 4 Cheat Sheet & Quiz
@@ -38,6 +38,9 @@ sources:
 
 > [!TIP]
 > **Long logic belongs in a script:** check out, then `run: ./scripts/x.sh`. Start it with `#!/usr/bin/env bash` and `set -euo pipefail`, commit the executable bit, and keep LF line endings.
+
+> [!TIP]
+> **Jobs run in parallel on separate runners.** `needs:` sets the order (a failed job skips what needs it). Files travel by `upload-artifact` then `download-artifact` with the same `name`; small strings travel as job outputs.
 
 ## 🎬 A run in six stages
 
@@ -190,7 +193,7 @@ You can point at any line of a workflow and say which component it is, describe 
 ---
 
 <p align="center">
-  <a href="07-executing-shell-scripts.md">⬅️ Executing Shell Scripts</a>
+  <a href="08-workflows-with-multiple-jobs.md">⬅️ Multiple Jobs</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;

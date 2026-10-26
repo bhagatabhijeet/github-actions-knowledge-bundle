@@ -1,0 +1,58 @@
+# Chapter 4 companion workflow.
+# Walkthrough: 04-github-actions-core-components/08-workflows-with-multiple-jobs.md
+#
+# Three jobs in order: build -> test -> deploy.
+# Each runs on its own runner, so dragon.txt travels between them as an artifact.
+
+name: 04 - Multiple Jobs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/04-multiple-jobs.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install cowsay
+        run: sudo apt-get install -y -qq cowsay
+
+      - name: Generate ASCII art
+        run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" > dragon.txt
+
+      - name: Upload dragon.txt
+        uses: actions/upload-artifact@v7
+        with:
+          name: dragon-text-file
+          path: dragon.txt
+          retention-days: 3
+
+  test_job:
+    needs: build_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download dragon.txt
+        uses: actions/download-artifact@v8
+        with:
+          name: dragon-text-file
+
+      - name: Test the file contains a dragon
+        run: grep -i "dragon" dragon.txt
+
+  deploy_job:
+    needs: test_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download dragon.txt
+        uses: actions/download-artifact@v8
+        with:
+          name: dragon-text-file
+
+      - name: Deploy (print the file)
+        run: cat dragon.txt

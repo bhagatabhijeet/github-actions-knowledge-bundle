@@ -18,7 +18,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 7 of 8</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 7 of 9</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 🐚 Executing Shell Scripts in a Workflow
@@ -240,5 +240,5 @@ Without `set -e`, bash carries on after a failure, and the step's result comes f
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="08-cheat-sheet-and-quiz.md"><b>Next: Cheat Sheet & Quiz ➡️</b></a>
+  <a href="08-workflows-with-multiple-jobs.md"><b>Next: Multiple Jobs ➡️</b></a>
 </p>
