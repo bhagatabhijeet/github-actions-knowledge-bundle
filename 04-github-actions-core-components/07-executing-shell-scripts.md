@@ -18,7 +18,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 7 of 8</b> &nbsp;·&nbsp; ⏱️ 15 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 7 of 8</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 🐚 Executing Shell Scripts in a Workflow
@@ -103,6 +103,36 @@ steps:
 ```
 
 Six steps became two, and you can now run `./scripts/ascii-script.sh` on any Linux machine to test it.
+
+## 👀 Watching the script run
+
+Push the change and open the run. Here's a run whose commit message was *"added permissions"*, the commit that set the executable bit, caught while the script is still running:
+
+```text
+🟡 added permissions #3                        [ Cancel workflow ]
+
+   ascii_job · Started 27s ago
+   ✅ Set up job                      2s
+   ✅ Checkout Repo                   5s
+   ✅ List Repo Files                 0s
+   🟡 Executing Shell Script         21s   ← running now
+   ⚪ Post Checkout Repo                   ← waiting
+```
+
+| What you see | What it means |
+|---|---|
+| **added permissions #3** | The run is named after the commit message. `#3` is this workflow's third run |
+| 🟡 next to the run, the job and a step | In progress. The step's timer keeps counting until it finishes |
+| ⚪ hollow circle | Queued. It runs when the steps above it finish |
+| **Executing Shell Script** takes about 20s | It's one step, but it does a lot: the whole `apt-get` install happens inside the script |
+| **Post Checkout Repo** | A step you never wrote. `actions/checkout` registers a **post step** that runs at the end of the job to remove the credentials it saved. Many actions do this. It always runs last, in reverse order |
+| **Cancel workflow** | Stops the run now. Steps still waiting are skipped |
+
+> [!TIP]
+> **Click the running step to watch its log live.** With one big script step, everything lands in one log section, so the `::group::` lines in the script are what keep it readable.
+
+> [!NOTE]
+> If run #2 failed with `Permission denied` and run #3 is green, the only change between them was the executable bit. Comparing two runs like this is one of the quickest ways to debug.
 
 ## 🔬 What each line of the script does
 
