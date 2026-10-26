@@ -13,8 +13,8 @@ generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
 <p align="center">
   <a href="01-introduction-to-github-actions/01-what-is-github-actions.md"><img src="https://img.shields.io/badge/START%20READING-%E2%96%B6-2ea043?style=for-the-badge" alt="Start reading"></a>
   <img src="https://img.shields.io/badge/CHAPTERS-4-58a6ff?style=for-the-badge" alt="4 chapters">
-  <img src="https://img.shields.io/badge/LESSONS-26-bc8cff?style=for-the-badge" alt="26 lessons">
-  <img src="https://img.shields.io/badge/LIVE%20WORKFLOWS-9-f778ba?style=for-the-badge&logo=githubactions&logoColor=white" alt="9 live workflows">
+  <img src="https://img.shields.io/badge/LESSONS-27-bc8cff?style=for-the-badge" alt="27 lessons">
+  <img src="https://img.shields.io/badge/LIVE%20WORKFLOWS-10-f778ba?style=for-the-badge&logo=githubactions&logoColor=white" alt="10 live workflows">
   <img src="https://img.shields.io/badge/OKF-v0.2-ffa657?style=for-the-badge" alt="OKF v0.2">
   <img src="https://img.shields.io/badge/LICENSE-CC0-e3b341?style=for-the-badge" alt="CC0 license">
 </p>
@@ -29,6 +29,7 @@ generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
   <a href=".github/workflows/04-multiple-jobs.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/04-multiple-jobs.yml/badge.svg" alt="Multiple Jobs status"></a>
   <a href=".github/workflows/04-needs-sequence.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/04-needs-sequence.yml/badge.svg" alt="Jobs in Sequence status"></a>
   <a href=".github/workflows/04-artifacts.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/04-artifacts.yml/badge.svg" alt="Artifacts status"></a>
+  <a href=".github/workflows/04-variables.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/04-variables.yml/badge.svg" alt="Variables status"></a>
 </p>
 
 <h3 align="center">📖 Read it like a book. 🛠️ Run it like a lab. 🤖 Feed it to an agent.</h3>
@@ -123,7 +124,8 @@ flowchart LR
 | 4.8 | 🔗 [**Workflows with Multiple Jobs**](04-github-actions-core-components/08-workflows-with-multiple-jobs.md) 🛠️ | Order jobs with `needs` and pass files between them with artifacts | 18 min |
 | 4.9 | ⛓️ [**Jobs in Sequence with `needs`**](04-github-actions-core-components/09-executing-jobs-in-sequence.md) 🛠️ | Design job graphs, control what runs after a failure, and read results and outputs | 16 min |
 | 4.10 | 📦 [**Storing Workflow Data as Artifacts**](04-github-actions-core-components/10-storing-workflow-data-as-artifacts.md) 🛠️ | Keep files after the runner is gone, name them safely in a matrix, and get them back anywhere | 16 min |
-| 4.11 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/11-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
+| 4.11 | 🔤 [**Working with Variables**](04-github-actions-core-components/11-working-with-variables.md) 🛠️ ⭐ | Replace hard-coded values with `env` and `vars`, and know which value wins | 20 min |
+| 4.12 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/12-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
 
 > [!NOTE]
 > 🔜 **This book is still being written.** New chapters land one topic at a time. Watch the repo, or peek at the [change log](log.md).
@@ -143,6 +145,7 @@ These aren't screenshots. They're running right here, and they'll run in your fo
 | 🔗 | [`04-multiple-jobs.yml`](.github/workflows/04-multiple-jobs.yml) | [4.8](04-github-actions-core-components/08-workflows-with-multiple-jobs.md) | Build, test and deploy jobs chained with `needs`, handing `dragon.txt` over as an artifact |
 | ⛓️ | [`04-needs-sequence.yml`](.github/workflows/04-needs-sequence.yml) | [4.9](04-github-actions-core-components/09-executing-jobs-in-sequence.md) | A `needs` chain with job outputs, an `if: !cancelled()` report, and a switch that makes the tests fail |
 | 📦 | [`04-artifacts.yml`](.github/workflows/04-artifacts.yml) | [4.10](04-github-actions-core-components/10-storing-workflow-data-as-artifacts.md) | Three matrix jobs upload uniquely named artifacts; a gallery job downloads them by pattern and re-uploads one |
+| 🔤 | [`04-variables.yml`](.github/workflows/04-variables.yml) | [4.11](04-github-actions-core-components/11-working-with-variables.md) | `env` at three levels, which value wins, default variables, `$GITHUB_ENV` and `vars` with a fallback |
 
 ## 🚀 Get started in 60 seconds
 

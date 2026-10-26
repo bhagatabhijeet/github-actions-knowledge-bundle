@@ -15,7 +15,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 11 of 11</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
+  <b>Lesson 12 of 12</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
 </p>
 
 # 📋 Chapter 4 Cheat Sheet & Quiz
@@ -47,6 +47,9 @@ sources:
 
 > [!TIP]
 > **Artifacts outlive the runner.** Names must be unique per run (put matrix values in them), use `if-no-files-found: error`, set `retention-days`, collect many with `pattern:` + `merge-multiple:`, and never upload secrets.
+
+> [!TIP]
+> **Variables:** `env:` at workflow, job or step level, and the most specific wins. `$VAR` in `run:`, `${{ env.VAR }}` in `with:`/`name:`/`if:`. `>> $GITHUB_ENV` for later steps. `${{ vars.NAME }}` for values kept in Settings (environment > repo > org). Passwords go in `secrets`, never in variables.
 
 ## 🎬 A run in six stages
 
@@ -199,7 +202,7 @@ You can point at any line of a workflow and say which component it is, describe 
 ---
 
 <p align="center">
-  <a href="10-storing-workflow-data-as-artifacts.md">⬅️ Artifacts</a>
+  <a href="11-working-with-variables.md">⬅️ Variables</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-label="Left: nested scopes. Workflow env sets IMAGE_TAG to latest, job env overrides it to stable, step env overrides it to rc-1; inside the step the value is rc-1 because the closest scope wins. Right: configuration variables stored in Settings at organisation, repository and environment level, read with the vars context, where environment beats repository beats organisation. Bottom: dollar-sign VAR is read by the shell on the runner, while the expression syntax is replaced by GitHub before the step runs">
+  <rect width="1200" height="700" rx="20" fill="#0d1117"/>
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="600" y="52" font-size="28" font-weight="800" fill="#e6edf3" text-anchor="middle">Write it once. Set it at the right level. The closest one wins.</text>
+    <text x="600" y="84" font-size="16" fill="#8b949e" text-anchor="middle"><tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#7ee787">env:</tspan> lives in the YAML · <tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#ffa657">vars</tspan> live in Settings</text>
+
+    <!-- nested scopes -->
+    <rect x="40" y="110" width="620" height="390" rx="22" fill="#0c1d3a" stroke="#58a6ff" stroke-width="2"/>
+    <text x="64" y="144" font-size="18" font-weight="800" fill="#58a6ff">📜 workflow</text>
+    <text x="636" y="144" font-size="15" fill="#c9d1d9" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">env: IMAGE_TAG: latest</text>
+
+    <rect x="70" y="164" width="560" height="310" rx="18" fill="#22123f" stroke="#d2a8ff" stroke-width="2"/>
+    <text x="94" y="198" font-size="18" font-weight="800" fill="#d2a8ff">📦 job</text>
+    <text x="606" y="198" font-size="15" fill="#c9d1d9" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">env: IMAGE_TAG: stable</text>
+
+    <rect x="100" y="218" width="500" height="230" rx="16" fill="#0f2d17" stroke="#3fb950" stroke-width="2"/>
+    <text x="124" y="252" font-size="18" font-weight="800" fill="#7ee787">👣 step</text>
+    <text x="576" y="252" font-size="15" fill="#c9d1d9" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">env: IMAGE_TAG: rc-1</text>
+
+    <rect x="130" y="276" width="440" height="70" rx="12" fill="#010409"/>
+    <text x="150" y="306" font-size="16" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">run: echo $IMAGE_TAG</text>
+    <text x="150" y="332" font-size="16" fill="#7ee787" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-weight="700">→ rc-1</text>
+
+    <g font-size="14" fill="#c9d1d9">
+      <text x="130" y="378">🥇 step beats job</text>
+      <text x="130" y="402">🥈 job beats workflow</text>
+      <text x="130" y="426">🥉 workflow is the fallback for every job</text>
+    </g>
+
+    <!-- vars -->
+    <rect x="690" y="110" width="470" height="390" rx="22" fill="#161b22" stroke="#ffa657" stroke-width="2"/>
+    <text x="925" y="146" font-size="18" font-weight="800" fill="#ffa657" text-anchor="middle">⚙️ Configuration variables</text>
+    <text x="925" y="170" font-size="13" fill="#8b949e" text-anchor="middle">Settings → Secrets and variables → Actions → Variables</text>
+    <g font-size="16" font-weight="700" fill="#e6edf3">
+      <rect x="720" y="192" width="410" height="58" rx="12" fill="#3d1d00" stroke="#ffa657"/>
+      <text x="740" y="227">🌍 Environment  <tspan font-weight="400" fill="#8b949e" font-size="13">e.g. production</tspan></text>
+      <text x="1110" y="227" text-anchor="end" fill="#ffa657">wins</text>
+      <rect x="720" y="262" width="410" height="58" rx="12" fill="#21262d" stroke="#6e7681"/>
+      <text x="740" y="297">📁 Repository</text>
+      <rect x="720" y="332" width="410" height="58" rx="12" fill="#21262d" stroke="#6e7681"/>
+      <text x="740" y="367">🏢 Organisation</text>
+      <text x="1110" y="367" text-anchor="end" fill="#8b949e" font-weight="400" font-size="13">fallback</text>
+    </g>
+    <rect x="720" y="408" width="410" height="70" rx="12" fill="#010409"/>
+    <text x="740" y="438" font-size="15" fill="#ffa657" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">${{ vars.DOCKER_USERNAME }}</text>
+    <text x="740" y="462" font-size="13" fill="#8b949e">change it in Settings, no commit needed</text>
+
+    <!-- bottom: $VAR vs expression -->
+    <text x="600" y="540" font-size="15" font-weight="700" fill="#8b949e" text-anchor="middle" letter-spacing="1">TWO WAYS TO READ A VALUE</text>
+    <rect x="40" y="556" width="550" height="118" rx="16" fill="#161b22" stroke="#7ee787" stroke-width="2"/>
+    <text x="64" y="592" font-size="20" font-weight="800" fill="#7ee787" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">$IMAGE_TAG</text>
+    <text x="64" y="620" font-size="15" fill="#c9d1d9">Read by the <tspan font-weight="700">shell, on the runner</tspan>, while the step runs</text>
+    <text x="64" y="646" font-size="14" fill="#8b949e">Only inside run: · PowerShell writes $env:IMAGE_TAG</text>
+    <rect x="610" y="556" width="550" height="118" rx="16" fill="#161b22" stroke="#d2a8ff" stroke-width="2"/>
+    <text x="634" y="592" font-size="20" font-weight="800" fill="#d2a8ff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">${{ env.IMAGE_TAG }}</text>
+    <text x="634" y="620" font-size="15" fill="#c9d1d9">Replaced by <tspan font-weight="700">GitHub, before</tspan> the step is sent to the runner</text>
+    <text x="634" y="646" font-size="14" fill="#8b949e">Works in with:, name:, step if: · any shell, any OS</text>
+  </g>
+</svg>

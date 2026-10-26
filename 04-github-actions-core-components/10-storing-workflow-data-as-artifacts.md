@@ -21,7 +21,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 10 of 11</b> &nbsp;·&nbsp; ⏱️ 16 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 10 of 12</b> &nbsp;·&nbsp; ⏱️ 16 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 📦 Storing Workflow Data as Artifacts
@@ -267,5 +267,5 @@ A cache. It exists to make future runs faster, not to keep this run's output.
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="11-cheat-sheet-and-quiz.md"><b>Next: Cheat Sheet & Quiz ➡️</b></a>
+  <a href="11-working-with-variables.md"><b>Next: Working with Variables ➡️</b></a>
 </p>

@@ -1,0 +1,74 @@
+# Chapter 4 companion workflow.
+# Walkthrough: 04-github-actions-core-components/11-working-with-variables.md
+#
+# Shows env at workflow, job and step level, which one wins, default
+# variables, $GITHUB_ENV, and configuration variables (vars) with a fallback.
+# Nothing is pushed anywhere: the docker commands are only printed.
+
+name: 04 - Variables
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/04-variables.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:                                   # 📜 workflow level: every job sees these
+  CONTAINER_REGISTRY: ${{ vars.CONTAINER_REGISTRY || 'docker.io' }}
+  DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME || 'demo-user' }}
+  IMAGE_NAME: dragon-web
+  IMAGE_TAG: latest
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    env:                               # 📦 job level: overrides the workflow
+      IMAGE_TAG: stable
+    steps:
+      - name: Docker build (printed, not run)
+        run: echo "docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG ."
+
+      - name: Who wins? (step level)
+        env:                           # 👣 step level: overrides the job
+          IMAGE_TAG: rc-1
+        run: |
+          echo "Shell sees      IMAGE_TAG=$IMAGE_TAG"
+          echo "Expression sees IMAGE_TAG=${{ env.IMAGE_TAG }}"
+
+      - name: Back to the job value
+        run: echo "IMAGE_TAG is $IMAGE_TAG again"
+
+      - name: Set a variable for later steps
+        run: echo "BUILD_ID=$IMAGE_TAG-${GITHUB_SHA::7}" >> "$GITHUB_ENV"
+
+      - name: Use it
+        run: echo "BUILD_ID is $BUILD_ID"
+
+      - name: Default variables GitHub gives you
+        run: |
+          echo "Repository : $GITHUB_REPOSITORY"
+          echo "Branch     : $GITHUB_REF_NAME"
+          echo "Commit     : $GITHUB_SHA"
+          echo "Triggered by $GITHUB_ACTOR via $GITHUB_EVENT_NAME"
+          echo "Run number : $GITHUB_RUN_NUMBER"
+          echo "Runner OS  : $RUNNER_OS"
+          echo "CI         : $CI"
+
+  deploy:
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker run (printed, not run)
+        run: echo "docker run -d -p 8080:80 $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG"
+
+      - name: Where did the values come from?
+        run: |
+          echo "| Name | Value |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| CONTAINER_REGISTRY | $CONTAINER_REGISTRY |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| DOCKER_USERNAME | $DOCKER_USERNAME |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| IMAGE_TAG in deploy | $IMAGE_TAG (workflow level, the job override doesn't reach here) |" >> "$GITHUB_STEP_SUMMARY"

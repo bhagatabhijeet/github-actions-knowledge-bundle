@@ -10,7 +10,8 @@
 * [Workflows with Multiple Jobs (Hands-On)](08-workflows-with-multiple-jobs.md) - Split a workflow into build, test and deploy jobs - why they run in parallel by default, how needs puts them in order, how artifacts carry files between runners, and how to read the job graph.
 * [Executing Jobs in Sequence with needs (Hands-On)](09-executing-jobs-in-sequence.md) - A deep dive into needs - the cost of sequencing, chains, fan-out and fan-in, how failure turns into skipped, status functions like always() and !cancelled(), needs.<job>.result, and why outputs only flow from direct dependencies.
 * [Storing Workflow Data as Artifacts (Hands-On)](10-storing-workflow-data-as-artifacts.md) - Keep files after the runner is gone - what artifacts are, every upload-artifact input worth knowing, unique names and immutability, downloading by pattern, from the browser, the CLI or another run, retention and storage, and when to use cache, releases or packages instead.
-* [Chapter 4 Cheat Sheet and Quiz](11-cheat-sheet-and-quiz.md) - The core components on one page - workflow, job, step, runner, how a run unfolds, hosted versus self-hosted - followed by an eight-question self-check.
+* [Working with Variables (Hands-On)](11-working-with-variables.md) - Stop hard-coding values - env at workflow, job and step level and which one wins, $VAR versus ${{ env.VAR }}, default GITHUB_ variables, setting values at runtime with $GITHUB_ENV, and configuration variables stored in Settings with the vars context.
+* [Chapter 4 Cheat Sheet and Quiz](12-cheat-sheet-and-quiz.md) - The core components on one page - workflow, job, step, runner, how a run unfolds, hosted versus self-hosted - followed by an eight-question self-check.
 
 # Companion Files
 
@@ -22,6 +23,8 @@
 * [github-manages-infrastructure.svg](../assets/images/github-manages-infrastructure.svg) - The three jobs GitHub handles for you, and the three operating systems available out of the box.
 * [04-checkout.yml](../.github/workflows/04-checkout.yml) - Live workflow: the same steps with and without checkout.
 * [04-multiline-commands.yml](../.github/workflows/04-multiline-commands.yml) - Live workflow: install cowsay, use it in a multi-line step, check the result.
+* [04-variables.yml](../.github/workflows/04-variables.yml) - Live workflow: env at three levels, which wins, default variables, $GITHUB_ENV and vars with a fallback.
+* [variable-scopes.svg](../assets/images/variable-scopes.svg) - Nested env scopes, configuration variable precedence, and $VAR versus ${{ env.VAR }}.
 * [04-artifacts.yml](../.github/workflows/04-artifacts.yml) - Live workflow: three matrix jobs upload uniquely named artifacts, a gallery job collects them by pattern.
 * [artifact-lifecycle.svg](../assets/images/artifact-lifecycle.svg) - From runner to artifact storage to the four ways of downloading.
 * [04-needs-sequence.yml](../.github/workflows/04-needs-sequence.yml) - Live workflow: build, test, deploy and an always-on report, with a switch to make the tests fail.

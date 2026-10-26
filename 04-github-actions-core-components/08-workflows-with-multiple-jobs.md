@@ -21,7 +21,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 8 of 11</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 8 of 12</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 🔗 Workflows with Multiple Jobs
