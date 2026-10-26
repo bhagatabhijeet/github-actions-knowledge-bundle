@@ -18,7 +18,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 6 of 7</b> &nbsp;·&nbsp; ⏱️ 15 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 6 of 7</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 📜 Multi-line Commands and Third-Party Tools
@@ -149,6 +149,43 @@ jobs:
 | ⚙️ Generate | Runs the tool, saves its output to a file | `cowsay` isn't installed |
 | 🔍 Check | `grep` looks for the word | The word isn't there: `grep` exits with 1 and the step fails |
 | 📄 Show | Prints the dragon in the log | The file is missing |
+
+### 🔎 Reading the install log
+
+Open the run, click the job, then expand **Install Cowsay Program**. A successful install looks like this:
+
+```text
+▶ Run sudo apt-get install cowsay -y
+  Reading package lists...
+  Building dependency tree...
+  Reading state information...
+  Suggested packages:
+    filters cowsay-off
+  The following NEW packages will be installed:
+    cowsay
+  0 upgraded, 1 newly installed, 0 to remove and 30 not upgraded.
+  Need to get 18.6 kB of archives.
+  Get:2 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 cowsay all 3.03+dfsg2-8 [18.6 kB]
+  Fetched 18.6 kB in 0s (269 kB/s)
+  Selecting previously unselected package cowsay.
+  ...
+```
+
+| Log line | What it tells you |
+|---|---|
+| `▶ Run sudo apt-get install cowsay -y` | The exact command GitHub ran. Click ▶ to see the shell and environment it used |
+| `Reading package lists...` | `apt` is loading its catalogue of available packages |
+| `Suggested packages: filters cowsay-off` | Optional extras. **Not** installed, and safe to ignore |
+| `The following NEW packages will be installed: cowsay` | Confirms it found the package you asked for |
+| `1 newly installed ... 30 not upgraded` | Only `cowsay` was added. Other packages were left alone |
+| `azure.archive.ubuntu.com ... jammy/universe` | Downloaded from Ubuntu's mirror inside Azure, where hosted runners live. `jammy` is Ubuntu 22.04 |
+| `Fetched 18.6 kB in 0s` | Small tools install in seconds. Big ones are worth caching |
+
+> [!TIP]
+> **`-y` matters.** Without it, `apt-get` stops to ask "Do you want to continue? [Y/n]". Nobody can answer on a runner, so the step fails. Every install command in a workflow must be non-interactive.
+
+> [!NOTE]
+> This run skipped `apt-get update` and still worked, because the runner image ships with a fairly fresh package list. When an install fails with `Unable to locate package` or a 404, add `sudo apt-get update` first.
 
 > [!WARNING]
 > **`curl ... | sh` runs whatever that URL serves today.** Pin a version in the URL, check a checksum when the project publishes one, and prefer a package manager or a pinned setup action when there is one.

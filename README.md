@@ -114,7 +114,7 @@ flowchart LR
 | 4.3 | 🖥️ [**Hosted vs Self-Hosted Runners**](04-github-actions-core-components/03-github-hosted-vs-self-hosted-runners.md) | Choose the right kind of runner, and say why | 8 min |
 | 4.4 | 🧩 [**What Are Actions?**](04-github-actions-core-components/04-what-are-actions.md) | Read any `uses:` line, pick the right kind of action and pin it safely | 9 min |
 | 4.5 | 📥 [**Configuring the Checkout Action**](04-github-actions-core-components/05-configuring-the-checkout-action.md) 🛠️ | Explain why a runner starts empty and configure checkout for history, branches and other repos | 15 min |
-| 4.6 | 📜 [**Multi-line Commands & Third-Party Tools**](04-github-actions-core-components/06-multiline-commands-and-third-party-tools.md) 🛠️ | Write multi-line run steps and install and run tools that aren't in your repo | 15 min |
+| 4.6 | 📜 [**Multi-line Commands & Third-Party Tools**](04-github-actions-core-components/06-multiline-commands-and-third-party-tools.md) 🛠️ | Write multi-line run steps and install and run tools that aren't in your repo | 18 min |
 | 4.7 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/07-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
 
 > [!NOTE]
