@@ -25,6 +25,10 @@
 * [04-checkout.yml](../.github/workflows/04-checkout.yml) - Live workflow: the same steps with and without checkout.
 * [04-multiline-commands.yml](../.github/workflows/04-multiline-commands.yml) - Live workflow: install cowsay, use it in a multi-line step, check the result.
 * [04-secrets.yml](../.github/workflows/04-secrets.yml) - Live workflow: log masking, ::add-mask:: and an optional Docker Hub login, safe to run with no secrets set.
+* [secrets-step1-navigate.svg](../assets/images/secrets-step1-navigate.svg) - Where to find Settings → Secrets and variables → Actions, with numbered callouts.
+* [secrets-step2-create.svg](../assets/images/secrets-step2-create.svg) - The New secret form, and what you can and can't do once it's saved.
+* [secrets-step3-variable.svg](../assets/images/secrets-step3-variable.svg) - The New variable form, and variables versus secrets side by side.
+* [secrets-step4-run-logs.svg](../assets/images/secrets-step4-run-logs.svg) - Run logs showing the masked password and the empty-username gotcha.
 * [secret-journey.svg](../assets/images/secret-journey.svg) - How a secret is encrypted, stored, decrypted and masked, and what it is and isn't protected from.
 * [04-variables.yml](../.github/workflows/04-variables.yml) - Live workflow: env at three levels, which wins, default variables, $GITHUB_ENV and vars with a fallback.
 * [variable-scopes.svg](../assets/images/variable-scopes.svg) - Nested env scopes, configuration variable precedence, and $VAR versus ${{ env.VAR }}.

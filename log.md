@@ -1,6 +1,7 @@
 # Bundle Update Log
 
 ## 2026-10-26
+* **Update**: [Working with Repository-Level Secrets](/04-github-actions-core-components/12-working-with-repository-secrets.md) gains a step-by-step walkthrough for creating secrets and variables in Settings, with four new screen illustrations and the empty-username gotcha.
 * **Creation**: Added [Working with Repository-Level Secrets](/04-github-actions-core-components/12-working-with-repository-secrets.md) as Lesson 12 of Chapter 4, with the live workflow `04-secrets.yml` and `secret-journey.svg`.
 * **Creation**: Added [Working with Variables](/04-github-actions-core-components/11-working-with-variables.md) as Lesson 11 of Chapter 4, with the live workflow `04-variables.yml` and `variable-scopes.svg`.
 * **Creation**: Added [Storing Workflow Data as Artifacts](/04-github-actions-core-components/10-storing-workflow-data-as-artifacts.md) as Lesson 10 of Chapter 4, with the live workflow `04-artifacts.yml` and `artifact-lifecycle.svg`.

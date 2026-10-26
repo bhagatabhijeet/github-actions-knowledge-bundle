@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 sample-app/dist/
+
+# Source videos and Windows download markers
+*.mp4
+*:Zone.Identifier
