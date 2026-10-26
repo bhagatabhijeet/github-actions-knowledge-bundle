@@ -11,7 +11,8 @@
 * [Executing Jobs in Sequence with needs (Hands-On)](09-executing-jobs-in-sequence.md) - A deep dive into needs - the cost of sequencing, chains, fan-out and fan-in, how failure turns into skipped, status functions like always() and !cancelled(), needs.<job>.result, and why outputs only flow from direct dependencies.
 * [Storing Workflow Data as Artifacts (Hands-On)](10-storing-workflow-data-as-artifacts.md) - Keep files after the runner is gone - what artifacts are, every upload-artifact input worth knowing, unique names and immutability, downloading by pattern, from the browser, the CLI or another run, retention and storage, and when to use cache, releases or packages instead.
 * [Working with Variables (Hands-On)](11-working-with-variables.md) - Stop hard-coding values - env at workflow, job and step level and which one wins, $VAR versus ${{ env.VAR }}, default GITHUB_ variables, setting values at runtime with $GITHUB_ENV, and configuration variables stored in Settings with the vars context.
-* [Chapter 4 Cheat Sheet and Quiz](12-cheat-sheet-and-quiz.md) - The core components on one page - workflow, job, step, runner, how a run unfolds, hosted versus self-hosted - followed by an eight-question self-check.
+* [Working with Repository-Level Secrets (Hands-On)](12-working-with-repository-secrets.md) - Get passwords and tokens out of your workflow files - what a secret is and how GitHub protects it, creating repository secrets in Settings or with gh, using them safely in run steps and actions, log masking and its limits, forks, GITHUB_TOKEN, and what to do when a secret leaks.
+* [Chapter 4 Cheat Sheet and Quiz](13-cheat-sheet-and-quiz.md) - The core components on one page - workflow, job, step, runner, how a run unfolds, hosted versus self-hosted - followed by an eight-question self-check.
 
 # Companion Files
 
@@ -23,6 +24,8 @@
 * [github-manages-infrastructure.svg](../assets/images/github-manages-infrastructure.svg) - The three jobs GitHub handles for you, and the three operating systems available out of the box.
 * [04-checkout.yml](../.github/workflows/04-checkout.yml) - Live workflow: the same steps with and without checkout.
 * [04-multiline-commands.yml](../.github/workflows/04-multiline-commands.yml) - Live workflow: install cowsay, use it in a multi-line step, check the result.
+* [04-secrets.yml](../.github/workflows/04-secrets.yml) - Live workflow: log masking, ::add-mask:: and an optional Docker Hub login, safe to run with no secrets set.
+* [secret-journey.svg](../assets/images/secret-journey.svg) - How a secret is encrypted, stored, decrypted and masked, and what it is and isn't protected from.
 * [04-variables.yml](../.github/workflows/04-variables.yml) - Live workflow: env at three levels, which wins, default variables, $GITHUB_ENV and vars with a fallback.
 * [variable-scopes.svg](../assets/images/variable-scopes.svg) - Nested env scopes, configuration variable precedence, and $VAR versus ${{ env.VAR }}.
 * [04-artifacts.yml](../.github/workflows/04-artifacts.yml) - Live workflow: three matrix jobs upload uniquely named artifacts, a gallery job collects them by pattern.

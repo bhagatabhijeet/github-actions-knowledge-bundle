@@ -21,7 +21,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 11 of 12</b> &nbsp;·&nbsp; ⏱️ 32 min &nbsp;·&nbsp; 🛠️ Hands-on &nbsp;·&nbsp; ⭐ Fundamental
+  <b>Lesson 11 of 13</b> &nbsp;·&nbsp; ⏱️ 32 min &nbsp;·&nbsp; 🛠️ Hands-on &nbsp;·&nbsp; ⭐ Fundamental
 </p>
 
 # 🔤 Working with Variables
@@ -551,6 +551,8 @@ Environment-level variables are how one workflow deploys to **staging** and **pr
 
 ### 🔐 A preview: fixing the password
 
+👉 [Lesson 12](12-working-with-repository-secrets.md) covers secrets in full.
+
 `vars` are **plain text**: anyone with read access sees them, and they print in logs. The password needs a **secret** instead:
 
 ```yaml
@@ -660,5 +662,5 @@ No. Variables are plain text and appear in logs. Use a secret.
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="12-cheat-sheet-and-quiz.md"><b>Next: Cheat Sheet & Quiz ➡️</b></a>
+  <a href="12-working-with-repository-secrets.md"><b>Next: Repository Secrets ➡️</b></a>
 </p>

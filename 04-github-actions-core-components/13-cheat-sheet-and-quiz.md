@@ -15,7 +15,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 12 of 12</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
+  <b>Lesson 13 of 13</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
 </p>
 
 # 📋 Chapter 4 Cheat Sheet & Quiz
@@ -50,6 +50,9 @@ sources:
 
 > [!TIP]
 > **Variables:** `env:` at workflow, job or step level, and the most specific wins. `$VAR` in `run:`, `${{ env.VAR }}` in `with:`/`name:`/`if:`. `>> $GITHUB_ENV` for later steps. `${{ vars.NAME }}` for values kept in Settings (environment > repo > org). Passwords go in `secrets`, never in variables.
+
+> [!TIP]
+> **Secrets:** create in Settings or with `gh secret set` (let it prompt). Read as `${{ secrets.NAME }}`, pass to `run:` through `env:`, use stdin for passwords. Masking only hides the exact value: `::add-mask::` derived ones. Forks get no secrets. Limit `GITHUB_TOKEN` with `permissions:`. Leaked? Rotate at the source first.
 
 ## 🎬 A run in six stages
 
@@ -202,7 +205,7 @@ You can point at any line of a workflow and say which component it is, describe 
 ---
 
 <p align="center">
-  <a href="11-working-with-variables.md">⬅️ Variables</a>
+  <a href="12-working-with-repository-secrets.md">⬅️ Secrets</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
