@@ -24,7 +24,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 3 of 4</b> &nbsp;·&nbsp; ⏱️ 8 min read &nbsp;·&nbsp; 🟢 Beginner
+  <b>Lesson 3 of 5</b> &nbsp;·&nbsp; ⏱️ 8 min read &nbsp;·&nbsp; 🟢 Beginner
 </p>
 
 # 🖥️ GitHub-Hosted vs Self-Hosted Runners
@@ -206,5 +206,5 @@ Leftovers. Files, caches or processes from an earlier job can change the result 
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="04-cheat-sheet-and-quiz.md"><b>Next: Cheat Sheet & Quiz ➡️</b></a>
+  <a href="04-what-are-actions.md"><b>Next: What Are Actions? ➡️</b></a>
 </p>

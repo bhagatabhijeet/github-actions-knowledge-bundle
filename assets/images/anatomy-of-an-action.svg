@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-label="The step 'uses: actions/checkout@v7' broken into its parts: the owner 'actions', the repository 'checkout' and the version '@v7'. Optional 'with' inputs configure it. Below, the three kinds of action: JavaScript actions run directly on the runner, Docker container actions run in a container on Linux, and composite actions bundle several steps into one">
+  <defs>
+    <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f6feb"/><stop offset="1" stop-color="#58a6ff"/></linearGradient>
+    <linearGradient id="gPink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bc8cff"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#238636"/><stop offset="1" stop-color="#7ee787"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+  <rect width="1200" height="700" rx="20" fill="#0d1117"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="54" font-size="28" font-weight="800" fill="#e6edf3">An action is a packaged step you call with one line</text>
+    <text x="600" y="86" font-size="16" fill="#8b949e">Someone else wrote, tested and versioned it. You just say which one, and which version.</text>
+
+    <!-- the uses line -->
+    <rect x="150" y="116" width="900" height="150" rx="16" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="30" font-weight="700" text-anchor="start">
+      <text x="200" y="170"><tspan fill="#8b949e">- uses: </tspan><tspan fill="#58a6ff">actions</tspan><tspan fill="#8b949e">/</tspan><tspan fill="#f778ba">checkout</tspan><tspan fill="#7ee787">@v7</tspan></text>
+      <text x="230" y="214" font-size="24"><tspan fill="#8b949e">with: </tspan><tspan fill="#ffa657">fetch-depth: 0</tspan></text>
+    </g>
+
+    <!-- colour-matched underlines (monospace: ~18px per char at 30px, ~14.4px at 24px) -->
+    <g stroke-width="4" stroke-linecap="round">
+      <line x1="346" y1="184" x2="468" y2="184" stroke="#58a6ff"/>
+      <line x1="490" y1="184" x2="630" y2="184" stroke="#f778ba"/>
+      <line x1="634" y1="184" x2="684" y2="184" stroke="#7ee787"/>
+      <line x1="318" y1="228" x2="518" y2="228" stroke="#ffa657"/>
+    </g>
+    <g font-size="15">
+      <rect x="350" y="300" width="180" height="62" rx="12" fill="#0c1d3a" stroke="#58a6ff" stroke-width="2"/>
+      <text x="440" y="326" font-weight="800" fill="#58a6ff">Owner</text>
+      <text x="440" y="348" fill="#c9d1d9">who publishes it</text>
+      <rect x="532" y="300" width="180" height="62" rx="12" fill="#3a0f2b" stroke="#f778ba" stroke-width="2"/>
+      <text x="622" y="326" font-weight="800" fill="#f778ba">Repository</text>
+      <text x="622" y="348" fill="#c9d1d9">where the code lives</text>
+      <rect x="714" y="300" width="160" height="62" rx="12" fill="#0f2d17" stroke="#7ee787" stroke-width="2"/>
+      <text x="794" y="326" font-weight="800" fill="#7ee787">Version</text>
+      <text x="794" y="348" fill="#c9d1d9">tag, branch or SHA</text>
+      <rect x="880" y="300" width="160" height="62" rx="12" fill="#3d1d00" stroke="#ffa657" stroke-width="2"/>
+      <text x="960" y="326" font-weight="800" fill="#ffa657">Inputs</text>
+      <text x="960" y="348" fill="#c9d1d9">its settings</text>
+    </g>
+
+    <!-- three kinds -->
+    <text x="600" y="414" font-size="16" font-weight="700" fill="#8b949e" letter-spacing="1">THREE KINDS OF ACTION</text>
+    <g stroke-width="2">
+      <rect x="60"  y="432" width="340" height="236" rx="20" fill="#161b22" stroke="#58a6ff"/>
+      <rect x="430" y="432" width="340" height="236" rx="20" fill="#161b22" stroke="#d2a8ff"/>
+      <rect x="800" y="432" width="340" height="236" rx="20" fill="#161b22" stroke="#3fb950"/>
+    </g>
+    <circle cx="230" cy="500" r="40" fill="#58a6ff" opacity="0.35" filter="url(#glow)"/>
+    <circle cx="600" cy="500" r="40" fill="#d2a8ff" opacity="0.35" filter="url(#glow)"/>
+    <circle cx="970" cy="500" r="40" fill="#3fb950" opacity="0.35" filter="url(#glow)"/>
+    <circle cx="230" cy="500" r="40" fill="url(#gBlue)"/>
+    <circle cx="600" cy="500" r="40" fill="url(#gPink)"/>
+    <circle cx="970" cy="500" r="40" fill="url(#gGreen)"/>
+    <g font-size="34">
+      <text x="230" y="512">⚡</text>
+      <text x="600" y="512">🐳</text>
+      <text x="970" y="512">🧩</text>
+    </g>
+    <g font-size="22" font-weight="800" fill="#e6edf3">
+      <text x="230" y="572">JavaScript</text>
+      <text x="600" y="572">Docker container</text>
+      <text x="970" y="572">Composite</text>
+    </g>
+    <g font-size="15" fill="#8b949e">
+      <text x="230" y="604">Runs straight on the runner.</text>
+      <text x="230" y="626">Fastest. Linux, Windows, macOS.</text>
+      <text x="230" y="648">e.g. actions/checkout</text>
+      <text x="600" y="604">Brings its own environment.</text>
+      <text x="600" y="626">Slower to start. Linux only.</text>
+      <text x="600" y="648">any language, any tools</text>
+      <text x="970" y="604">Several steps packaged as one.</text>
+      <text x="970" y="626">Plain YAML, no new language.</text>
+      <text x="970" y="648">great for your own repeats</text>
+    </g>
+  </g>
+</svg>

@@ -13,7 +13,7 @@ generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
 <p align="center">
   <a href="01-introduction-to-github-actions/01-what-is-github-actions.md"><img src="https://img.shields.io/badge/START%20READING-%E2%96%B6-2ea043?style=for-the-badge" alt="Start reading"></a>
   <img src="https://img.shields.io/badge/CHAPTERS-4-58a6ff?style=for-the-badge" alt="4 chapters">
-  <img src="https://img.shields.io/badge/LESSONS-19-bc8cff?style=for-the-badge" alt="19 lessons">
+  <img src="https://img.shields.io/badge/LESSONS-20-bc8cff?style=for-the-badge" alt="20 lessons">
   <img src="https://img.shields.io/badge/LIVE%20WORKFLOWS-3-f778ba?style=for-the-badge&logo=githubactions&logoColor=white" alt="3 live workflows">
   <img src="https://img.shields.io/badge/OKF-v0.2-ffa657?style=for-the-badge" alt="OKF v0.2">
   <img src="https://img.shields.io/badge/LICENSE-CC0-e3b341?style=for-the-badge" alt="CC0 license">
@@ -110,7 +110,8 @@ flowchart LR
 | 4.1 | 🧱 [**The Core Components**](04-github-actions-core-components/01-the-core-components.md) | Point at any line of a workflow and name the component | 7 min |
 | 4.2 | 🎬 [**Life of a Workflow Run**](04-github-actions-core-components/02-life-of-a-workflow-run.md) 🛠️ | Follow a run across three operating systems, then read its logs and artifacts | 20 min |
 | 4.3 | 🖥️ [**Hosted vs Self-Hosted Runners**](04-github-actions-core-components/03-github-hosted-vs-self-hosted-runners.md) | Choose the right kind of runner, and say why | 8 min |
-| 4.4 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/04-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
+| 4.4 | 🧩 [**What Are Actions?**](04-github-actions-core-components/04-what-are-actions.md) | Read any `uses:` line, pick the right kind of action and pin it safely | 9 min |
+| 4.5 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/05-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
 
 > [!NOTE]
 > 🔜 **This book is still being written.** New chapters land one topic at a time. Watch the repo, or peek at the [change log](log.md).

@@ -15,7 +15,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 4 of 4</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
+  <b>Lesson 5 of 5</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
 </p>
 
 # 📋 Chapter 4 Cheat Sheet & Quiz
@@ -28,6 +28,7 @@ sources:
 | 📦 | **Job** | Steps that share a machine | `jobs.<id>:` | Parallel by default |
 | 👣 | **Step** | One action or command | `- uses:` / `- run:` | In series, top to bottom |
 | 🖥️ | **Runner** | The machine for a job | `runs-on:` | One per job, fresh each time |
+| 🧩 | **Action** | A reusable, packaged step | `- uses: owner/repo@version` | Pin third-party actions to a full SHA |
 
 ## 🎬 A run in six stages
 
@@ -180,7 +181,7 @@ You can point at any line of a workflow and say which component it is, describe 
 ---
 
 <p align="center">
-  <a href="03-github-hosted-vs-self-hosted-runners.md">⬅️ Hosted vs Self-Hosted Runners</a>
+  <a href="04-what-are-actions.md">⬅️ What Are Actions?</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
