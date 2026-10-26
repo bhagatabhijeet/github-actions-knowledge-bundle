@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660" role="img" aria-label="Before: a workflow with six steps, each holding one command. After: the commands move into scripts/ascii-script.sh in the repository, and the workflow has two steps, checkout and run the script. Below, the three things that make a script run: check it out first, make it executable, keep LF line endings">
+  <rect width="1200" height="660" rx="20" fill="#0d1117"/>
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="54" font-size="28" font-weight="800" fill="#e6edf3">Move the commands into a script. Keep the workflow short.</text>
+    <text x="600" y="86" font-size="16" fill="#8b949e">The script lives in your repo, so you can test it on your laptop too.</text>
+
+    <!-- before -->
+    <rect x="40" y="110" width="400" height="360" rx="18" fill="#161b22" stroke="#ffa657" stroke-width="2"/>
+    <text x="240" y="146" font-size="20" font-weight="800" fill="#ffa657">Before: generate-ascii.yml</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" text-anchor="start" fill="#c9d1d9">
+      <rect x="62" y="166" width="356" height="40" rx="8" fill="#0c1d3a"/><text x="76" y="191"><tspan fill="#8b949e">- uses:</tspan> actions/checkout</text>
+      <rect x="62" y="214" width="356" height="40" rx="8" fill="#3d1d00"/><text x="76" y="239"><tspan fill="#8b949e">- run:</tspan> sudo apt-get install …</text>
+      <rect x="62" y="262" width="356" height="40" rx="8" fill="#3d1d00"/><text x="76" y="287"><tspan fill="#8b949e">- run:</tspan> cowsay -f dragon …</text>
+      <rect x="62" y="310" width="356" height="40" rx="8" fill="#3d1d00"/><text x="76" y="335"><tspan fill="#8b949e">- run:</tspan> grep -i "dragon" …</text>
+      <rect x="62" y="358" width="356" height="40" rx="8" fill="#3d1d00"/><text x="76" y="383"><tspan fill="#8b949e">- run:</tspan> cat dragon.txt</text>
+      <rect x="62" y="406" width="356" height="40" rx="8" fill="#3d1d00"/><text x="76" y="431"><tspan fill="#8b949e">- run:</tspan> ls -ltra</text>
+    </g>
+
+    <!-- arrow -->
+    <path d="M458 290 H520" stroke="#bc8cff" stroke-width="4"/>
+    <path d="M520 276 L544 290 L520 304 Z" fill="#bc8cff"/>
+
+    <!-- after: workflow -->
+    <rect x="560" y="110" width="600" height="130" rx="18" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+    <text x="860" y="146" font-size="20" font-weight="800" fill="#7ee787">After: the workflow</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" text-anchor="start" fill="#c9d1d9">
+      <rect x="582" y="162" width="556" height="30" rx="8" fill="#0c1d3a"/><text x="596" y="183"><tspan fill="#8b949e">- uses:</tspan> actions/checkout@v7</text>
+      <rect x="582" y="198" width="556" height="30" rx="8" fill="#0f2d17"/><text x="596" y="219"><tspan fill="#8b949e">- run:</tspan> <tspan fill="#7ee787">./scripts/ascii-script.sh</tspan></text>
+    </g>
+
+    <!-- after: script -->
+    <rect x="560" y="256" width="600" height="214" rx="18" fill="#161b22" stroke="#d2a8ff" stroke-width="2"/>
+    <text x="860" y="290" font-size="20" font-weight="800" fill="#d2a8ff">📄 scripts/ascii-script.sh</text>
+    <rect x="582" y="304" width="556" height="150" rx="10" fill="#010409"/>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" text-anchor="start" fill="#e6edf3">
+      <text x="598" y="328" fill="#8b949e">#!/usr/bin/env bash</text>
+      <text x="598" y="350" fill="#ffa657">set -euo pipefail</text>
+      <text x="598" y="374">sudo apt-get install -y cowsay</text>
+      <text x="598" y="396">cowsay -f dragon "…RAWR" &gt; dragon.txt</text>
+      <text x="598" y="418">grep -i "dragon" dragon.txt</text>
+      <text x="598" y="440">cat dragon.txt &amp;&amp; ls -ltra</text>
+    </g>
+
+    <!-- checklist -->
+    <text x="600" y="514" font-size="16" font-weight="700" fill="#8b949e" letter-spacing="1">THREE THINGS EVERY SCRIPT NEEDS</text>
+    <g stroke-width="2">
+      <rect x="40"  y="532" width="360" height="100" rx="16" fill="#161b22" stroke="#58a6ff"/>
+      <rect x="420" y="532" width="360" height="100" rx="16" fill="#161b22" stroke="#f778ba"/>
+      <rect x="800" y="532" width="360" height="100" rx="16" fill="#161b22" stroke="#3fb950"/>
+    </g>
+    <g font-size="19" font-weight="800" fill="#e6edf3">
+      <text x="220" y="568">📥 Checked out first</text>
+      <text x="600" y="568">🔐 Executable bit</text>
+      <text x="980" y="568">↩️ LF line endings</text>
+    </g>
+    <g font-size="14" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+      <text x="220" y="600">else: No such file</text>
+      <text x="600" y="600">git update-index --chmod=+x</text>
+      <text x="980" y="600">else: $'\r': command not found</text>
+      <text x="600" y="620" font-size="13">else: Permission denied</text>
+    </g>
+  </g>
+</svg>

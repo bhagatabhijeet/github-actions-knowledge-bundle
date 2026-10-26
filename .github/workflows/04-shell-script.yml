@@ -1,0 +1,27 @@
+# Chapter 4 companion workflow.
+# Walkthrough: 04-github-actions-core-components/07-executing-shell-scripts.md
+#
+# The commands live in scripts/ascii-script.sh. The workflow just runs it.
+
+name: 04 - Shell Script
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/04-shell-script.yml
+      - scripts/ascii-script.sh
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ascii-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v7
+
+      - name: Execute the script
+        run: ./scripts/ascii-script.sh

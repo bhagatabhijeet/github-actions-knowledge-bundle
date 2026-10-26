@@ -18,7 +18,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 6 of 7</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 6 of 8</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 📜 Multi-line Commands and Third-Party Tools
@@ -254,5 +254,5 @@ No. Each job gets a fresh runner, so the install must be in the workflow every t
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="07-cheat-sheet-and-quiz.md"><b>Next: Cheat Sheet & Quiz ➡️</b></a>
+  <a href="07-executing-shell-scripts.md"><b>Next: Executing Shell Scripts ➡️</b></a>
 </p>

@@ -15,7 +15,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 7 of 7</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
+  <b>Lesson 8 of 8</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
 </p>
 
 # 📋 Chapter 4 Cheat Sheet & Quiz
@@ -35,6 +35,9 @@ sources:
 
 > [!TIP]
 > **`run: |`** keeps each line as its own command; **`run: >`** folds them into one. Lines in one step share a shell; separate steps do not. Tools you install vanish with the runner.
+
+> [!TIP]
+> **Long logic belongs in a script:** check out, then `run: ./scripts/x.sh`. Start it with `#!/usr/bin/env bash` and `set -euo pipefail`, commit the executable bit, and keep LF line endings.
 
 ## 🎬 A run in six stages
 
@@ -187,7 +190,7 @@ You can point at any line of a workflow and say which component it is, describe 
 ---
 
 <p align="center">
-  <a href="06-multiline-commands-and-third-party-tools.md">⬅️ Multi-line Commands</a>
+  <a href="07-executing-shell-scripts.md">⬅️ Executing Shell Scripts</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
