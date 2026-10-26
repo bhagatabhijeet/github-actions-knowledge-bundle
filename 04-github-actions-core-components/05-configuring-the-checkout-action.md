@@ -15,7 +15,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 5 of 6</b> &nbsp;·&nbsp; ⏱️ 15 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 5 of 7</b> &nbsp;·&nbsp; ⏱️ 15 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 📥 Configuring the Checkout Action
@@ -217,5 +217,5 @@ One, the commit that triggered the run. Set `fetch-depth: 0` to get the full his
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="06-cheat-sheet-and-quiz.md"><b>Next: Cheat Sheet & Quiz ➡️</b></a>
+  <a href="06-multiline-commands-and-third-party-tools.md"><b>Next: Multi-line Commands ➡️</b></a>
 </p>

@@ -13,8 +13,8 @@ generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
 <p align="center">
   <a href="01-introduction-to-github-actions/01-what-is-github-actions.md"><img src="https://img.shields.io/badge/START%20READING-%E2%96%B6-2ea043?style=for-the-badge" alt="Start reading"></a>
   <img src="https://img.shields.io/badge/CHAPTERS-4-58a6ff?style=for-the-badge" alt="4 chapters">
-  <img src="https://img.shields.io/badge/LESSONS-21-bc8cff?style=for-the-badge" alt="21 lessons">
-  <img src="https://img.shields.io/badge/LIVE%20WORKFLOWS-4-f778ba?style=for-the-badge&logo=githubactions&logoColor=white" alt="4 live workflows">
+  <img src="https://img.shields.io/badge/LESSONS-22-bc8cff?style=for-the-badge" alt="22 lessons">
+  <img src="https://img.shields.io/badge/LIVE%20WORKFLOWS-5-f778ba?style=for-the-badge&logo=githubactions&logoColor=white" alt="5 live workflows">
   <img src="https://img.shields.io/badge/OKF-v0.2-ffa657?style=for-the-badge" alt="OKF v0.2">
   <img src="https://img.shields.io/badge/LICENSE-CC0-e3b341?style=for-the-badge" alt="CC0 license">
 </p>
@@ -24,6 +24,7 @@ generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
   <a href=".github/workflows/02-ci-basics.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/02-ci-basics.yml/badge.svg" alt="CI Basics status"></a>
   <a href=".github/workflows/04-core-components.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/04-core-components.yml/badge.svg" alt="Core Components status"></a>
   <a href=".github/workflows/04-checkout.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/04-checkout.yml/badge.svg" alt="Checkout status"></a>
+  <a href=".github/workflows/04-multiline-commands.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/04-multiline-commands.yml/badge.svg" alt="Multi-line Commands status"></a>
 </p>
 
 <h3 align="center">📖 Read it like a book. 🛠️ Run it like a lab. 🤖 Feed it to an agent.</h3>
@@ -113,7 +114,8 @@ flowchart LR
 | 4.3 | 🖥️ [**Hosted vs Self-Hosted Runners**](04-github-actions-core-components/03-github-hosted-vs-self-hosted-runners.md) | Choose the right kind of runner, and say why | 8 min |
 | 4.4 | 🧩 [**What Are Actions?**](04-github-actions-core-components/04-what-are-actions.md) | Read any `uses:` line, pick the right kind of action and pin it safely | 9 min |
 | 4.5 | 📥 [**Configuring the Checkout Action**](04-github-actions-core-components/05-configuring-the-checkout-action.md) 🛠️ | Explain why a runner starts empty and configure checkout for history, branches and other repos | 15 min |
-| 4.6 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/06-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
+| 4.6 | 📜 [**Multi-line Commands & Third-Party Tools**](04-github-actions-core-components/06-multiline-commands-and-third-party-tools.md) 🛠️ | Write multi-line run steps and install and run tools that aren't in your repo | 15 min |
+| 4.7 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/07-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
 
 > [!NOTE]
 > 🔜 **This book is still being written.** New chapters land one topic at a time. Watch the repo, or peek at the [change log](log.md).
@@ -128,6 +130,7 @@ These aren't screenshots. They're running right here, and they'll run in your fo
 | 🧪 | [`02-ci-basics.yml`](.github/workflows/02-ci-basics.yml) | [2.5](02-basics-of-ci-cd/05-your-first-ci-pipeline.md) | Staged jobs with `needs`, a version matrix, caching, artifacts |
 | 🧱 | [`04-core-components.yml`](.github/workflows/04-core-components.yml) | [4.2](04-github-actions-core-components/02-life-of-a-workflow-run.md) | One job on Ubuntu, Windows and macOS via an OS matrix, one artifact per runner |
 | 📥 | [`04-checkout.yml`](.github/workflows/04-checkout.yml) | [4.5](04-github-actions-core-components/05-configuring-the-checkout-action.md) | The same steps with and without `actions/checkout`, side by side |
+| 🐉 | [`04-multiline-commands.yml`](.github/workflows/04-multiline-commands.yml) | [4.6](04-github-actions-core-components/06-multiline-commands-and-third-party-tools.md) | Installs `cowsay`, runs it in a multi-line step and checks the output |
 
 ## 🚀 Get started in 60 seconds
 

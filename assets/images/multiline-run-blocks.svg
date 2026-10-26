@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-label="Two ways to write a multi-line run step. With the literal pipe, each line stays a separate command and runs in order in one shell. With the folded greater-than sign, lines are joined with spaces into a single long command. Below, the flow for using a third-party tool: install it, use it, check the result">
+  <rect width="1200" height="640" rx="20" fill="#0d1117"/>
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="54" font-size="28" font-weight="800" fill="#e6edf3">One step, many commands: <tspan fill="#7ee787">|</tspan> keeps lines, <tspan fill="#ffa657">&gt;</tspan> joins them</text>
+    <text x="600" y="86" font-size="16" fill="#8b949e">Both run in one shell, in one step. The symbol decides what the shell receives.</text>
+
+    <!-- literal -->
+    <rect x="50" y="110" width="530" height="290" rx="18" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+    <text x="315" y="146" font-size="21" font-weight="800" fill="#7ee787">run: |   literal block</text>
+    <rect x="76" y="164" width="478" height="104" rx="10" fill="#010409"/>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" text-anchor="start" fill="#e6edf3">
+      <text x="96" y="192"><tspan fill="#8b949e">run: </tspan><tspan fill="#7ee787">|</tspan></text>
+      <text x="116" y="218">sudo apt-get install -y cowsay</text>
+      <text x="116" y="244">cowsay "Hello" &gt; hello.txt</text>
+    </g>
+    <text x="315" y="296" font-size="15" fill="#8b949e">the shell receives</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" fill="#7ee787">
+      <rect x="96" y="310" width="438" height="34" rx="8" fill="#0f2d17"/>
+      <text x="315" y="333">① sudo apt-get install -y cowsay</text>
+      <rect x="96" y="352" width="438" height="34" rx="8" fill="#0f2d17"/>
+      <text x="315" y="375">② cowsay "Hello" &gt; hello.txt</text>
+    </g>
+
+    <!-- folded -->
+    <rect x="620" y="110" width="530" height="290" rx="18" fill="#161b22" stroke="#ffa657" stroke-width="2"/>
+    <text x="885" y="146" font-size="21" font-weight="800" fill="#ffa657">run: &gt;   folded block</text>
+    <rect x="646" y="164" width="478" height="104" rx="10" fill="#010409"/>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" text-anchor="start" fill="#e6edf3">
+      <text x="666" y="192"><tspan fill="#8b949e">run: </tspan><tspan fill="#ffa657">&gt;</tspan></text>
+      <text x="686" y="218">docker build</text>
+      <text x="686" y="244">--tag my-app:1.0 .</text>
+    </g>
+    <text x="885" y="296" font-size="15" fill="#8b949e">the shell receives</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" fill="#ffa657">
+      <rect x="666" y="310" width="438" height="34" rx="8" fill="#3d1d00"/>
+      <text x="885" y="333">① docker build --tag my-app:1.0 .</text>
+    </g>
+    <text x="885" y="378" font-size="14" fill="#8b949e">one long command, split only for reading</text>
+
+    <!-- third-party flow -->
+    <text x="600" y="446" font-size="16" font-weight="700" fill="#8b949e" letter-spacing="1">RUNNING A THIRD-PARTY TOOL</text>
+    <g stroke-width="2">
+      <rect x="50"  y="466" width="330" height="140" rx="18" fill="#161b22" stroke="#58a6ff"/>
+      <rect x="435" y="466" width="330" height="140" rx="18" fill="#161b22" stroke="#d2a8ff"/>
+      <rect x="820" y="466" width="330" height="140" rx="18" fill="#161b22" stroke="#3fb950"/>
+    </g>
+    <g fill="#30363d"><path d="M388 536 l30 -14 v28 z"/><path d="M773 536 l30 -14 v28 z"/></g>
+    <g font-size="30"><text x="215" y="510">📦</text><text x="600" y="510">⚙️</text><text x="985" y="510">🔍</text></g>
+    <g font-size="20" font-weight="800" fill="#e6edf3">
+      <text x="215" y="544">1. Install</text><text x="600" y="544">2. Use</text><text x="985" y="544">3. Check</text>
+    </g>
+    <g font-size="14" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+      <text x="215" y="574">apt-get · pip · npm · curl</text>
+      <text x="600" y="574">run it like any command</text>
+      <text x="985" y="574">grep · test · exit code</text>
+    </g>
+    <g font-size="13" fill="#8b949e">
+      <text x="215" y="594">gone when the runner is</text>
+      <text x="600" y="594">same step or a later one</text>
+      <text x="985" y="594">non-zero exit fails the step</text>
+    </g>
+  </g>
+</svg>

@@ -15,7 +15,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 6 of 6</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
+  <b>Lesson 7 of 7</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
 </p>
 
 # 📋 Chapter 4 Cheat Sheet & Quiz
@@ -32,6 +32,9 @@ sources:
 
 > [!IMPORTANT]
 > **A runner starts empty.** Make `actions/checkout` the first step of any job that reads your files. Add `fetch-depth: 0` when you need full history.
+
+> [!TIP]
+> **`run: |`** keeps each line as its own command; **`run: >`** folds them into one. Lines in one step share a shell; separate steps do not. Tools you install vanish with the runner.
 
 ## 🎬 A run in six stages
 
@@ -184,7 +187,7 @@ You can point at any line of a workflow and say which component it is, describe 
 ---
 
 <p align="center">
-  <a href="05-configuring-the-checkout-action.md">⬅️ Configuring Checkout</a>
+  <a href="06-multiline-commands-and-third-party-tools.md">⬅️ Multi-line Commands</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;

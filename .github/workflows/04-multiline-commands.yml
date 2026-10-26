@@ -1,0 +1,43 @@
+# Chapter 4 companion workflow.
+# Walkthrough: 04-github-actions-core-components/06-multiline-commands-and-third-party-tools.md
+#
+# Installs a third-party tool (cowsay), uses it in a multi-line step,
+# then checks the result. Shows | (literal) and > (folded) blocks.
+
+name: 04 - Multi-line Commands
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/04-multiline-commands.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ascii-art:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install cowsay
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cowsay
+
+      - name: Generate ASCII art
+        run: |
+          cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" > dragon.txt
+          echo "Lines written: $(wc -l < dragon.txt)"
+
+      - name: Check the file
+        run: grep -i "dragon" dragon.txt
+
+      - name: Show the file
+        run: cat dragon.txt
+
+      - name: A folded command
+        run: >
+          echo "This long command is
+          written on three lines
+          but runs as one."
