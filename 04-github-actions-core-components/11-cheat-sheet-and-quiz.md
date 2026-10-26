@@ -15,7 +15,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 10 of 10</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
+  <b>Lesson 11 of 11</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
 </p>
 
 # 📋 Chapter 4 Cheat Sheet & Quiz
@@ -44,6 +44,9 @@ sources:
 
 > [!TIP]
 > **After a failure, jobs that need it are skipped.** Override with `if: ${{ failure() }}` or `if: ${{ !cancelled() }}` (prefer it to `always()`). Check one job with `needs.<job>.result`. Outputs are readable only from jobs listed directly in `needs:`.
+
+> [!TIP]
+> **Artifacts outlive the runner.** Names must be unique per run (put matrix values in them), use `if-no-files-found: error`, set `retention-days`, collect many with `pattern:` + `merge-multiple:`, and never upload secrets.
 
 ## 🎬 A run in six stages
 
@@ -196,7 +199,7 @@ You can point at any line of a workflow and say which component it is, describe 
 ---
 
 <p align="center">
-  <a href="09-executing-jobs-in-sequence.md">⬅️ Jobs in Sequence</a>
+  <a href="10-storing-workflow-data-as-artifacts.md">⬅️ Artifacts</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;

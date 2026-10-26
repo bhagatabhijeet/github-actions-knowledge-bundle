@@ -18,7 +18,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 9 of 10</b> &nbsp;·&nbsp; ⏱️ 16 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 9 of 11</b> &nbsp;·&nbsp; ⏱️ 16 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # ⛓️ Executing Jobs in Sequence with `needs`
@@ -254,5 +254,5 @@ Outputs are only visible from jobs listed directly in `needs:`. Change it to `ne
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="10-cheat-sheet-and-quiz.md"><b>Next: Cheat Sheet & Quiz ➡️</b></a>
+  <a href="10-storing-workflow-data-as-artifacts.md"><b>Next: Storing Data as Artifacts ➡️</b></a>
 </p>

@@ -1,0 +1,81 @@
+# Chapter 4 companion workflow.
+# Walkthrough: 04-github-actions-core-components/10-storing-workflow-data-as-artifacts.md
+#
+# Three matrix jobs each draw a different cow and upload it under a unique
+# name. A gallery job downloads them all with a pattern, merges them into
+# one folder and uploads the result as a single artifact.
+
+name: 04 - Artifacts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/04-artifacts.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        cow: [dragon, tux, stegosaurus]
+    steps:
+      - name: Install cowsay
+        run: sudo apt-get install -y -qq cowsay
+
+      - name: Draw a ${{ matrix.cow }}
+        run: |
+          mkdir -p art logs
+          /usr/games/cowsay -f ${{ matrix.cow }} "Hello from the ${{ matrix.cow }} job" > art/${{ matrix.cow }}.txt
+          echo "drawn at $(date -u +%H:%M:%S)" > logs/${{ matrix.cow }}.log
+
+      - name: Upload the drawing
+        id: upload
+        uses: actions/upload-artifact@v7
+        with:
+          name: cow-${{ matrix.cow }}       # unique per matrix job
+          path: |
+            art/
+            !art/**/*.tmp
+          if-no-files-found: error
+          retention-days: 3
+
+      - name: Show what was stored
+        run: |
+          echo "id:     ${{ steps.upload.outputs.artifact-id }}"
+          echo "url:    ${{ steps.upload.outputs.artifact-url }}"
+          echo "digest: ${{ steps.upload.outputs.artifact-digest }}"
+
+      - name: Keep logs only if something broke
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: logs-${{ matrix.cow }}
+          path: logs/
+
+  gallery:
+    needs: draw
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download every cow
+        uses: actions/download-artifact@v8
+        with:
+          pattern: cow-*
+          merge-multiple: true
+          path: gallery
+
+      - name: Show the gallery
+        run: |
+          ls -l gallery
+          cat gallery/*.txt
+
+      - name: Upload the gallery as one artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: cow-gallery
+          path: gallery/
+          retention-days: 3

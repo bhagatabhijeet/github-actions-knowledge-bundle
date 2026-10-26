@@ -21,7 +21,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 8 of 10</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 8 of 11</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 🔗 Workflows with Multiple Jobs
@@ -159,6 +159,8 @@ jobs:
 | `path` | upload | File, folder or glob to save, e.g. `dist/` or `reports/*.xml` |
 | `path` | download | Where to put it. Defaults to the workspace root |
 | `retention-days` | upload | How long GitHub keeps it. Default 90 days, or your repo's setting |
+
+👉 [Lesson 10](10-storing-workflow-data-as-artifacts.md) covers artifacts in depth: naming, patterns, retention and downloading from other runs.
 
 > [!TIP]
 > Artifacts also appear on the run's **Summary** page as downloadable zip files. That's handy for build outputs, test reports and screenshots, even after the runners are long gone.

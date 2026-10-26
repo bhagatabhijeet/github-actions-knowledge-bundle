@@ -18,7 +18,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 2 of 10</b> &nbsp;·&nbsp; ⏱️ 20 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 2 of 11</b> &nbsp;·&nbsp; ⏱️ 20 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 🎬 Life of a Workflow Run

@@ -15,7 +15,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 5 of 10</b> &nbsp;·&nbsp; ⏱️ 15 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 5 of 11</b> &nbsp;·&nbsp; ⏱️ 15 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 📥 Configuring the Checkout Action

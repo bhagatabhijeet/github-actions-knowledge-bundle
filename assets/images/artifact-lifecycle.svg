@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-label="The life of an artifact. A job on a runner produces files, upload-artifact zips them and stores them with the workflow run. The runner is then destroyed but the artifact remains until its retention days run out. From storage it can be downloaded by a later job, by a person from the run summary page, by the gh command line tool, or by another workflow run">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#d2a8ff"/></marker>
+    <linearGradient id="vault" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8957e5"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1200" height="640" rx="20" fill="#0d1117"/>
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="52" font-size="28" font-weight="800" fill="#e6edf3">Runners vanish. Artifacts stay.</text>
+    <text x="600" y="84" font-size="16" fill="#8b949e">Upload once, then download from a job, a browser, the CLI or another workflow.</text>
+
+    <!-- runner -->
+    <rect x="40" y="130" width="300" height="300" rx="20" fill="#161b22" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="190" y="166" font-size="20" font-weight="800" fill="#58a6ff">🖥️ Runner</text>
+    <text x="190" y="188" font-size="13" fill="#8b949e">destroyed when the job ends</text>
+    <g font-size="15" fill="#e6edf3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+      <rect x="70" y="210" width="240" height="36" rx="8" fill="#0c1d3a"/><text x="190" y="234">📄 dragon.txt</text>
+      <rect x="70" y="254" width="240" height="36" rx="8" fill="#0c1d3a"/><text x="190" y="278">📁 reports/*.xml</text>
+      <rect x="70" y="298" width="240" height="36" rx="8" fill="#0c1d3a"/><text x="190" y="322">📁 dist/</text>
+      <rect x="70" y="342" width="240" height="36" rx="8" fill="#21262d"/><text x="190" y="366" fill="#6e7681">🗑️ node_modules/ ✗</text>
+    </g>
+    <text x="190" y="408" font-size="13" fill="#8b949e">pick files with <tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace">path:</tspan> globs, <tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace">!</tspan> excludes</text>
+
+    <!-- upload arrow -->
+    <path d="M345 280 H468" stroke="#d2a8ff" stroke-width="4" marker-end="url(#a)"/>
+    <text x="406" y="266" font-size="14" font-weight="800" fill="#d2a8ff">upload</text>
+    <text x="406" y="302" font-size="12" fill="#8b949e">zipped</text>
+
+    <!-- vault -->
+    <circle cx="600" cy="280" r="120" fill="#8957e5" opacity="0.25" filter="url(#glow)"/>
+    <rect x="480" y="150" width="240" height="260" rx="24" fill="#22123f" stroke="url(#vault)" stroke-width="3"/>
+    <text x="600" y="210" font-size="44">📦</text>
+    <text x="600" y="250" font-size="20" font-weight="800" fill="#e6edf3">Artifact storage</text>
+    <text x="600" y="274" font-size="13" fill="#c9d1d9">attached to the workflow run</text>
+    <g font-size="13" fill="#d2a8ff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+      <text x="600" y="308">name: dragon-art</text>
+      <text x="600" y="330">digest: sha256:…</text>
+    </g>
+    <rect x="510" y="350" width="180" height="40" rx="20" fill="#3d2a00" stroke="#e3b341"/>
+    <text x="600" y="376" font-size="14" font-weight="700" fill="#e3b341">⏳ retention 1–90 days</text>
+
+    <!-- consumers -->
+    <g font-size="16" font-weight="800" fill="#e6edf3" text-anchor="start">
+      <rect x="820" y="120" width="340" height="66" rx="14" fill="#161b22" stroke="#3fb950"/>
+      <text x="842" y="149">🔗 A later job</text>
+      <rect x="820" y="198" width="340" height="66" rx="14" fill="#161b22" stroke="#3fb950"/>
+      <text x="842" y="227">🌐 You, in the browser</text>
+      <rect x="820" y="276" width="340" height="66" rx="14" fill="#161b22" stroke="#3fb950"/>
+      <text x="842" y="305">⌨️ The gh CLI</text>
+      <rect x="820" y="354" width="340" height="66" rx="14" fill="#161b22" stroke="#3fb950"/>
+      <text x="842" y="383">🔁 Another workflow run</text>
+    </g>
+    <g font-size="12" fill="#8b949e" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+      <text x="842" y="172">download-artifact, same run</text>
+      <text x="842" y="250">Summary page → Artifacts → zip</text>
+      <text x="842" y="328">gh run download &lt;run-id&gt; -n name</text>
+      <text x="842" y="406">download-artifact + run-id + token</text>
+    </g>
+    <g stroke="#3fb950" stroke-width="2.5" fill="none" marker-end="url(#a)">
+      <path d="M722 230 L812 153"/><path d="M722 260 L812 231"/><path d="M722 300 L812 309"/><path d="M722 330 L812 387"/>
+    </g>
+
+    <!-- bottom strip: when to use what -->
+    <text x="600" y="474" font-size="15" font-weight="700" fill="#8b949e" letter-spacing="1">GOOD THINGS TO KEEP AS ARTIFACTS</text>
+    <g font-size="15" font-weight="700" fill="#e6edf3">
+      <rect x="40"  y="492" width="210" height="110" rx="16" fill="#161b22" stroke="#30363d"/>
+      <rect x="268" y="492" width="210" height="110" rx="16" fill="#161b22" stroke="#30363d"/>
+      <rect x="496" y="492" width="210" height="110" rx="16" fill="#161b22" stroke="#30363d"/>
+      <rect x="724" y="492" width="210" height="110" rx="16" fill="#161b22" stroke="#30363d"/>
+      <rect x="952" y="492" width="208" height="110" rx="16" fill="#161b22" stroke="#30363d"/>
+      <text x="145" y="536" font-size="28">🏗️</text><text x="145" y="572">Build outputs</text>
+      <text x="373" y="536" font-size="28">🧪</text><text x="373" y="572">Test reports</text>
+      <text x="601" y="536" font-size="28">📊</text><text x="601" y="572">Coverage</text>
+      <text x="829" y="536" font-size="28">📸</text><text x="829" y="572">Failure screenshots</text>
+      <text x="1056" y="536" font-size="28">📜</text><text x="1056" y="572">Logs and dumps</text>
+    </g>
+    <g font-size="12" fill="#8b949e">
+      <text x="145" y="592">dist/, binaries</text><text x="373" y="592">JUnit XML, HTML</text><text x="601" y="592">lcov, cobertura</text><text x="829" y="592">if: failure()</text><text x="1056" y="592">for debugging later</text>
+    </g>
+  </g>
+</svg>
