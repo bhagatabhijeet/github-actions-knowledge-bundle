@@ -21,7 +21,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 8 of 9</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 8 of 10</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 🔗 Workflows with Multiple Jobs
@@ -105,6 +105,8 @@ Two separate problems caused this:
 
 > [!IMPORTANT]
 > **If a needed job fails, the jobs after it are skipped**, not failed. That's the whole point: never deploy something whose tests didn't pass. To run a job anyway, for example to send a failure alert, add `if: ${{ always() }}` or `if: ${{ failure() }}` to it.
+
+👉 [Lesson 9](09-executing-jobs-in-sequence.md) goes deeper into `needs`: failure handling, status functions and job results.
 
 Now the jobs run in order, but `test_job` still fails. It waited for build, then started on a **new** runner that has never seen `dragon.txt`.
 
@@ -296,5 +298,5 @@ A job output. Artifacts are for files; outputs are for small strings, read as `n
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="09-cheat-sheet-and-quiz.md"><b>Next: Cheat Sheet & Quiz ➡️</b></a>
+  <a href="09-executing-jobs-in-sequence.md"><b>Next: Jobs in Sequence ➡️</b></a>
 </p>

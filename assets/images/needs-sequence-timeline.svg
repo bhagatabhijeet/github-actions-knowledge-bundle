@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-label="Three timelines. Parallel: build, test and deploy all start at zero and the run takes as long as the slowest job. Sequence with needs: test starts when build ends and deploy when test ends, so the run takes the sum of all three. Failure: test fails, deploy is skipped, and a report job with if not cancelled still runs and reports the results">
+  <rect width="1200" height="720" rx="20" fill="#0d1117"/>
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="600" y="52" font-size="28" font-weight="800" fill="#e6edf3" text-anchor="middle"><tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#d2a8ff">needs:</tspan> turns a crowd into a queue</text>
+    <text x="600" y="84" font-size="16" fill="#8b949e" text-anchor="middle">Safer order, longer wall-clock time, and failures that stop the line</text>
+
+    <!-- time axis ticks -->
+    <g font-size="12" fill="#6e7681" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+      <text x="220" y="112">0s</text><text x="420" y="112">20s</text><text x="620" y="112">40s</text><text x="820" y="112">60s</text><text x="1020" y="112">80s</text>
+    </g>
+    <g stroke="#21262d" stroke-width="1">
+      <line x1="220" y1="120" x2="220" y2="690"/><line x1="420" y1="120" x2="420" y2="690"/><line x1="620" y1="120" x2="620" y2="690"/><line x1="820" y1="120" x2="820" y2="690"/><line x1="1020" y1="120" x2="1020" y2="690"/>
+    </g>
+
+    <!-- row 1 parallel -->
+    <rect x="40" y="126" width="1120" height="170" rx="16" fill="#161b22" fill-opacity="0.85" stroke="#30363d" stroke-width="2"/>
+    <text x="60" y="156" font-size="18" font-weight="800" fill="#ffa657">⚡ No needs</text>
+    <text x="60" y="180" font-size="13" fill="#8b949e">all start at once</text>
+    <g font-size="14" font-weight="700" fill="#e6edf3">
+      <rect x="220" y="140" width="300" height="38" rx="10" fill="#0c1d3a" stroke="#58a6ff"/><text x="234" y="165">🔨 build 30s</text>
+      <rect x="220" y="190" width="200" height="38" rx="10" fill="#22123f" stroke="#d2a8ff"/><text x="234" y="215">🧪 test 20s</text>
+      <rect x="220" y="240" width="100" height="38" rx="10" fill="#0f2d17" stroke="#3fb950"/><text x="234" y="265">🚀 10s</text>
+    </g>
+    <text x="1140" y="215" font-size="15" fill="#ffa657" text-anchor="end" font-weight="700">≈ 30s total</text>
+    <text x="1140" y="238" font-size="13" fill="#8b949e" text-anchor="end">deploys before tests finish 😬</text>
+
+    <!-- row 2 sequence -->
+    <rect x="40" y="310" width="1120" height="170" rx="16" fill="#161b22" fill-opacity="0.85" stroke="#3fb950" stroke-width="2"/>
+    <text x="60" y="340" font-size="18" font-weight="800" fill="#7ee787">🔗 With needs</text>
+    <text x="60" y="364" font-size="13" fill="#8b949e">each waits its turn</text>
+    <g font-size="14" font-weight="700" fill="#e6edf3">
+      <rect x="220" y="324" width="300" height="38" rx="10" fill="#0c1d3a" stroke="#58a6ff"/><text x="234" y="349">🔨 build 30s</text>
+      <rect x="520" y="374" width="200" height="38" rx="10" fill="#22123f" stroke="#d2a8ff"/><text x="534" y="399">🧪 test 20s</text>
+      <rect x="720" y="424" width="100" height="38" rx="10" fill="#0f2d17" stroke="#3fb950"/><text x="734" y="449">🚀 10s</text>
+    </g>
+    <g stroke="#8b949e" stroke-width="2" fill="none" stroke-dasharray="4 4">
+      <path d="M520 362 V374"/><path d="M720 412 V424"/>
+    </g>
+    <text x="1140" y="399" font-size="15" fill="#7ee787" text-anchor="end" font-weight="700">≈ 60s total</text>
+    <text x="1140" y="422" font-size="13" fill="#8b949e" text-anchor="end">only deploys tested code ✅</text>
+
+    <!-- row 3 failure -->
+    <rect x="40" y="494" width="1120" height="196" rx="16" fill="#161b22" fill-opacity="0.85" stroke="#f85149" stroke-width="2"/>
+    <text x="60" y="524" font-size="18" font-weight="800" fill="#ff7b72">💥 A job fails</text>
+    <text x="60" y="548" font-size="13" fill="#8b949e">the line stops</text>
+    <g font-size="14" font-weight="700" fill="#e6edf3">
+      <rect x="220" y="508" width="300" height="36" rx="10" fill="#0c1d3a" stroke="#58a6ff"/><text x="234" y="532">🔨 build ✅</text>
+      <rect x="520" y="552" width="120" height="36" rx="10" fill="#3d0d0d" stroke="#f85149"/><text x="534" y="576">🧪 test ❌</text>
+      <rect x="640" y="596" width="180" height="36" rx="10" fill="#161b22" stroke="#6e7681" stroke-dasharray="6 4"/><text x="654" y="620" fill="#8b949e">🚀 deploy ⊘ skipped</text>
+      <rect x="640" y="640" width="200" height="36" rx="10" fill="#3d2a00" stroke="#e3b341"/><text x="654" y="664">📋 report ✅ ran</text>
+    </g>
+    <g font-size="13" fill="#8b949e" text-anchor="end">
+      <text x="1140" y="620"><tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace">needs: test</tspan> → skipped, not failed</text>
+      <text x="1140" y="664"><tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#e3b341">if: ${{ !cancelled() }}</tspan> → runs anyway</text>
+    </g>
+  </g>
+</svg>

@@ -15,7 +15,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 9 of 9</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
+  <b>Lesson 10 of 10</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
 </p>
 
 # 📋 Chapter 4 Cheat Sheet & Quiz
@@ -41,6 +41,9 @@ sources:
 
 > [!TIP]
 > **Jobs run in parallel on separate runners.** `needs:` sets the order (a failed job skips what needs it). Files travel by `upload-artifact` then `download-artifact` with the same `name`; small strings travel as job outputs.
+
+> [!TIP]
+> **After a failure, jobs that need it are skipped.** Override with `if: ${{ failure() }}` or `if: ${{ !cancelled() }}` (prefer it to `always()`). Check one job with `needs.<job>.result`. Outputs are readable only from jobs listed directly in `needs:`.
 
 ## 🎬 A run in six stages
 
@@ -193,7 +196,7 @@ You can point at any line of a workflow and say which component it is, describe 
 ---
 
 <p align="center">
-  <a href="08-workflows-with-multiple-jobs.md">⬅️ Multiple Jobs</a>
+  <a href="09-executing-jobs-in-sequence.md">⬅️ Jobs in Sequence</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;

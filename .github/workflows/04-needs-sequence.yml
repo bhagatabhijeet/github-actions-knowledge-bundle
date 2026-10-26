@@ -1,0 +1,88 @@
+# Chapter 4 companion workflow.
+# Walkthrough: 04-github-actions-core-components/09-executing-jobs-in-sequence.md
+#
+# build -> test -> deploy, run one after another with needs.
+# A report job always runs (unless cancelled) and writes each job's result
+# to the run summary. Tick "Make the tests fail" to watch deploy get skipped.
+
+name: 04 - Jobs in Sequence
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/04-needs-sequence.yml
+  workflow_dispatch:
+    inputs:
+      fail_tests:
+        description: Make the tests fail
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Install cowsay
+        run: sudo apt-get install -y -qq cowsay
+      - name: Generate ASCII art
+        run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" > dragon.txt
+      - name: Pick a version
+        id: version
+        run: echo "version=1.0.${{ github.run_number }}" >> "$GITHUB_OUTPUT"
+      - name: Upload dragon.txt
+        uses: actions/upload-artifact@v7
+        with:
+          name: dragon-text-file
+          path: dragon.txt
+          retention-days: 3
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download dragon.txt
+        uses: actions/download-artifact@v8
+        with:
+          name: dragon-text-file
+      - name: Test the file contains a dragon
+        run: grep -i "dragon" dragon.txt
+      - name: Optional failure
+        if: ${{ inputs.fail_tests }}
+        run: |
+          echo "::error::Tests failed on purpose (fail_tests was ticked)"
+          exit 1
+
+  deploy:
+    needs: [build, test]          # build listed too, to read its outputs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download dragon.txt
+        uses: actions/download-artifact@v8
+        with:
+          name: dragon-text-file
+      - name: Deploy (print the file)
+        run: |
+          echo "Deploying version ${{ needs.build.outputs.version }}"
+          cat dragon.txt
+
+  report:
+    needs: [build, test, deploy]
+    if: ${{ !cancelled() }}       # run even when something above failed
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write the results to the run summary
+        run: |
+          {
+            echo "### 🐉 Pipeline results"
+            echo "| Job | Result |"
+            echo "|---|---|"
+            echo "| build | ${{ needs.build.result }} |"
+            echo "| test | ${{ needs.test.result }} |"
+            echo "| deploy | ${{ needs.deploy.result }} |"
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -18,7 +18,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 7 of 9</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
+  <b>Lesson 7 of 10</b> &nbsp;·&nbsp; ⏱️ 18 min &nbsp;·&nbsp; 🛠️ Hands-on
 </p>
 
 # 🐚 Executing Shell Scripts in a Workflow

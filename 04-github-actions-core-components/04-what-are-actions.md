@@ -21,7 +21,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 4 of 9</b> &nbsp;·&nbsp; ⏱️ 9 min read &nbsp;·&nbsp; 🟢 Beginner
+  <b>Lesson 4 of 10</b> &nbsp;·&nbsp; ⏱️ 9 min read &nbsp;·&nbsp; 🟢 Beginner
 </p>
 
 # 🧩 What Are Actions?

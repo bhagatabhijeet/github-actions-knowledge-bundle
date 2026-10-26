@@ -22,7 +22,7 @@ sources:
 </p>
 
 <p align="center">
-  <b>Lesson 1 of 9</b> &nbsp;·&nbsp; ⏱️ 7 min read &nbsp;·&nbsp; 🟢 Beginner
+  <b>Lesson 1 of 10</b> &nbsp;·&nbsp; ⏱️ 7 min read &nbsp;·&nbsp; 🟢 Beginner
 </p>
 
 # 🧱 The Core Components

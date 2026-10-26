@@ -13,8 +13,8 @@ generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
 <p align="center">
   <a href="01-introduction-to-github-actions/01-what-is-github-actions.md"><img src="https://img.shields.io/badge/START%20READING-%E2%96%B6-2ea043?style=for-the-badge" alt="Start reading"></a>
   <img src="https://img.shields.io/badge/CHAPTERS-4-58a6ff?style=for-the-badge" alt="4 chapters">
-  <img src="https://img.shields.io/badge/LESSONS-24-bc8cff?style=for-the-badge" alt="24 lessons">
-  <img src="https://img.shields.io/badge/LIVE%20WORKFLOWS-7-f778ba?style=for-the-badge&logo=githubactions&logoColor=white" alt="7 live workflows">
+  <img src="https://img.shields.io/badge/LESSONS-25-bc8cff?style=for-the-badge" alt="25 lessons">
+  <img src="https://img.shields.io/badge/LIVE%20WORKFLOWS-8-f778ba?style=for-the-badge&logo=githubactions&logoColor=white" alt="8 live workflows">
   <img src="https://img.shields.io/badge/OKF-v0.2-ffa657?style=for-the-badge" alt="OKF v0.2">
   <img src="https://img.shields.io/badge/LICENSE-CC0-e3b341?style=for-the-badge" alt="CC0 license">
 </p>
@@ -27,6 +27,7 @@ generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
   <a href=".github/workflows/04-multiline-commands.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/04-multiline-commands.yml/badge.svg" alt="Multi-line Commands status"></a>
   <a href=".github/workflows/04-shell-script.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/04-shell-script.yml/badge.svg" alt="Shell Script status"></a>
   <a href=".github/workflows/04-multiple-jobs.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/04-multiple-jobs.yml/badge.svg" alt="Multiple Jobs status"></a>
+  <a href=".github/workflows/04-needs-sequence.yml"><img src="https://github.com/bhagatabhijeet/github-actions-knowledge-bundle/actions/workflows/04-needs-sequence.yml/badge.svg" alt="Jobs in Sequence status"></a>
 </p>
 
 <h3 align="center">📖 Read it like a book. 🛠️ Run it like a lab. 🤖 Feed it to an agent.</h3>
@@ -119,7 +120,8 @@ flowchart LR
 | 4.6 | 📜 [**Multi-line Commands & Third-Party Tools**](04-github-actions-core-components/06-multiline-commands-and-third-party-tools.md) 🛠️ | Write multi-line run steps and install and run tools that aren't in your repo | 18 min |
 | 4.7 | 🐚 [**Executing Shell Scripts**](04-github-actions-core-components/07-executing-shell-scripts.md) 🛠️ | Move commands into a script, make it run on the runner, and fix the usual errors | 18 min |
 | 4.8 | 🔗 [**Workflows with Multiple Jobs**](04-github-actions-core-components/08-workflows-with-multiple-jobs.md) 🛠️ | Order jobs with `needs` and pass files between them with artifacts | 18 min |
-| 4.9 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/09-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
+| 4.9 | ⛓️ [**Jobs in Sequence with `needs`**](04-github-actions-core-components/09-executing-jobs-in-sequence.md) 🛠️ | Design job graphs, control what runs after a failure, and read results and outputs | 16 min |
+| 4.10 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/10-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
 
 > [!NOTE]
 > 🔜 **This book is still being written.** New chapters land one topic at a time. Watch the repo, or peek at the [change log](log.md).
@@ -137,6 +139,7 @@ These aren't screenshots. They're running right here, and they'll run in your fo
 | 🐉 | [`04-multiline-commands.yml`](.github/workflows/04-multiline-commands.yml) | [4.6](04-github-actions-core-components/06-multiline-commands-and-third-party-tools.md) | Installs `cowsay`, runs it in a multi-line step and checks the output |
 | 🐚 | [`04-shell-script.yml`](.github/workflows/04-shell-script.yml) | [4.7](04-github-actions-core-components/07-executing-shell-scripts.md) | Checks out the repo and runs [`scripts/ascii-script.sh`](scripts/ascii-script.sh) in one step |
 | 🔗 | [`04-multiple-jobs.yml`](.github/workflows/04-multiple-jobs.yml) | [4.8](04-github-actions-core-components/08-workflows-with-multiple-jobs.md) | Build, test and deploy jobs chained with `needs`, handing `dragon.txt` over as an artifact |
+| ⛓️ | [`04-needs-sequence.yml`](.github/workflows/04-needs-sequence.yml) | [4.9](04-github-actions-core-components/09-executing-jobs-in-sequence.md) | A `needs` chain with job outputs, an `if: !cancelled()` report, and a switch that makes the tests fail |
 
 ## 🚀 Get started in 60 seconds
 
