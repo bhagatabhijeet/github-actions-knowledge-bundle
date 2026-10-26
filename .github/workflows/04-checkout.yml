@@ -1,0 +1,41 @@
+# Chapter 4 companion workflow.
+# Walkthrough: 04-github-actions-core-components/05-configuring-the-checkout-action.md
+#
+# Two jobs run the same three steps. Only the second checks out the code.
+# The first is allowed to fail so you can see why checkout matters.
+
+name: 04 - Checkout
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/04-checkout.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  without-checkout:
+    runs-on: ubuntu-latest
+    continue-on-error: true   # expected to fail: there is no code on the runner
+    steps:
+      - name: Welcome message
+        run: echo "My first GitHub Actions job"
+      - name: List files
+        run: ls -la
+      - name: Read file
+        run: cat README.md
+
+  with-checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+      - name: Welcome message
+        run: echo "My first GitHub Actions job"
+      - name: List files
+        run: ls -la
+      - name: Read file
+        run: head -n 20 README.md

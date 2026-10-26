@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Without actions/checkout the runner's workspace is empty: ls prints nothing and cat README.md fails with 'No such file or directory'. With actions/checkout as the first step, the repository is copied in: ls lists the files and cat prints the README">
+  <rect width="1200" height="600" rx="20" fill="#0d1117"/>
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="54" font-size="28" font-weight="800" fill="#e6edf3">A fresh runner starts empty. Checkout brings your code.</text>
+    <text x="600" y="86" font-size="16" fill="#8b949e">Same three steps. One extra line makes the difference.</text>
+
+    <!-- headers -->
+    <rect x="50" y="112" width="530" height="54" rx="14" fill="#3d0d0d" stroke="#f85149" stroke-width="3"/>
+    <text x="315" y="147" font-size="21" font-weight="800" fill="#ff7b72">❌ Without checkout</text>
+    <rect x="620" y="112" width="530" height="54" rx="14" fill="#0f2d17" stroke="#3fb950" stroke-width="3"/>
+    <text x="885" y="147" font-size="21" font-weight="800" fill="#7ee787">✅ With actions/checkout</text>
+
+    <!-- workspace boxes -->
+    <rect x="50" y="182" width="530" height="150" rx="16" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+    <rect x="620" y="182" width="530" height="150" rx="16" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+    <text x="315" y="212" font-size="14" font-weight="700" fill="#8b949e" letter-spacing="1">RUNNER WORKSPACE</text>
+    <text x="885" y="212" font-size="14" font-weight="700" fill="#8b949e" letter-spacing="1">RUNNER WORKSPACE</text>
+    <rect x="215" y="230" width="200" height="84" rx="12" fill="none" stroke="#484f58" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="315" y="266" font-size="30">📭</text>
+    <text x="315" y="298" font-size="15" fill="#8b949e">empty folder</text>
+
+    <g font-size="15" fill="#e6edf3">
+      <rect x="660" y="234" width="140" height="36" rx="8" fill="#0c1d3a" stroke="#58a6ff"/>
+      <text x="730" y="258">📁 .github</text>
+      <rect x="815" y="234" width="140" height="36" rx="8" fill="#0c1d3a" stroke="#58a6ff"/>
+      <text x="885" y="258">📄 README.md</text>
+      <rect x="970" y="234" width="140" height="36" rx="8" fill="#0c1d3a" stroke="#58a6ff"/>
+      <text x="1040" y="258">📁 src</text>
+      <text x="885" y="302" fill="#7ee787" font-size="15">your repository, at the commit that triggered the run</text>
+    </g>
+
+    <!-- terminals -->
+    <rect x="50" y="350" width="530" height="220" rx="16" fill="#010409" stroke="#f85149" stroke-width="2"/>
+    <rect x="620" y="350" width="530" height="220" rx="16" fill="#010409" stroke="#3fb950" stroke-width="2"/>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" text-anchor="start">
+      <text x="76" y="388" fill="#8b949e">▸ Welcome message</text>
+      <text x="96" y="412" fill="#e6edf3">My first Github Actions Job</text>
+      <text x="76" y="446" fill="#8b949e">▸ List files</text>
+      <text x="96" y="470" fill="#484f58">(nothing)</text>
+      <text x="76" y="504" fill="#8b949e">▸ Read file</text>
+      <text x="96" y="528" fill="#ff7b72">cat: README.md: No such file</text>
+      <text x="96" y="552" fill="#ff7b72">Error: Process completed with exit code 1.</text>
+
+      <text x="646" y="388" fill="#7ee787">▸ Checkout repository</text>
+      <text x="646" y="422" fill="#8b949e">▸ Welcome message</text>
+      <text x="646" y="456" fill="#8b949e">▸ List files</text>
+      <text x="666" y="480" fill="#e6edf3">README.md  src</text>
+      <text x="646" y="514" fill="#8b949e">▸ Read file</text>
+      <text x="666" y="538" fill="#e6edf3"># actions-1</text>
+      <text x="666" y="560" fill="#7ee787">✓ Job succeeded</text>
+    </g>
+  </g>
+</svg>

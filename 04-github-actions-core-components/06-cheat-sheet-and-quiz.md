@@ -15,7 +15,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 5 of 5</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
+  <b>Lesson 6 of 6</b> &nbsp;·&nbsp; ⏱️ 5 min &nbsp;·&nbsp; 🏁 Chapter finale
 </p>
 
 # 📋 Chapter 4 Cheat Sheet & Quiz
@@ -29,6 +29,9 @@ sources:
 | 👣 | **Step** | One action or command | `- uses:` / `- run:` | In series, top to bottom |
 | 🖥️ | **Runner** | The machine for a job | `runs-on:` | One per job, fresh each time |
 | 🧩 | **Action** | A reusable, packaged step | `- uses: owner/repo@version` | Pin third-party actions to a full SHA |
+
+> [!IMPORTANT]
+> **A runner starts empty.** Make `actions/checkout` the first step of any job that reads your files. Add `fetch-depth: 0` when you need full history.
 
 ## 🎬 A run in six stages
 
@@ -181,7 +184,7 @@ You can point at any line of a workflow and say which component it is, describe 
 ---
 
 <p align="center">
-  <a href="04-what-are-actions.md">⬅️ What Are Actions?</a>
+  <a href="05-configuring-the-checkout-action.md">⬅️ Configuring Checkout</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;

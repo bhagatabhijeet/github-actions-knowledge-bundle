@@ -21,7 +21,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 4 of 5</b> &nbsp;·&nbsp; ⏱️ 9 min read &nbsp;·&nbsp; 🟢 Beginner
+  <b>Lesson 4 of 6</b> &nbsp;·&nbsp; ⏱️ 9 min read &nbsp;·&nbsp; 🟢 Beginner
 </p>
 
 # 🧩 What Are Actions?
@@ -192,5 +192,5 @@ Whatever is pushed to that branch runs in your workflow next time, with access t
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="05-cheat-sheet-and-quiz.md"><b>Next: Cheat Sheet & Quiz ➡️</b></a>
+  <a href="05-configuring-the-checkout-action.md"><b>Next: Configuring Checkout ➡️</b></a>
 </p>
