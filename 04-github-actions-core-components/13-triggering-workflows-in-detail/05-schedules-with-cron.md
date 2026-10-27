@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Triggering Workflows in Detail: Schedules with cron"
-description: "A cron line has five fields:"
+description: "Run a workflow on a timer with five-field cron lines, and know the limits: UTC by default, 5-minute minimum, late or dropped runs, default branch only."
 tags: [github-actions, triggers, events, on, workflow_dispatch, schedule, cron, repository_dispatch, workflow_run, filters, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

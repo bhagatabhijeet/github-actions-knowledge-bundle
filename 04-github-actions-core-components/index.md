@@ -13,7 +13,7 @@
 * [Working with Variables (Hands-On)](11-working-with-variables/README.md) - Stop hard-coding values - env at workflow, job and step level and which one wins, $VAR versus ${{ env.VAR }}, default GITHUB_ variables, setting values at runtime with $GITHUB_ENV, and configuration variables stored in Settings with the vars context.
 * [Working with Repository-Level Secrets (Hands-On)](12-working-with-repository-secrets/README.md) - Get passwords and tokens out of your workflow files - what a secret is and how GitHub protects it, creating repository secrets in Settings or with gh, using them safely in run steps and actions, log masking and its limits, forks, GITHUB_TOKEN, and what to do when a secret leaks.
 * [Triggering Workflows in Detail (Hands-On)](13-triggering-workflows-in-detail/README.md) - Everything that can start a workflow - repository events and activity types, branch, tag and path filters, manual runs with workflow_dispatch and typed inputs, cron schedules, repository_dispatch, workflow_run and workflow_call, which commit a run uses, and the GITHUB_TOKEN loop guard.
-* [Chapter 4 Cheat Sheet and Quiz](14-cheat-sheet-and-quiz/README.md) - The core components on one page - workflow, job, step, runner, how a run unfolds, hosted versus self-hosted - followed by an eight-question self-check.
+* [Chapter 4 Cheat Sheet and Quiz](14-cheat-sheet-and-quiz/README.md) - The core components on one page - workflow, job, step, runner, how a run unfolds, hosted versus self-hosted - followed by an eleven-question self-check.
 
 # Companion Files
 

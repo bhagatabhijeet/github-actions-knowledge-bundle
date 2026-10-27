@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Working with Repository-Level Secrets: Rules that catch people out"
-description: "Rules that catch people out, part 5 of 10 of Working with Repository-Level Secrets."
+description: "Nine secret rules that surprise people: no secrets in if:, empty when missing, none for forks or Dependabot, no automatic sharing, naming rules and size limits."
 tags: [github-actions, secrets, security, masking, github-token, docker, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
@@ -21,6 +21,9 @@ sources:
   - id: docker-login-action
     resource: https://github.com/docker/login-action
     title: docker/login-action
+  - id: gh-secrets-ref
+    resource: https://docs.github.com/en/actions/reference/security/secrets
+    title: Secrets reference
 ---
 
 <p align="center">
@@ -37,7 +40,9 @@ sources:
 | 🤖 **Dependabot runs don't get Actions secrets** | Workflows triggered by Dependabot see **Dependabot secrets** instead | Add the ones it needs under **Secrets and variables → Dependabot** |
 | 🧩 **Actions don't see secrets automatically** | An action only gets what you pass in `with:` or `env:` | Pass only the secrets each step needs |
 | 🔁 **Reusable workflows don't inherit them** | A called workflow gets secrets only if you pass them | `secrets: inherit`, or pass them one by one |
-| 📏 **Limits** | Up to 48 KB per secret, 100 secrets per repository | For bigger files, encrypt the file in the repo and store only the key as a secret |
+| 🔤 **Names** | Letters, digits and `_` only. No leading digit, no `GITHUB_` prefix. GitHub stores them in uppercase | `DOCKER_PASSWORD`, not `docker-password` |
+| 🏢 **Only 100 org secrets reach a workflow** | If a repo can see more than 100 organisation secrets, a workflow gets only the first 100, sorted alphabetically by name | Keep org secrets few, or move some to repository or environment level |
+| 📏 **Limits** | Up to 48 KB per secret; 100 per repository, 100 per environment, 1,000 per organisation | For bigger files, encrypt the file in the repo and store only the key as a secret |
 
 ---
 

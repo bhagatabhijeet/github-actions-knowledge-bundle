@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Working with Variables: Configuration variables: values that live in Settings"
-description: "env: lives in the YAML, so changing it means a commit. Configuration variables live in the repository's settings, so you can change them without touching the workflow, and share them across many workflows."
+description: "Configuration variables live in Settings at organisation, repository or environment level, are read with ${{ vars.NAME }}, and change without a commit."
 tags: [github-actions, variables, env, vars, configuration-variables, github-env, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
@@ -63,6 +63,9 @@ Environment-level variables are how one workflow deploys to **staging** and **pr
     steps:
       - run: echo "Deploying to ${{ vars.APP_URL }}"
 ```
+
+> [!NOTE]
+> **📘 From the GitHub docs:** names may use only letters, digits and `_`. They can't start with a digit or with `GITHUB_`, and they're case-insensitive. Each variable holds up to **48 KB**. You can keep **500** per repository, **100** per environment and **1,000** per organisation. Organisation and repository variables together are capped at **256 KB per run**; environment variables don't count toward that. ([Variables reference](https://docs.github.com/en/actions/reference/workflows-and-actions/variables))
 
 ---
 

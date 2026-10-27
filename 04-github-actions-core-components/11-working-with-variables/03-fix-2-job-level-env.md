@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Working with Variables: Fix 2: job-level `env`"
-description: "Move env: up to the job, and every step in that job sees it:"
+description: "Moving env: up to the job makes a variable visible to every step in that job."
 tags: [github-actions, variables, env, vars, configuration-variables, github-env, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Working with Variables: `$VAR` or `${{ env.VAR }}`?"
-description: "There are two ways to read a variable, and they work at different moments:"
+description: "Use $VAR inside run: scripts and ${{ env.VAR }} everywhere GitHub evaluates YAML, because they resolve at different moments."
 tags: [github-actions, variables, env, vars, configuration-variables, github-env, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

@@ -1,10 +1,10 @@
 ---
 type: Reference
 title: "Chapter 4 Cheat Sheet and Quiz: How results roll up"
-description: "How results roll up, part 3 of 9 of Chapter 4 Cheat Sheet and Quiz."
+description: "A step passes when it exits cleanly, a job when every step passes, and a run when every job passes."
 tags: [github-actions, core-components, runners, cheat-sheet, quiz, recap]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-understand
     resource: https://docs.github.com/en/actions/get-started/understand-github-actions

@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Working with Variables: Fix 3: workflow-level `env`"
-description: "Put env: at the top, and every job sees it:"
+description: "A workflow-level env: block shares a variable with every job in the file."
 tags: [github-actions, variables, env, vars, configuration-variables, github-env, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

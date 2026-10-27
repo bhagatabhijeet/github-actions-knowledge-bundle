@@ -1,10 +1,10 @@
 ---
 type: Reference
 title: "Chapter 4 Cheat Sheet and Quiz: Quiz"
-description: "Workflow, job, step. The fourth, the runner, isn't inside the others: it's the machine each job runs on."
+description: "Eleven quick questions on components, runs, matrices, runners, secrets, variables and triggers, with answers hidden until you click."
 tags: [github-actions, core-components, runners, cheat-sheet, quiz, recap]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-understand
     resource: https://docs.github.com/en/actions/get-started/understand-github-actions
@@ -12,10 +12,16 @@ sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
     title: Workflow syntax for GitHub Actions
+  - id: gh-secure-use
+    resource: https://docs.github.com/en/actions/reference/security/secure-use
+    title: Secure use reference
+  - id: gh-variables-ref
+    resource: https://docs.github.com/en/actions/reference/workflows-and-actions/variables
+    title: Variables reference
 ---
 
 <p align="center">
-  <a href="README.md">📂 <b>Chapter 4 Cheat Sheet and Quiz</b></a> &nbsp;·&nbsp; Lesson 14 · Part 8 of 9 &nbsp;·&nbsp; ⏱️ 3 min
+  <a href="README.md">📂 <b>Chapter 4 Cheat Sheet and Quiz</b></a> &nbsp;·&nbsp; Lesson 14 · Part 8 of 9 &nbsp;·&nbsp; ⏱️ 4 min
 </p>
 
 # 🧠 Quiz
@@ -92,13 +98,40 @@ Any two of: access to a private network, special hardware such as a GPU, jobs lo
 
 </details>
 
+<details>
+<summary><b>9. A step prints a JSON secret one field at a time. Is it masked?</b></summary>
+
+<br>
+
+Often not. Masking matches the exact stored value, so pieces of a structured secret can leak. The docs advise one secret per sensitive value instead of a JSON, XML or YAML blob.
+
+</details>
+
+<details>
+<summary><b>10. You set <code>vars.APP_URL</code> at repository level and in the <code>production</code> environment. A job with <code>environment: production</code> reads it. Which value wins?</b></summary>
+
+<br>
+
+The environment one. The most specific level wins: environment, then repository, then organisation.
+
+</details>
+
+<details>
+<summary><b>11. A workflow has <code>on: push: branches: [main]</code>. You push tag <code>v1.0</code>. Does it run?</b></summary>
+
+<br>
+
+No. With only a `branches` filter, tag pushes are ignored. Add a `tags:` filter if you want both.
+
+</details>
+
 ## 📊 How did you do?
 
 | Score | Verdict |
 |---|---|
-| 8 | 🏆 You can read a run like a timeline |
-| 5 to 7 | 💪 Strong. Revisit the lessons you missed |
-| 0 to 4 | 🔁 Redo the [hands-on lesson](../02-life-of-a-workflow-run/README.md); watching a run beats reading about one |
+| 10 to 11 | 🏆 You can read a run like a timeline |
+| 6 to 9 | 💪 Strong. Revisit the lessons you missed |
+| 0 to 5 | 🔁 Redo the [hands-on lesson](../02-life-of-a-workflow-run/README.md); watching a run beats reading about one |
 
 ---
 

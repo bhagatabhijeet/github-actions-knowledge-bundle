@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Working with Repository-Level Secrets: Log masking: what it catches, and what it misses"
-description: "GitHub scans the logs for the exact secret value and replaces it with :"
+description: "Masking hides only the exact secret value; encoded, partial or derived copies leak unless you register them with ::add-mask::."
 tags: [github-actions, secrets, security, masking, github-token, docker, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
@@ -52,6 +52,9 @@ That's a safety net, not a guarantee. It misses **changed copies**:
     echo "::add-mask::$TOKEN_B64"       # register the derived value for masking first
     echo "Encoded: $TOKEN_B64"          # → Encoded: ***
 ```
+
+> [!NOTE]
+> **📘 From the GitHub docs:** don't wrap a secret in a blob of JSON, XML or YAML. Redaction works best on plain values, so create one secret per sensitive value. And any sensitive value that isn't a GitHub secret (a token you generated, say) should be masked with `::add-mask::`. ([Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use))
 
 > [!CAUTION]
 > **Never print a secret on purpose, even "just to check it".** If you need to know it's set, print its length or test that it's non-empty.

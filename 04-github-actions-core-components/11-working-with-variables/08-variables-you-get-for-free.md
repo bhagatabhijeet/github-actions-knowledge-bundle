@@ -42,6 +42,9 @@ Every job starts with default variables already set:
 
 Most have a matching context value, e.g. `${{ github.sha }}`, `${{ runner.os }}`. You **can't override** names that start with `GITHUB_` or `RUNNER_`.
 
+> [!NOTE]
+> **📘 From the GitHub docs:** `CI` is the odd one out. You can overwrite it today, but the docs say that isn't guaranteed to stay true. Don't build on it. ([Variables reference](https://docs.github.com/en/actions/reference/workflows-and-actions/variables))
+
 ---
 
 <p align="center">

@@ -1,10 +1,10 @@
 ---
 type: Reference
 title: "Chapter 4 Cheat Sheet and Quiz: Finding your way in the Actions tab"
-description: "Finding your way in the Actions tab, part 6 of 9 of Chapter 4 Cheat Sheet and Quiz."
+description: "Where to click in the Actions tab to find a step log, the cause of a failure, the artifacts a run produced, or the re-run button."
 tags: [github-actions, core-components, runners, cheat-sheet, quiz, recap]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-understand
     resource: https://docs.github.com/en/actions/get-started/understand-github-actions

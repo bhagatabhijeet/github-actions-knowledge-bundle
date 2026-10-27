@@ -53,7 +53,7 @@ on:
 - **Filters combine with AND.** With both `branches:` and `paths:`, a push must match **both**.
 - **`branches` alone means "not on tags".** If you set only `branches:`, tag pushes don't run the workflow, and the reverse is also true. Add both if you want both.
 - **Patterns are globs.** `*` matches anything except `/`, and `**` matches anything including `/`. Quote patterns that start with `*` or `!`, because YAML treats those characters specially.
-- **Diffs over 300 files** may not be fully checked by `paths:`. If no match is found in the first 300 files, the workflow doesn't run.
+- **Huge diffs behave differently.** A push with more than **1,000 commits** always runs the workflow, and so does a diff that times out. If the diff has more than **3,000 files** and your matching files aren't in the first 3,000, the workflow doesn't run.
 - **Tag pushes in bulk** don't create events. The docs say tag events aren't created when more than **three tags** are pushed at once.
 
 > [!TIP]

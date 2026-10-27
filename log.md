@@ -1,6 +1,7 @@
 # Bundle Update Log
 
 ## 2026-10-26
+* **Update**: Every chapter gains insights from the official GitHub Actions docs (limits, defaults, runner specs, security guidance, naming rules), each linked to its docs page and listed in the page's `sources`. Weak subtopic descriptions were rewritten, the trigger lesson's path-filter limit was corrected to 3,000 files, and the Chapter 4 quiz grows to eleven questions.
 * **Update**: Restructured the whole bundle into topics and subtopics. Every lesson is now a folder with a `README.md` overview (map of subtopics, reading times, what you learned), an OKF `index.md`, and one page per subtopic with its own frontmatter and ⬅️ / ➡️ navigation. All links were rewritten to the new paths.
 * **Creation**: Added [Triggering Workflows in Detail](/04-github-actions-core-components/13-triggering-workflows-in-detail/README.md) as Lesson 13 of Chapter 4, with the live workflow `04-triggers.yml`, `trigger-doors.svg` and `workflow-dispatch-form.svg`. The Chapter 4 cheat sheet moves to [Lesson 14](/04-github-actions-core-components/14-cheat-sheet-and-quiz/README.md).
 * **Update**: [Working with Repository-Level Secrets](/04-github-actions-core-components/12-working-with-repository-secrets/README.md) gains a step-by-step walkthrough for creating secrets and variables in Settings, with four new screen illustrations and the empty-username gotcha.

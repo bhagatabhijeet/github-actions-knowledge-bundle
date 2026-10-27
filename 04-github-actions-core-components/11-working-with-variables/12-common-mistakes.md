@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Working with Variables: Common mistakes"
-description: "Common mistakes, part 12 of 14 of Working with Variables."
+description: "The variable slips learners make most: wrong syntax for the place, wrong scope, $GITHUB_ENV timing and secrets stored as variables."
 tags: [github-actions, variables, env, vars, configuration-variables, github-env, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

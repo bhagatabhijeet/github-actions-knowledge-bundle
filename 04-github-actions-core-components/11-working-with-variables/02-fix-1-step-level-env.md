@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Working with Variables: Fix 1: step-level `env`"
-description: "env: defines environment variables. Put it on a step, and only that step sees them:"
+description: "A step-level env: block sets variables that only that one step can see."
 tags: [github-actions, variables, env, vars, configuration-variables, github-env, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Triggering Workflows in Detail: Common mistakes"
-description: "Common mistakes, part 10 of 12 of Triggering Workflows in Detail."
+description: "The trigger mistakes that leave workflows silent or running too often, with the cause and fix for each."
 tags: [github-actions, triggers, events, on, workflow_dispatch, schedule, cron, repository_dispatch, workflow_run, filters, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

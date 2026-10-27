@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Triggering Workflows in Detail: Four doors into a workflow"
-description: "GitHub's docs list four sources of triggers:"
+description: "Workflows start from four places: events in your repository, a manual button, a schedule, or a call from outside or from another workflow."
 tags: [github-actions, triggers, events, on, workflow_dispatch, schedule, cron, repository_dispatch, workflow_run, filters, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

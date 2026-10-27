@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Working with Repository-Level Secrets: Using it: fixing the Docker login"
-description: "Two details make this safe:"
+description: "Pass the Docker password from secrets into the login step through env: and stdin, so it never appears in the command line or the YAML."
 tags: [github-actions, secrets, security, masking, github-token, docker, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
