@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "The Six Core Concepts: 3. Job: a unit of work on one machine"
-description: "A job is a group of steps that run on the same runner."
+description: "What a job is, why jobs run in parallel on separate machines, how needs puts them in order, and how long one may run."
 tags: [github-actions, concepts, workflow, job, step, action, runner, event]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-understand
     resource: https://docs.github.com/en/actions/get-started/understand-github-actions
@@ -15,6 +15,9 @@ sources:
   - id: gh-events
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows
     title: Events that trigger workflows
+  - id: gh-limits
+    resource: https://docs.github.com/en/actions/reference/limits
+    title: Actions limits
 ---
 
 <p align="center">
@@ -44,6 +47,9 @@ flowchart LR
 ```
 
 Here `lint` and `test` run side by side, `package` waits for both, and `deploy` waits for `package`. The YAML for exactly this shape is in [assets/snippets/job-dependencies.yml](../../assets/snippets/job-dependencies.yml).
+
+> [!NOTE]
+> **📘 From the GitHub docs:** a job on a GitHub-hosted runner can run for at most **6 hours** before it is stopped (self-hosted: 5 days). A job matrix, which you'll meet later, can create at most **256 jobs** per workflow run. ([Actions limits](https://docs.github.com/en/actions/reference/limits))
 
 ---
 

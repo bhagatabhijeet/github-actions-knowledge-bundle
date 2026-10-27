@@ -35,7 +35,7 @@ sources:
 | 3 | 🍳 [**An analogy that sticks**](03-an-analogy-that-sticks.md) | 1 min |
 | 4 | 🎁 [**What can it actually do?**](04-what-can-it-actually-do.md) | 1 min |
 | 5 | 🧭 [**Where it lives**](05-where-it-lives.md) | 1 min |
-| 6 | 💸 [**What does it cost?**](06-what-does-it-cost.md) | 1 min |
+| 6 | 💸 [**What does it cost?**](06-what-does-it-cost.md) | 2 min |
 | 7 | 🆚 [**Why not just use a script?**](07-why-not-just-use-a-script.md) | 1 min |
 | 8 | ✅ [**Checkpoint**](08-checkpoint.md) | 1 min |
 

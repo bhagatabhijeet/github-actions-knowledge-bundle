@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "What is GitHub Actions?: Checkpoint"
-description: "An event (when), a workflow of instructions (what), and a runner machine (where)."
+description: "Quick self-check on Lesson 1: the event, workflow and runner that make up every GitHub Actions run."
 tags: [github-actions, introduction, automation, beginner]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }

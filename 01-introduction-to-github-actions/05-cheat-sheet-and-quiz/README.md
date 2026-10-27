@@ -31,7 +31,7 @@ Bookmark this page. It's the one you'll come back to.
 | 1 | 🗣️ [**Vocabulary**](01-vocabulary.md) | 1 min |
 | 2 | ⌨️ [**YAML keys**](02-yaml-keys.md) | 1 min |
 | 3 | 🧾 [**Default variables worth knowing**](03-default-variables-worth-knowing.md) | 1 min |
-| 4 | 🏆 [**Golden rules**](04-golden-rules.md) | 1 min |
+| 4 | 🏆 [**Golden rules**](04-golden-rules.md) | 2 min |
 | 5 | 🧠 [**Quiz**](05-quiz.md) | 3 min |
 | 6 | 🎉 [**Chapter complete**](06-chapter-complete.md) | 1 min |
 

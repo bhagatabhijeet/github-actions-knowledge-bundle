@@ -4,7 +4,7 @@ title: "The Six Core Concepts: 1. Event: the trigger"
 description: "An event is something that happened. It's the reason a workflow starts."
 tags: [github-actions, concepts, workflow, job, step, action, runner, event]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-understand
     resource: https://docs.github.com/en/actions/get-started/understand-github-actions
@@ -38,6 +38,14 @@ on: push
 | 🔗 Another workflow | `workflow_call`, `workflow_run` |
 
 📎 A fuller menu lives in [assets/snippets/triggers.yml](../../assets/snippets/triggers.yml).
+
+> [!WARNING]
+> **📘 From the GitHub docs:** two trigger gotchas that surprise everyone once:
+>
+> - **`schedule`** runs only on the default branch, no more often than **every 5 minutes**. In public repositories, scheduled workflows are switched off automatically after **60 days** with no repository activity.
+> - **Events caused by the built-in `GITHUB_TOKEN` don't start new runs** (except `workflow_dispatch` and `repository_dispatch`). A workflow that pushes a commit with that token will not trigger your `on: push` workflow. This stops accidental infinite loops.
+>
+> ([Events that trigger workflows](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows))
 
 ## 🌳 Beyond CI/CD: automating the repository itself
 

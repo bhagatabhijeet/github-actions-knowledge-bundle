@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Your First Workflow: Before you start"
-description: "[ ] Your own copy of this repository (Fork it, top right of the repo page)"
+description: "The checklist before the hands-on: your own fork of this repository with Actions enabled."
 resource: /.github/workflows/01-hello-world.yml
 tags: [github-actions, hands-on, hello-world, workflow-dispatch, logs]
 status: stable

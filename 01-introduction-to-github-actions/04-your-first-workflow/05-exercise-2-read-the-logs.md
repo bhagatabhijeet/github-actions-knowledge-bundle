@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Your First Workflow: Exercise 2: Read the logs"
-description: "Click the run, then click the say-hello job. You'll see this:"
+description: "How to open a run, expand each step"s log and find the output your workflow printed."
 resource: /.github/workflows/01-hello-world.yml
 tags: [github-actions, hands-on, hello-world, workflow-dispatch, logs]
 status: stable

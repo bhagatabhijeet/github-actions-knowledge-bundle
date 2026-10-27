@@ -1,7 +1,7 @@
 ---
 type: Reference
 title: "Chapter 1 Cheat Sheet and Quiz: YAML keys"
-description: "YAML keys, part 2 of 6 of Chapter 1 Cheat Sheet and Quiz."
+description: "Quick reference of the workflow YAML keys used in Chapter 1 and what each one does."
 tags: [github-actions, cheat-sheet, quiz, recap]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }

@@ -1,11 +1,11 @@
 ---
 type: Tutorial
 title: "Your First Workflow: Something went wrong?"
-description: "Something went wrong?, part 8 of 8 of Your First Workflow."
+description: "A symptom-to-cause table for the common first-run problems: workflow not listed, invalid YAML, no Run workflow button, and nothing running on push."
 resource: /.github/workflows/01-hello-world.yml
 tags: [github-actions, hands-on, hello-world, workflow-dispatch, logs]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-quickstart
     resource: https://docs.github.com/en/actions/get-started/quickstart
@@ -13,6 +13,9 @@ sources:
   - id: gh-summary
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands
     title: Workflow commands (job summaries)
+  - id: gh-syntax
+    resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
+    title: Workflow syntax for GitHub Actions
 ---
 
 <p align="center">
@@ -23,7 +26,7 @@ sources:
 
 | Symptom | Likely cause |
 |---|---|
-| Workflow isn't listed in the Actions tab | File isn't in `.github/workflows/`, or doesn't end in `.yml` |
+| Workflow isn't listed in the Actions tab | File isn't in `.github/workflows/`, or doesn't end in `.yml` or `.yaml` |
 | "Invalid workflow file" | Indentation. Check for tabs and misaligned keys |
 | No **Run workflow** button | `workflow_dispatch` is missing, or the file isn't on the default branch |
 | Nothing runs on push | You pushed to a branch other than `main` |

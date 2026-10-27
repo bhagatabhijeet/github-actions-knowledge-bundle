@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "The Six Core Concepts: Checkpoint"
-description: "Neither. They start at the same time, in parallel, on separate runners."
+description: "Quick self-check on the six core concepts, including whether two jobs without needs run in order or in parallel."
 tags: [github-actions, concepts, workflow, job, step, action, runner, event]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }

@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Anatomy of a Workflow File: The skeleton"
-description: "Every workflow answers four questions:"
+description: "The four questions every workflow answers (name, when, where, what) and the minimal YAML skeleton that answers them."
 tags: [github-actions, yaml, workflow-syntax, beginner]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }

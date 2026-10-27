@@ -1,11 +1,11 @@
 ---
 type: Tutorial
 title: "Your First Workflow: Exercise 1: Run it with the button"
-description: "Open the Actions tab of your fork"
+description: "Start the Hello, Actions workflow by hand from the Actions tab with the Run workflow button, and why that button needs the file on the default branch."
 resource: /.github/workflows/01-hello-world.yml
 tags: [github-actions, hands-on, hello-world, workflow-dispatch, logs]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-quickstart
     resource: https://docs.github.com/en/actions/get-started/quickstart
@@ -13,6 +13,9 @@ sources:
   - id: gh-summary
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands
     title: Workflow commands (job summaries)
+  - id: gh-events
+    resource: https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows
+    title: Events that trigger workflows
 ---
 
 <p align="center">
@@ -28,6 +31,9 @@ sources:
 5. Click the green **Run workflow** button
 
 A new run appears with a spinning 🟡. Within about twenty seconds it turns ✅.
+
+> [!TIP]
+> **No Run workflow button?** The workflow file must be on your **default branch** (usually `main`). A `workflow_dispatch` workflow that only exists on a feature branch can't be started from the button. Once it's on the default branch, you can pick any branch or tag to run it against. ([Events that trigger workflows](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows))
 
 ---
 

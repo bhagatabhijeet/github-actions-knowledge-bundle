@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "What is GitHub Actions?: An analogy that sticks"
-description: "Think of a restaurant kitchen."
+description: "A restaurant-kitchen analogy that maps orders, recipe cards, cooks, cooking steps and ready-made sauces onto events, workflows, runners, steps and actions."
 tags: [github-actions, introduction, automation, beginner]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }

@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Your First Workflow: The workflow"
-description: "The workflow, part 2 of 8 of Your First Workflow."
+description: "The full Hello, Actions workflow file you will run in this lesson."
 resource: /.github/workflows/01-hello-world.yml
 tags: [github-actions, hands-on, hello-world, workflow-dispatch, logs]
 status: stable

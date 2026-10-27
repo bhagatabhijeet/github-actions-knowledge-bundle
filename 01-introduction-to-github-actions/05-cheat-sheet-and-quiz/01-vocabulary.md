@@ -1,7 +1,7 @@
 ---
 type: Reference
 title: "Chapter 1 Cheat Sheet and Quiz: Vocabulary"
-description: "Vocabulary, part 1 of 6 of Chapter 1 Cheat Sheet and Quiz."
+description: "One-line definitions of every GitHub Actions term introduced in Chapter 1."
 tags: [github-actions, cheat-sheet, quiz, recap]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }

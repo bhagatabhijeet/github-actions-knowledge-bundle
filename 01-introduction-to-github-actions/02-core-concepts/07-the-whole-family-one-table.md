@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "The Six Core Concepts: The whole family, one table"
-description: "The whole family, one table, part 7 of 8 of The Six Core Concepts."
+description: "All six core concepts side by side in one table, with what each one is and where it appears in YAML."
 tags: [github-actions, concepts, workflow, job, step, action, runner, event]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }

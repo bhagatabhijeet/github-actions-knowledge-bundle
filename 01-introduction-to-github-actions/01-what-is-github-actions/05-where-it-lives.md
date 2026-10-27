@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "What is GitHub Actions?: Where it lives"
-description: "There is nothing to install and no server to rent. Two places matter:"
+description: "Where GitHub Actions lives: workflow files in .github/workflows/ and run history in the repository"s Actions tab."
 tags: [github-actions, introduction, automation, beginner]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }

@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "What is GitHub Actions?: Why not just use a script?"
-description: "A fair question. You could run ./deploy.sh yourself. Here is what you'd be giving up:"
+description: "Why a workflow beats running ./deploy.sh by hand: it runs when you forget, on a clean machine, visible to the team, and can block a bad merge."
 tags: [github-actions, introduction, automation, beginner]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }

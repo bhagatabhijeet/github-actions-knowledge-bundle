@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Your First Workflow: Exercise 3: Trigger it with a push"
-description: "Events, not buttons, are the real power. Make any small edit (add a line to a file) and push it to main:"
+description: "Push a small commit to main and watch the push event start the workflow on its own."
 resource: /.github/workflows/01-hello-world.yml
 tags: [github-actions, hands-on, hello-world, workflow-dispatch, logs]
 status: stable

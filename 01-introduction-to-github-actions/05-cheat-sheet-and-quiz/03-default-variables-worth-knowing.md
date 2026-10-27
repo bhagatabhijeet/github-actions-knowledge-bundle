@@ -1,7 +1,7 @@
 ---
 type: Reference
 title: "Chapter 1 Cheat Sheet and Quiz: Default variables worth knowing"
-description: "Default variables worth knowing, part 3 of 6 of Chapter 1 Cheat Sheet and Quiz."
+description: "The default GITHUB_* and RUNNER_* environment variables you will use most often, with example values."
 tags: [github-actions, cheat-sheet, quiz, recap]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }

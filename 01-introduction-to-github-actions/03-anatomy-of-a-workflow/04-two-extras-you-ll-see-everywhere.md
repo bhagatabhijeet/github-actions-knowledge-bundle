@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Anatomy of a Workflow File: Two extras you'll see everywhere"
-description: "Double curly braces ask GitHub to fill in a value before the step runs."
+description: "The ${{ }} expression syntax with the github context, how to avoid script injection, and limiting the GITHUB_TOKEN with permissions."
 tags: [github-actions, yaml, workflow-syntax, beginner]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }

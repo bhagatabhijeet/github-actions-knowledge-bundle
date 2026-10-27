@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Your First Workflow: Exercise 4: Break it on purpose"
-description: "You learn a tool properly when you see it fail. In 01-hello-world.yml, add this as the second step, then push:"
+description: "Add a failing step on purpose to see how a non-zero exit code turns a run red and stops the job."
 resource: /.github/workflows/01-hello-world.yml
 tags: [github-actions, hands-on, hello-world, workflow-dispatch, logs]
 status: stable

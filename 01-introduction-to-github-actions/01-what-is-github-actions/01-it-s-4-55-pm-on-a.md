@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "What is GitHub Actions?: It's 4:55 pm on a Friday"
-description: "You fixed the bug. You're proud of it. All that's left is the ritual:"
+description: "A Friday-afternoon story of a manual release going wrong, showing the problem GitHub Actions exists to solve."
 tags: [github-actions, introduction, automation, beginner]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
