@@ -1,5 +1,5 @@
 # Chapter 4 companion workflow.
-# Walkthrough: 04-github-actions-core-components/10-storing-workflow-data-as-artifacts.md
+# Walkthrough: 04-github-actions-core-components/10-storing-workflow-data-as-artifacts/
 #
 # Three matrix jobs each draw a different cow and upload it under a unique
 # name. A gallery job downloads them all with a pattern, merges them into

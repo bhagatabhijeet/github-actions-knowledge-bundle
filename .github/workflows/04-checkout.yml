@@ -1,5 +1,5 @@
 # Chapter 4 companion workflow.
-# Walkthrough: 04-github-actions-core-components/05-configuring-the-checkout-action.md
+# Walkthrough: 04-github-actions-core-components/05-configuring-the-checkout-action/
 #
 # Two jobs run the same three steps. Only the second checks out the code.
 # The first is allowed to fail so you can see why checkout matters.

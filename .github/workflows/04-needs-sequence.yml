@@ -1,5 +1,5 @@
 # Chapter 4 companion workflow.
-# Walkthrough: 04-github-actions-core-components/09-executing-jobs-in-sequence.md
+# Walkthrough: 04-github-actions-core-components/09-executing-jobs-in-sequence/
 #
 # build -> test -> deploy, run one after another with needs.
 # A report job always runs (unless cancelled) and writes each job's result

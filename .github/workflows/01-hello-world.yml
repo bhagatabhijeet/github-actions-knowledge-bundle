@@ -1,5 +1,5 @@
 # Chapter 1 companion workflow.
-# Walkthrough: 01-introduction-to-github-actions/04-your-first-workflow.md
+# Walkthrough: 01-introduction-to-github-actions/04-your-first-workflow/
 
 name: 01 - Hello, Actions
 

@@ -1,5 +1,5 @@
 # Chapter 4 companion workflow.
-# Walkthrough: 04-github-actions-core-components/11-working-with-variables.md
+# Walkthrough: 04-github-actions-core-components/11-working-with-variables/
 #
 # Shows env at workflow, job and step level, which one wins, default
 # variables, $GITHUB_ENV, and configuration variables (vars) with a fallback.

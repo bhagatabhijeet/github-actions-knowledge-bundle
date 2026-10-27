@@ -1,5 +1,5 @@
 # Chapter 4 companion workflow.
-# Walkthrough: 04-github-actions-core-components/06-multiline-commands-and-third-party-tools.md
+# Walkthrough: 04-github-actions-core-components/06-multiline-commands-and-third-party-tools/
 #
 # Installs a third-party tool (cowsay), uses it in a multi-line step,
 # then checks the result. Shows | (literal) and > (folded) blocks.

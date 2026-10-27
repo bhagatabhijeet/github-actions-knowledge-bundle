@@ -1,5 +1,5 @@
 # Chapter 4 companion workflow.
-# Walkthrough: 04-github-actions-core-components/08-workflows-with-multiple-jobs.md
+# Walkthrough: 04-github-actions-core-components/08-workflows-with-multiple-jobs/
 #
 # Three jobs in order: build -> test -> deploy.
 # Each runs on its own runner, so dragon.txt travels between them as an artifact.

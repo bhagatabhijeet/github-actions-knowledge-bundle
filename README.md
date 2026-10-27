@@ -11,7 +11,7 @@ generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
 </p>
 
 <p align="center">
-  <a href="01-introduction-to-github-actions/01-what-is-github-actions.md"><img src="https://img.shields.io/badge/START%20READING-%E2%96%B6-2ea043?style=for-the-badge" alt="Start reading"></a>
+  <a href="01-introduction-to-github-actions/01-what-is-github-actions/README.md"><img src="https://img.shields.io/badge/START%20READING-%E2%96%B6-2ea043?style=for-the-badge" alt="Start reading"></a>
   <img src="https://img.shields.io/badge/CHAPTERS-4-58a6ff?style=for-the-badge" alt="4 chapters">
   <img src="https://img.shields.io/badge/LESSONS-29-bc8cff?style=for-the-badge" alt="29 lessons">
   <img src="https://img.shields.io/badge/LIVE%20WORKFLOWS-12-f778ba?style=for-the-badge&logo=githubactions&logoColor=white" alt="12 live workflows">
@@ -75,60 +75,60 @@ flowchart LR
 
 ## 📚 Table of contents
 
-<a href="01-introduction-to-github-actions/01-what-is-github-actions.md"><img src="assets/images/chapter-01-banner.svg" alt="Chapter 1: Introduction to GitHub Actions" width="100%"></a>
+<a href="01-introduction-to-github-actions/01-what-is-github-actions/README.md"><img src="assets/images/chapter-01-banner.svg" alt="Chapter 1: Introduction to GitHub Actions" width="100%"></a>
 
 | # | Lesson | You'll be able to... | ⏱️ |
 |:---:|---|---|:---:|
-| 1.1 | 🤖 [**What is GitHub Actions?**](01-introduction-to-github-actions/01-what-is-github-actions.md) | Explain it to a colleague in one sentence | 6 min |
-| 1.2 | 🧩 [**The Six Core Concepts**](01-introduction-to-github-actions/02-core-concepts.md) | Name every moving part: event, workflow, job, step, action, runner | 11 min |
-| 1.3 | 🔬 [**Anatomy of a Workflow File**](01-introduction-to-github-actions/03-anatomy-of-a-workflow.md) | Read any workflow YAML aloud in plain English | 9 min |
-| 1.4 | 🚀 [**Your First Workflow**](01-introduction-to-github-actions/04-your-first-workflow.md) 🛠️ | Run, inspect and deliberately break a live workflow | 15 min |
-| 1.5 | 📋 [**Cheat Sheet & Quiz**](01-introduction-to-github-actions/05-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
+| 1.1 | 🤖 [**What is GitHub Actions?**](01-introduction-to-github-actions/01-what-is-github-actions/README.md) | Explain it to a colleague in one sentence | 6 min |
+| 1.2 | 🧩 [**The Six Core Concepts**](01-introduction-to-github-actions/02-core-concepts/README.md) | Name every moving part: event, workflow, job, step, action, runner | 11 min |
+| 1.3 | 🔬 [**Anatomy of a Workflow File**](01-introduction-to-github-actions/03-anatomy-of-a-workflow/README.md) | Read any workflow YAML aloud in plain English | 9 min |
+| 1.4 | 🚀 [**Your First Workflow**](01-introduction-to-github-actions/04-your-first-workflow/README.md) 🛠️ | Run, inspect and deliberately break a live workflow | 15 min |
+| 1.5 | 📋 [**Cheat Sheet & Quiz**](01-introduction-to-github-actions/05-cheat-sheet-and-quiz/README.md) | Prove it stuck | 5 min |
 
 <br>
 
-<a href="02-basics-of-ci-cd/01-what-is-ci-cd.md"><img src="assets/images/chapter-02-banner.svg" alt="Chapter 2: Basics of CI/CD" width="100%"></a>
+<a href="02-basics-of-ci-cd/01-what-is-ci-cd/README.md"><img src="assets/images/chapter-02-banner.svg" alt="Chapter 2: Basics of CI/CD" width="100%"></a>
 
 | # | Lesson | You'll be able to... | ⏱️ |
 |:---:|---|---|:---:|
-| 2.1 | 🔄 [**What is CI/CD?**](02-basics-of-ci-cd/01-what-is-ci-cd.md) | Explain why small, frequent releases are safer | 7 min |
-| 2.2 | 🧪 [**Continuous Integration**](02-basics-of-ci-cd/02-continuous-integration.md) | Describe what a CI run checks, and the habits behind it | 8 min |
-| 2.3 | 🚚 [**Delivery vs Deployment**](02-basics-of-ci-cd/03-delivery-vs-deployment.md) | Finally tell the two CDs apart | 7 min |
-| 2.4 | 🏭 [**Anatomy of a Pipeline**](02-basics-of-ci-cd/04-anatomy-of-a-pipeline.md) | Map pipeline stages onto jobs, `needs`, matrices and artifacts | 9 min |
-| 2.5 | 🛠️ [**Your First CI Pipeline**](02-basics-of-ci-cd/05-your-first-ci-pipeline.md) 🛠️ | Build a lint → test → package pipeline and watch it catch a bug | 25 min |
-| 2.6 | 📋 [**Cheat Sheet & Quiz**](02-basics-of-ci-cd/06-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
+| 2.1 | 🔄 [**What is CI/CD?**](02-basics-of-ci-cd/01-what-is-ci-cd/README.md) | Explain why small, frequent releases are safer | 7 min |
+| 2.2 | 🧪 [**Continuous Integration**](02-basics-of-ci-cd/02-continuous-integration/README.md) | Describe what a CI run checks, and the habits behind it | 8 min |
+| 2.3 | 🚚 [**Delivery vs Deployment**](02-basics-of-ci-cd/03-delivery-vs-deployment/README.md) | Finally tell the two CDs apart | 7 min |
+| 2.4 | 🏭 [**Anatomy of a Pipeline**](02-basics-of-ci-cd/04-anatomy-of-a-pipeline/README.md) | Map pipeline stages onto jobs, `needs`, matrices and artifacts | 9 min |
+| 2.5 | 🛠️ [**Your First CI Pipeline**](02-basics-of-ci-cd/05-your-first-ci-pipeline/README.md) 🛠️ | Build a lint → test → package pipeline and watch it catch a bug | 25 min |
+| 2.6 | 📋 [**Cheat Sheet & Quiz**](02-basics-of-ci-cd/06-cheat-sheet-and-quiz/README.md) | Prove it stuck | 5 min |
 
 <br>
 
-<a href="03-problem-with-traditional-ci-cd-tools/01-the-problem-statement.md"><img src="assets/images/chapter-03-banner.svg" alt="Chapter 3: The Problem with Traditional CI/CD Tools" width="100%"></a>
+<a href="03-problem-with-traditional-ci-cd-tools/01-the-problem-statement/README.md"><img src="assets/images/chapter-03-banner.svg" alt="Chapter 3: The Problem with Traditional CI/CD Tools" width="100%"></a>
 
 | # | Lesson | You'll be able to... | ⏱️ |
 |:---:|---|---|:---:|
-| 3.1 | 🧯 [**The Problem Statement**](03-problem-with-traditional-ci-cd-tools/01-the-problem-statement.md) | Explain why a good pipeline plan can stall on the tool that runs it | 7 min |
-| 3.2 | 🧊 [**The Hidden Costs**](03-problem-with-traditional-ci-cd-tools/02-hidden-costs-of-self-hosted-ci.md) | Name the six pains: upkeep, snowflake agents, capacity, plugins, glue, silos | 8 min |
-| 3.3 | 🛟 [**How GitHub Actions Answers**](03-problem-with-traditional-ci-cd-tools/03-how-github-actions-answers.md) | Map each pain to an Actions feature, and name the trade-offs | 9 min |
-| 3.4 | 📋 [**Cheat Sheet & Quiz**](03-problem-with-traditional-ci-cd-tools/04-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
+| 3.1 | 🧯 [**The Problem Statement**](03-problem-with-traditional-ci-cd-tools/01-the-problem-statement/README.md) | Explain why a good pipeline plan can stall on the tool that runs it | 7 min |
+| 3.2 | 🧊 [**The Hidden Costs**](03-problem-with-traditional-ci-cd-tools/02-hidden-costs-of-self-hosted-ci/README.md) | Name the six pains: upkeep, snowflake agents, capacity, plugins, glue, silos | 8 min |
+| 3.3 | 🛟 [**How GitHub Actions Answers**](03-problem-with-traditional-ci-cd-tools/03-how-github-actions-answers/README.md) | Map each pain to an Actions feature, and name the trade-offs | 9 min |
+| 3.4 | 📋 [**Cheat Sheet & Quiz**](03-problem-with-traditional-ci-cd-tools/04-cheat-sheet-and-quiz/README.md) | Prove it stuck | 5 min |
 
 <br>
 
-<a href="04-github-actions-core-components/01-the-core-components.md"><img src="assets/images/chapter-04-banner.svg" alt="Chapter 4: GitHub Actions Core Components" width="100%"></a>
+<a href="04-github-actions-core-components/01-the-core-components/README.md"><img src="assets/images/chapter-04-banner.svg" alt="Chapter 4: GitHub Actions Core Components" width="100%"></a>
 
 | # | Lesson | You'll be able to... | ⏱️ |
 |:---:|---|---|:---:|
-| 4.1 | 🧱 [**The Core Components**](04-github-actions-core-components/01-the-core-components.md) | Point at any line of a workflow and name the component | 7 min |
-| 4.2 | 🎬 [**Life of a Workflow Run**](04-github-actions-core-components/02-life-of-a-workflow-run.md) 🛠️ | Follow a run across three operating systems, then read its logs and artifacts | 20 min |
-| 4.3 | 🖥️ [**Hosted vs Self-Hosted Runners**](04-github-actions-core-components/03-github-hosted-vs-self-hosted-runners.md) | Choose the right kind of runner, and say why | 8 min |
-| 4.4 | 🧩 [**What Are Actions?**](04-github-actions-core-components/04-what-are-actions.md) | Read any `uses:` line, pick the right kind of action and pin it safely | 9 min |
-| 4.5 | 📥 [**Configuring the Checkout Action**](04-github-actions-core-components/05-configuring-the-checkout-action.md) 🛠️ | Explain why a runner starts empty and configure checkout for history, branches and other repos | 15 min |
-| 4.6 | 📜 [**Multi-line Commands & Third-Party Tools**](04-github-actions-core-components/06-multiline-commands-and-third-party-tools.md) 🛠️ | Write multi-line run steps and install and run tools that aren't in your repo | 18 min |
-| 4.7 | 🐚 [**Executing Shell Scripts**](04-github-actions-core-components/07-executing-shell-scripts.md) 🛠️ | Move commands into a script, make it run on the runner, and fix the usual errors | 18 min |
-| 4.8 | 🔗 [**Workflows with Multiple Jobs**](04-github-actions-core-components/08-workflows-with-multiple-jobs.md) 🛠️ | Order jobs with `needs` and pass files between them with artifacts | 18 min |
-| 4.9 | ⛓️ [**Jobs in Sequence with `needs`**](04-github-actions-core-components/09-executing-jobs-in-sequence.md) 🛠️ | Design job graphs, control what runs after a failure, and read results and outputs | 16 min |
-| 4.10 | 📦 [**Storing Workflow Data as Artifacts**](04-github-actions-core-components/10-storing-workflow-data-as-artifacts.md) 🛠️ | Keep files after the runner is gone, name them safely in a matrix, and get them back anywhere | 16 min |
-| 4.11 | 🔤 [**Working with Variables**](04-github-actions-core-components/11-working-with-variables.md) 🛠️ ⭐ | Replace hard-coded values with `env` and `vars`, and know which value wins | 32 min |
-| 4.12 | 🔐 [**Repository-Level Secrets**](04-github-actions-core-components/12-working-with-repository-secrets.md) 🛠️ | Move passwords out of YAML, use them safely, and know the limits of masking | 28 min |
-| 4.13 | 🚦 [**Triggering Workflows in Detail**](04-github-actions-core-components/13-triggering-workflows-in-detail.md) 🛠️ | Every way a run can start: events, filters, manual runs with inputs, cron, dispatch and chaining | 26 min |
-| 4.14 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/14-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
+| 4.1 | 🧱 [**The Core Components**](04-github-actions-core-components/01-the-core-components/README.md) | Point at any line of a workflow and name the component | 7 min |
+| 4.2 | 🎬 [**Life of a Workflow Run**](04-github-actions-core-components/02-life-of-a-workflow-run/README.md) 🛠️ | Follow a run across three operating systems, then read its logs and artifacts | 20 min |
+| 4.3 | 🖥️ [**Hosted vs Self-Hosted Runners**](04-github-actions-core-components/03-github-hosted-vs-self-hosted-runners/README.md) | Choose the right kind of runner, and say why | 8 min |
+| 4.4 | 🧩 [**What Are Actions?**](04-github-actions-core-components/04-what-are-actions/README.md) | Read any `uses:` line, pick the right kind of action and pin it safely | 9 min |
+| 4.5 | 📥 [**Configuring the Checkout Action**](04-github-actions-core-components/05-configuring-the-checkout-action/README.md) 🛠️ | Explain why a runner starts empty and configure checkout for history, branches and other repos | 15 min |
+| 4.6 | 📜 [**Multi-line Commands & Third-Party Tools**](04-github-actions-core-components/06-multiline-commands-and-third-party-tools/README.md) 🛠️ | Write multi-line run steps and install and run tools that aren't in your repo | 18 min |
+| 4.7 | 🐚 [**Executing Shell Scripts**](04-github-actions-core-components/07-executing-shell-scripts/README.md) 🛠️ | Move commands into a script, make it run on the runner, and fix the usual errors | 18 min |
+| 4.8 | 🔗 [**Workflows with Multiple Jobs**](04-github-actions-core-components/08-workflows-with-multiple-jobs/README.md) 🛠️ | Order jobs with `needs` and pass files between them with artifacts | 18 min |
+| 4.9 | ⛓️ [**Jobs in Sequence with `needs`**](04-github-actions-core-components/09-executing-jobs-in-sequence/README.md) 🛠️ | Design job graphs, control what runs after a failure, and read results and outputs | 16 min |
+| 4.10 | 📦 [**Storing Workflow Data as Artifacts**](04-github-actions-core-components/10-storing-workflow-data-as-artifacts/README.md) 🛠️ | Keep files after the runner is gone, name them safely in a matrix, and get them back anywhere | 16 min |
+| 4.11 | 🔤 [**Working with Variables**](04-github-actions-core-components/11-working-with-variables/README.md) 🛠️ ⭐ | Replace hard-coded values with `env` and `vars`, and know which value wins | 32 min |
+| 4.12 | 🔐 [**Repository-Level Secrets**](04-github-actions-core-components/12-working-with-repository-secrets/README.md) 🛠️ | Move passwords out of YAML, use them safely, and know the limits of masking | 28 min |
+| 4.13 | 🚦 [**Triggering Workflows in Detail**](04-github-actions-core-components/13-triggering-workflows-in-detail/README.md) 🛠️ | Every way a run can start: events, filters, manual runs with inputs, cron, dispatch and chaining | 26 min |
+| 4.14 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/14-cheat-sheet-and-quiz/README.md) | Prove it stuck | 5 min |
 
 > [!NOTE]
 > 🔜 **This book is still being written.** New chapters land one topic at a time. Watch the repo, or peek at the [change log](log.md).
@@ -139,18 +139,18 @@ These aren't screenshots. They're running right here, and they'll run in your fo
 
 | | Workflow | Chapter | What it demonstrates |
 |:---:|---|:---:|---|
-| 👋 | [`01-hello-world.yml`](.github/workflows/01-hello-world.yml) | [1.4](01-introduction-to-github-actions/04-your-first-workflow.md) | Events, a manual trigger with input, `run` vs `uses`, job summaries |
-| 🧪 | [`02-ci-basics.yml`](.github/workflows/02-ci-basics.yml) | [2.5](02-basics-of-ci-cd/05-your-first-ci-pipeline.md) | Staged jobs with `needs`, a version matrix, caching, artifacts |
-| 🧱 | [`04-core-components.yml`](.github/workflows/04-core-components.yml) | [4.2](04-github-actions-core-components/02-life-of-a-workflow-run.md) | One job on Ubuntu, Windows and macOS via an OS matrix, one artifact per runner |
-| 📥 | [`04-checkout.yml`](.github/workflows/04-checkout.yml) | [4.5](04-github-actions-core-components/05-configuring-the-checkout-action.md) | The same steps with and without `actions/checkout`, side by side |
-| 🐉 | [`04-multiline-commands.yml`](.github/workflows/04-multiline-commands.yml) | [4.6](04-github-actions-core-components/06-multiline-commands-and-third-party-tools.md) | Installs `cowsay`, runs it in a multi-line step and checks the output |
-| 🐚 | [`04-shell-script.yml`](.github/workflows/04-shell-script.yml) | [4.7](04-github-actions-core-components/07-executing-shell-scripts.md) | Checks out the repo and runs [`scripts/ascii-script.sh`](scripts/ascii-script.sh) in one step |
-| 🔗 | [`04-multiple-jobs.yml`](.github/workflows/04-multiple-jobs.yml) | [4.8](04-github-actions-core-components/08-workflows-with-multiple-jobs.md) | Build, test and deploy jobs chained with `needs`, handing `dragon.txt` over as an artifact |
-| ⛓️ | [`04-needs-sequence.yml`](.github/workflows/04-needs-sequence.yml) | [4.9](04-github-actions-core-components/09-executing-jobs-in-sequence.md) | A `needs` chain with job outputs, an `if: !cancelled()` report, and a switch that makes the tests fail |
-| 📦 | [`04-artifacts.yml`](.github/workflows/04-artifacts.yml) | [4.10](04-github-actions-core-components/10-storing-workflow-data-as-artifacts.md) | Three matrix jobs upload uniquely named artifacts; a gallery job downloads them by pattern and re-uploads one |
-| 🔤 | [`04-variables.yml`](.github/workflows/04-variables.yml) | [4.11](04-github-actions-core-components/11-working-with-variables.md) | `env` at three levels, which value wins, default variables, `$GITHUB_ENV` and `vars` with a fallback |
-| 🔐 | [`04-secrets.yml`](.github/workflows/04-secrets.yml) | [4.12](04-github-actions-core-components/12-working-with-repository-secrets.md) | Log masking, `::add-mask::` and an optional Docker Hub login; safe with no secrets set |
-| 🚦 | [`04-triggers.yml`](.github/workflows/04-triggers.yml) | [4.13](04-github-actions-core-components/13-triggering-workflows-in-detail.md) | A filtered push, a weekly schedule, a manual run with typed inputs and a `repository_dispatch`, each printing what started it |
+| 👋 | [`01-hello-world.yml`](.github/workflows/01-hello-world.yml) | [1.4](01-introduction-to-github-actions/04-your-first-workflow/README.md) | Events, a manual trigger with input, `run` vs `uses`, job summaries |
+| 🧪 | [`02-ci-basics.yml`](.github/workflows/02-ci-basics.yml) | [2.5](02-basics-of-ci-cd/05-your-first-ci-pipeline/README.md) | Staged jobs with `needs`, a version matrix, caching, artifacts |
+| 🧱 | [`04-core-components.yml`](.github/workflows/04-core-components.yml) | [4.2](04-github-actions-core-components/02-life-of-a-workflow-run/README.md) | One job on Ubuntu, Windows and macOS via an OS matrix, one artifact per runner |
+| 📥 | [`04-checkout.yml`](.github/workflows/04-checkout.yml) | [4.5](04-github-actions-core-components/05-configuring-the-checkout-action/README.md) | The same steps with and without `actions/checkout`, side by side |
+| 🐉 | [`04-multiline-commands.yml`](.github/workflows/04-multiline-commands.yml) | [4.6](04-github-actions-core-components/06-multiline-commands-and-third-party-tools/README.md) | Installs `cowsay`, runs it in a multi-line step and checks the output |
+| 🐚 | [`04-shell-script.yml`](.github/workflows/04-shell-script.yml) | [4.7](04-github-actions-core-components/07-executing-shell-scripts/README.md) | Checks out the repo and runs [`scripts/ascii-script.sh`](scripts/ascii-script.sh) in one step |
+| 🔗 | [`04-multiple-jobs.yml`](.github/workflows/04-multiple-jobs.yml) | [4.8](04-github-actions-core-components/08-workflows-with-multiple-jobs/README.md) | Build, test and deploy jobs chained with `needs`, handing `dragon.txt` over as an artifact |
+| ⛓️ | [`04-needs-sequence.yml`](.github/workflows/04-needs-sequence.yml) | [4.9](04-github-actions-core-components/09-executing-jobs-in-sequence/README.md) | A `needs` chain with job outputs, an `if: !cancelled()` report, and a switch that makes the tests fail |
+| 📦 | [`04-artifacts.yml`](.github/workflows/04-artifacts.yml) | [4.10](04-github-actions-core-components/10-storing-workflow-data-as-artifacts/README.md) | Three matrix jobs upload uniquely named artifacts; a gallery job downloads them by pattern and re-uploads one |
+| 🔤 | [`04-variables.yml`](.github/workflows/04-variables.yml) | [4.11](04-github-actions-core-components/11-working-with-variables/README.md) | `env` at three levels, which value wins, default variables, `$GITHUB_ENV` and `vars` with a fallback |
+| 🔐 | [`04-secrets.yml`](.github/workflows/04-secrets.yml) | [4.12](04-github-actions-core-components/12-working-with-repository-secrets/README.md) | Log masking, `::add-mask::` and an optional Docker Hub login; safe with no secrets set |
+| 🚦 | [`04-triggers.yml`](.github/workflows/04-triggers.yml) | [4.13](04-github-actions-core-components/13-triggering-workflows-in-detail/README.md) | A filtered push, a weekly schedule, a manual run with typed inputs and a `repository_dispatch`, each printing what started it |
 
 ## 🚀 Get started in 60 seconds
 
@@ -165,11 +165,11 @@ cd github-actions-knowledge-bundle
 ```
 
 <p align="center">
-  <a href="01-introduction-to-github-actions/01-what-is-github-actions.md"><img src="https://img.shields.io/badge/%F0%9F%93%96%20%20Begin%20with%20Lesson%201.1-What%20is%20GitHub%20Actions%3F-2ea043?style=for-the-badge" alt="Begin with Lesson 1.1"></a>
+  <a href="01-introduction-to-github-actions/01-what-is-github-actions/README.md"><img src="https://img.shields.io/badge/%F0%9F%93%96%20%20Begin%20with%20Lesson%201.1-What%20is%20GitHub%20Actions%3F-2ea043?style=for-the-badge" alt="Begin with Lesson 1.1"></a>
 </p>
 
 > [!TIP]
-> **Only have five minutes?** Read [the one-sentence definition](01-introduction-to-github-actions/01-what-is-github-actions.md#-the-one-sentence-definition), then look at [the core concepts picture](01-introduction-to-github-actions/02-core-concepts.md).
+> **Only have five minutes?** Read [the one-sentence definition](01-introduction-to-github-actions/01-what-is-github-actions/02-the-one-sentence-definition.md), then look at [the core concepts picture](01-introduction-to-github-actions/02-core-concepts/README.md).
 
 ## 🧭 What's in the box
 
@@ -182,12 +182,20 @@ cd github-actions-knowledge-bundle
  ┣ 📂 02-basics-of-ci-cd                   Chapter 2 lessons
  ┣ 📂 03-problem-with-traditional-ci-cd-tools   Chapter 3 lessons
  ┣ 📂 04-github-actions-core-components    Chapter 4 lessons
+ ┃  ┣ 📂 13-triggering-workflows-in-detail   one folder per topic
+ ┃  ┃  ┣ 📄 README.md                      overview, map of subtopics, what you learned
+ ┃  ┃  ┣ 📄 01-four-doors-into-a-workflow.md   one file per subtopic
+ ┃  ┃  ┣ 📄 …
+ ┃  ┃  ┗ 📄 index.md                       OKF listing of the subtopics
+ ┃  ┗ 📂 …
  ┣ 📂 assets
  ┃  ┣ 📂 images                            diagrams and banners (SVG)
  ┃  ┗ 📂 snippets                          copy-paste YAML
  ┣ 📂 .github/workflows                    the live sample workflows
  ┗ 📂 sample-app                           a tiny app for the pipelines to build
 ```
+
+Every topic is a folder, and every subtopic is a short page of its own with ⬅️ / ➡️ links, so you can read a topic straight through or jump to the one part you need. Open a topic's `README.md` for its map.
 
 ## 🧬 Built on the Open Knowledge Format
 

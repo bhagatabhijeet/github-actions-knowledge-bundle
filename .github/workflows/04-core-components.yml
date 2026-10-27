@@ -1,5 +1,5 @@
 # Chapter 4 companion workflow.
-# Walkthrough: 04-github-actions-core-components/02-life-of-a-workflow-run.md
+# Walkthrough: 04-github-actions-core-components/02-life-of-a-workflow-run/
 
 name: 04 - Core Components
 
