@@ -33,7 +33,7 @@ So far each `run:` step has held one command. Real steps often need several, and
 |---|---|---|
 | 1 | 🤔 [**One command per step gets noisy**](01-one-command-per-step-gets-noisy.md) | 1 min |
 | 2 | ✍️ [**Two ways to write a multi-line `run:`**](02-two-ways-to-write-a-multi-line.md) | 2 min |
-| 3 | 🐚 [**How the shell runs your lines**](03-how-the-shell-runs-your-lines.md) | 2 min |
+| 3 | 🐚 [**How the shell runs your lines**](03-how-the-shell-runs-your-lines.md) | 3 min |
 | 4 | 📦 [**Executing third-party tools**](04-executing-third-party-tools.md) | 6 min |
 | 5 | 🛠️ [**Try it yourself**](05-try-it-yourself.md) | 1 min |
 | 6 | ✅ [**Checkpoint**](06-checkpoint.md) | 2 min |

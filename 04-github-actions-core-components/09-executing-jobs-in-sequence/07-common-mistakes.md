@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Executing Jobs in Sequence with needs: Common mistakes"
-description: "Common mistakes, part 7 of 9 of Executing Jobs in Sequence with needs."
+description: "The usual needs: mistakes, from typos in job IDs and cycles to reading outputs from indirect dependencies."
 tags: [github-actions, jobs, needs, sequence, if, status-functions, outputs, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

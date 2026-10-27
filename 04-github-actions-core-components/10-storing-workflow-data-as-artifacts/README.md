@@ -39,7 +39,7 @@ A runner is wiped the moment its job ends. Your build output, your test report, 
 | 3 | 🏷️ [**Names are unique and artifacts are immutable**](03-names-are-unique-and-artifacts-are-immutable.md) | 2 min |
 | 4 | 📥 [**Four ways to get an artifact back**](04-four-ways-to-get-an-artifact-back.md) | 1 min |
 | 5 | 📸 [**Keep evidence when things break**](05-keep-evidence-when-things-break.md) | 1 min |
-| 6 | ⏳ [**Retention and storage**](06-retention-and-storage.md) | 1 min |
+| 6 | ⏳ [**Retention and storage**](06-retention-and-storage.md) | 2 min |
 | 7 | 🔐 [**Security: assume anyone can read it**](07-security-assume-anyone-can-read-it.md) | 1 min |
 | 8 | 🔀 [**Artifact, cache, release or package?**](08-artifact-cache-release-or-package.md) | 1 min |
 | 9 | 🛠️ [**Try it yourself**](09-try-it-yourself.md) | 2 min |

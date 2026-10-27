@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Executing Shell Scripts in a Workflow: What each line of the script does"
-description: "A script that hides its failures makes a green run that's lying. Without set -e, a script carries on after errors, and only the last command's exit code decides whether the step passes. Always start with set -euo..."
+description: "The shebang, set -euo pipefail and workflow commands explained line by line, and why a script must set its own strict mode."
 tags: [github-actions, shell, bash, scripts, chmod, line-endings, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
@@ -34,6 +34,9 @@ sources:
 
 > [!IMPORTANT]
 > **A script that hides its failures makes a green run that's lying.** Without `set -e`, a script carries on after errors, and only the *last* command's exit code decides whether the step passes. Always start with `set -euo pipefail`.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** `shell: bash` makes GitHub run your `run:` block as `bash --noprofile --norc -eo pipefail {0}`. Those flags apply to the inline block only. When that block calls `./scripts/ascii-script.sh`, the script starts a fresh bash from its shebang, so it gets none of them. That's why the script needs its own `set -euo pipefail`. ([Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#defaultsrunshell))
 
 ---
 

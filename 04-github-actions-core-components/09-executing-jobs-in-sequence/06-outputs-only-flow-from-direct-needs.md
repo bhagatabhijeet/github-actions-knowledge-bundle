@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Executing Jobs in Sequence with needs: Outputs only flow from direct `needs`"
-description: "A job can read needs.<job>.outputs only for jobs it lists in its own needs:. Being further down the chain isn't enough:"
+description: "A job can read needs.<job>.outputs only for jobs it lists in its own needs:, not for jobs further up the chain."
 tags: [github-actions, jobs, needs, sequence, if, status-functions, outputs, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

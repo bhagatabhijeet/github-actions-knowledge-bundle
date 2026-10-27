@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Executing Jobs in Sequence with needs: Four shapes you can build"
-description: "Four shapes you can build, part 3 of 9 of Executing Jobs in Sequence with needs."
+description: "Chain, fan-out, fan-in and diamond: the four job-graph shapes you can build with needs:."
 tags: [github-actions, jobs, needs, sequence, if, status-functions, outputs, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

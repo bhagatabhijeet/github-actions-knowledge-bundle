@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Storing Workflow Data as Artifacts: Four ways to get an artifact back"
-description: "Downloading from another run:"
+description: "Get an artifact back four ways: in a later job, from the browser, with gh run download, or from another workflow run."
 tags: [github-actions, artifacts, upload-artifact, download-artifact, retention, storage, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

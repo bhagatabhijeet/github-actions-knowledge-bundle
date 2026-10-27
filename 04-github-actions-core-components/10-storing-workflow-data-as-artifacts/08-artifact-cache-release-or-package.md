@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Storing Workflow Data as Artifacts: Artifact, cache, release or package?"
-description: "Artifact, cache, release or package?, part 8 of 10 of Storing Workflow Data as Artifacts."
+description: "Choose between an artifact, the dependency cache, a release asset or a package for the file you want to keep."
 tags: [github-actions, artifacts, upload-artifact, download-artifact, retention, storage, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
@@ -18,6 +18,9 @@ sources:
   - id: gh-run-download
     resource: https://cli.github.com/manual/gh_run_download
     title: gh run download
+  - id: gh-limits
+    resource: https://docs.github.com/en/actions/reference/limits
+    title: Actions limits
 ---
 
 <p align="center">
@@ -32,6 +35,9 @@ sources:
 | **Typical content** | Build output, reports, logs | Dependencies (`node_modules`, pip) | Installers, binaries | npm, Maven, container images |
 | **Lives** | Retention days | 7 days unused, size-capped | Until you delete it | Until you delete it |
 | **Downloaded by** | Jobs, people, CLI | Only `actions/cache` | Anyone who can see the release | Package managers |
+
+> [!NOTE]
+> **📘 From the GitHub docs:** the cache is capped at **10 GB per repository** on every plan, and each repository can upload at most 200 cache entries per minute. That's another reason to keep build output in artifacts and only dependencies in the cache. ([Actions limits](https://docs.github.com/en/actions/reference/limits))
 
 ---
 

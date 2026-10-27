@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Multi-line Commands and Third-Party Tools: One command per step gets noisy"
-description: "That works, but it's four steps, four log sections and four shell start-ups for what is really one idea. YAML lets you put several lines in one run:."
+description: "Why splitting one idea into many single-command steps makes a workflow noisy, and how a multi-line run: fixes it."
 tags: [github-actions, run, multi-line, yaml, shell, apt-get, third-party, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax

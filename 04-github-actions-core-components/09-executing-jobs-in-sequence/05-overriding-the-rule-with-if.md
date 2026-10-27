@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Executing Jobs in Sequence with needs: Overriding the rule with `if:`"
-description: "Sometimes a job should run after a failure: a report, a Slack alert, a cleanup. Add a job-level if: with a status function:"
+description: "Use status functions like failure(), !cancelled() and always() in a job-level if: to run a job after a failure."
 tags: [github-actions, jobs, needs, sequence, if, status-functions, outputs, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
@@ -48,6 +48,9 @@ To react to **one particular** job, read its result from the `needs` context:
 ```
 
 `needs.<job>.result` is one of `success`, `failure`, `cancelled` or `skipped`.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** in a chain of jobs, `failure()` is `true` if **any ancestor** job failed, not only the direct one. So an alert job at the end of `build → test → deploy` still fires when `build` fails. The docs also warn against `always()` for any task that could suffer a critical failure, and recommend `${{ !cancelled() }}` instead. ([Evaluate expressions in workflows and actions](https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#status-check-functions))
 
 ---
 

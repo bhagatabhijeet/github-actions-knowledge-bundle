@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Executing Jobs in Sequence with needs: When a job fails: skipped, not failed"
-description: "Failure spreads down the graph as skipped:"
+description: "When a job fails, every job that needs it, directly or further down, is marked skipped rather than failed."
 tags: [github-actions, jobs, needs, sequence, if, status-functions, outputs, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

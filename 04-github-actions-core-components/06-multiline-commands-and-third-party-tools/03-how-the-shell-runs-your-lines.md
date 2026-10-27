@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Multi-line Commands and Third-Party Tools: How the shell runs your lines"
-description: "All lines of one run: go into one script run by one shell. That has three consequences:"
+description: "All lines of one run: share one shell: state carries between lines but not between steps, and the exact shell flags decide when a step fails."
 tags: [github-actions, run, multi-line, yaml, shell, apt-get, third-party, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
@@ -18,7 +18,7 @@ sources:
 ---
 
 <p align="center">
-  <a href="README.md">📂 <b>Multi-line Commands and Third-Party Tools</b></a> &nbsp;·&nbsp; Lesson 6 · Part 3 of 6 &nbsp;·&nbsp; ⏱️ 2 min
+  <a href="README.md">📂 <b>Multi-line Commands and Third-Party Tools</b></a> &nbsp;·&nbsp; Lesson 6 · Part 3 of 6 &nbsp;·&nbsp; ⏱️ 3 min
 </p>
 
 # 🐚 How the shell runs your lines
@@ -52,6 +52,27 @@ Two more step keys help with multi-line scripts:
     python -m pip install -r requirements.txt
     python -m pytest -q
 ```
+
+To set these once for every `run:` step in a job (or the whole workflow), use `defaults.run`:
+
+```yaml
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: sample-app
+    steps:
+      - uses: actions/checkout@v7
+      - run: python -m pytest -q
+```
+
+> [!NOTE]
+> **📘 From the GitHub docs:** If you don't set `shell:` on Linux or macOS, GitHub runs `bash -e {0}`. If bash isn't on the PATH, it falls back to `sh`. Set `shell: bash` and you get `bash --noprofile --norc -eo pipefail {0}` instead, which also skips `~/.bash_profile` and `~/.bashrc`. ([Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#defaultsrunshell))
+
+> [!TIP]
+> **📘 From the GitHub docs:** the `working-directory` must already exist on the runner when the step starts. A folder that only appears after checkout won't work in a step before `actions/checkout`. ([Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#defaultsrunworking-directory))
 
 ---
 

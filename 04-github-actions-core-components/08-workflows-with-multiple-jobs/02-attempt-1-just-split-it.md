@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Workflows with Multiple Jobs: Attempt 1: just split it"
-description: "Push it, and two of the three jobs fail within seconds:"
+description: "Splitting the workflow into three jobs naively makes two of them fail, because jobs run in parallel on separate runners."
 tags: [github-actions, jobs, needs, parallel, artifacts, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax

@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Storing Workflow Data as Artifacts: Retention and storage"
-description: "Expired artifacts are deleted automatically. You can delete one early from the run's Summary page (🗑️ next to its name) or through the REST API, which frees the storage at once."
+description: "How long artifacts live by default, where to change retention, and how deleting artifacts frees storage."
 tags: [github-actions, artifacts, upload-artifact, download-artifact, retention, storage, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
@@ -18,10 +18,16 @@ sources:
   - id: gh-run-download
     resource: https://cli.github.com/manual/gh_run_download
     title: gh run download
+  - id: gh-remove-artifacts
+    resource: https://docs.github.com/en/actions/how-tos/manage-workflow-runs/remove-workflow-artifacts
+    title: Removing workflow artifacts
+  - id: gh-limits
+    resource: https://docs.github.com/en/actions/reference/limits
+    title: Actions limits
 ---
 
 <p align="center">
-  <a href="README.md">📂 <b>Storing Workflow Data as Artifacts</b></a> &nbsp;·&nbsp; Lesson 10 · Part 6 of 10 &nbsp;·&nbsp; ⏱️ 1 min
+  <a href="README.md">📂 <b>Storing Workflow Data as Artifacts</b></a> &nbsp;·&nbsp; Lesson 10 · Part 6 of 10 &nbsp;·&nbsp; ⏱️ 2 min
 </p>
 
 # ⏳ Retention and storage
@@ -34,6 +40,12 @@ sources:
 
 > [!NOTE]
 > Expired artifacts are deleted automatically. You can delete one early from the run's Summary page (🗑️ next to its name) or through the REST API, which frees the storage at once.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** by default GitHub keeps build logs and artifacts for **90 days**. A deleted artifact **can't be restored**, and deleting it needs write access. Deleting a workflow run also deletes all of its artifacts. ([Removing workflow artifacts](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/remove-workflow-artifacts))
+
+> [!NOTE]
+> **📘 From the GitHub docs:** artifact storage depends on your plan. It starts at 500 MB on GitHub Free and goes up to 50 GB on GitHub Enterprise Cloud. Short `retention-days` on bulky uploads keep you under it. ([Actions limits](https://docs.github.com/en/actions/reference/limits))
 
 ---
 

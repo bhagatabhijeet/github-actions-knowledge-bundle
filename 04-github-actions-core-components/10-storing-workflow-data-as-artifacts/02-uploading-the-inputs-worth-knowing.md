@@ -1,7 +1,7 @@
 ---
 type: Tutorial
 title: "Storing Workflow Data as Artifacts: Uploading: the inputs worth knowing"
-description: "It also returns outputs you can use in later steps:"
+description: "The upload-artifact inputs worth knowing, from path patterns and retention-days to if-no-files-found, and the outputs it returns."
 tags: [github-actions, artifacts, upload-artifact, download-artifact, retention, storage, hands-on]
 status: stable
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }

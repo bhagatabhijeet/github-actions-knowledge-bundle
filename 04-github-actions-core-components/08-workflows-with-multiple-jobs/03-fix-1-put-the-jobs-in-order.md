@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Workflows with Multiple Jobs: Fix 1: put the jobs in order with `needs`"
-description: "needs: takes one job ID or a list:"
+description: "Use needs: with one job ID or a list to make jobs wait for each other."
 tags: [github-actions, jobs, needs, parallel, artifacts, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax

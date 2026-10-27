@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Executing Shell Scripts in a Workflow: Three ways to run a script"
-description: "Scripts can take arguments and read environment variables, just like on your laptop:"
+description: "Run a script by path, through bash, or with arguments and environment variables, and know when each one fits."
 tags: [github-actions, shell, bash, scripts, chmod, line-endings, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax

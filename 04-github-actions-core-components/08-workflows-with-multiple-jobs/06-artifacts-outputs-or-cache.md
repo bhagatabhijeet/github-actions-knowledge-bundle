@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Workflows with Multiple Jobs: Artifacts, outputs or cache?"
-description: "Three ways to pass something from one job to another, or from one run to the next:"
+description: "Choose between artifacts, job outputs and the cache to pass data between jobs or between runs."
 tags: [github-actions, jobs, needs, parallel, artifacts, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax

@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Workflows with Multiple Jobs: Reading the job graph"
-description: "Open the run's Summary and GitHub draws the jobs as a graph:"
+description: "Read the job graph on the run's Summary page to see how needs: connects jobs and where a run failed."
 tags: [github-actions, jobs, needs, parallel, artifacts, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax

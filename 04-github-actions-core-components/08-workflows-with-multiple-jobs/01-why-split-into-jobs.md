@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Workflows with Multiple Jobs: Why split into jobs?"
-description: "Why split into jobs?, part 1 of 8 of Workflows with Multiple Jobs."
+description: "What you gain by splitting one big job into several: clearer logs, parallel speed, partial re-runs, and per-job runners and permissions."
 tags: [github-actions, jobs, needs, parallel, artifacts, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
@@ -18,6 +18,9 @@ sources:
   - id: download-artifact
     resource: https://github.com/actions/download-artifact
     title: actions/download-artifact
+  - id: gh-limits
+    resource: https://docs.github.com/en/actions/reference/limits
+    title: Actions limits
 ---
 
 <p align="center">
@@ -33,6 +36,9 @@ sources:
 | 🔁 Re-running | Start from scratch | **Re-run failed jobs** only |
 | 🖥️ Machines | One runner | Different runners per job (Linux build, Windows test, ...) |
 | 🔐 Control | Same permissions throughout | Per-job `permissions`, `environment`, approvals |
+
+> [!NOTE]
+> **📘 From the GitHub docs:** Each job on a GitHub-hosted runner can run for up to **6 hours**. After that it's stopped and fails. A whole run can last up to 35 days. Parallel jobs are capped too: 20 at once on GitHub Free, 40 on Pro, 60 on Team. ([Actions limits](https://docs.github.com/en/actions/reference/limits))
 
 ---
 

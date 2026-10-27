@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Executing Shell Scripts in a Workflow: Watching the script run"
-description: "Push the change and open the run. Here's a run whose commit message was \"added permissions\", the commit that set the executable bit, caught while the script is still running:"
+description: "Push the change and follow the script's output live in the run log, with grouped sections for the noisy parts."
 tags: [github-actions, shell, bash, scripts, chmod, line-endings, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
