@@ -4,7 +4,7 @@ title: "GitHub-Hosted vs Self-Hosted Runners: Two myths"
 description: "You can. A step can install whatever it needs, and on Linux you even have passwordless sudo:"
 tags: [github-actions, runners, github-hosted, self-hosted, comparison]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-hosted-runners
     resource: https://docs.github.com/en/actions/concepts/runners/github-hosted-runners
@@ -21,6 +21,9 @@ sources:
   - id: gh-billing
     resource: https://docs.github.com/en/billing/concepts/product-billing/github-actions
     title: GitHub Actions billing
+  - id: gh-hosted-ref
+    resource: https://docs.github.com/en/actions/reference/runners/github-hosted-runners
+    title: GitHub-hosted runners reference
 ---
 
 <p align="center">
@@ -52,6 +55,9 @@ What you can't do is make it **stick**. The machine is destroyed after the job, 
 You still pay for the machine, its electricity or cloud bill, and the time someone spends looking after it. It's the same iceberg you met in [Chapter 3](../../03-problem-with-traditional-ci-cd-tools/02-hidden-costs-of-self-hosted-ci/08-the-iceberg.md), on a smaller scale.
 
 </details>
+
+> [!NOTE]
+> **📘 From the GitHub docs:** Linux and macOS runners use passwordless `sudo`. Windows runners run as administrator with User Account Control (UAC) turned off. So installing extra software works on all three. ([GitHub-hosted runners reference](https://docs.github.com/en/actions/reference/runners/github-hosted-runners))
 
 ---
 

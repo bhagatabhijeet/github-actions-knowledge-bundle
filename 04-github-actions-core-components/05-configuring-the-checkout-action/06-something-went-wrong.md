@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Configuring the Checkout Action: Something went wrong?"
-description: "Something went wrong?, part 6 of 7 of Configuring the Checkout Action."
+description: "Five common checkout failures - missing files, no tags, repository not found, vanished files, pushes that trigger nothing - and how to fix each."
 tags: [github-actions, actions, checkout, hands-on, fetch-depth, sparse-checkout]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: checkout-repo
     resource: https://github.com/actions/checkout

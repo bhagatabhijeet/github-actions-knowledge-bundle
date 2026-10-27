@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "The Core Components: They nest like boxes"
-description: "They nest like boxes, part 2 of 8 of The Core Components."
+description: "Event, workflow, job, step and runner drawn as nested boxes, so you can see what contains what."
 tags: [github-actions, core-components, workflow, job, step, runner, matrix]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-understand
     resource: https://docs.github.com/en/actions/get-started/understand-github-actions

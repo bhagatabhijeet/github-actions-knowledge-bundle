@@ -38,11 +38,11 @@ Every job needs a machine. So far GitHub has supplied it. You can also supply yo
 | # | Subtopic | Time |
 |---|---|---|
 | 1 | 🎯 [**The difference in one picture**](01-the-difference-in-one-picture.md) | 1 min |
-| 2 | ☁️ [**GitHub-hosted runners**](02-github-hosted-runners.md) | 3 min |
+| 2 | ☁️ [**GitHub-hosted runners**](02-github-hosted-runners.md) | 4 min |
 | 3 | 🏢 [**Self-hosted runners**](03-self-hosted-runners.md) | 1 min |
 | 4 | ⚖️ [**Side by side**](04-side-by-side.md) | 1 min |
 | 5 | 🚫 [**Two myths**](05-two-myths.md) | 2 min |
-| 6 | 🛡️ [**One security rule**](06-one-security-rule.md) | 1 min |
+| 6 | 🛡️ [**One security rule**](06-one-security-rule.md) | 2 min |
 | 7 | 🧭 [**Which should you choose?**](07-which-should-you-choose.md) | 2 min |
 | 8 | ✅ [**Checkpoint**](08-checkpoint.md) | 2 min |
 

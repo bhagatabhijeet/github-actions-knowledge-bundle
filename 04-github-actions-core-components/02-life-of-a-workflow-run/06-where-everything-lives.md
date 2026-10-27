@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Life of a Workflow Run: Where everything lives"
-description: "Where everything lives, part 6 of 7 of Life of a Workflow Run."
+description: "Where to find runs, jobs, step logs, artifacts and the re-run button in the Actions tab."
 tags: [github-actions, workflow-run, matrix, logs, artifacts, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax

@@ -4,7 +4,7 @@ title: "GitHub-Hosted vs Self-Hosted Runners: GitHub-hosted runners"
 description: "GitHub owns the machine, starts it for your job and throws it away afterwards."
 tags: [github-actions, runners, github-hosted, self-hosted, comparison]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-hosted-runners
     resource: https://docs.github.com/en/actions/concepts/runners/github-hosted-runners
@@ -21,10 +21,13 @@ sources:
   - id: gh-billing
     resource: https://docs.github.com/en/billing/concepts/product-billing/github-actions
     title: GitHub Actions billing
+  - id: gh-hosted-ref
+    resource: https://docs.github.com/en/actions/reference/runners/github-hosted-runners
+    title: GitHub-hosted runners reference
 ---
 
 <p align="center">
-  <a href="README.md">📂 <b>GitHub-Hosted vs Self-Hosted Runners</b></a> &nbsp;·&nbsp; Lesson 3 · Part 2 of 8 &nbsp;·&nbsp; ⏱️ 3 min
+  <a href="README.md">📂 <b>GitHub-Hosted vs Self-Hosted Runners</b></a> &nbsp;·&nbsp; Lesson 3 · Part 2 of 8 &nbsp;·&nbsp; ⏱️ 4 min
 </p>
 
 # ☁️ GitHub-hosted runners
@@ -57,6 +60,19 @@ All three major operating systems work **out of the box**. Pick one with a singl
 
 > [!NOTE]
 > GitHub runs its Linux and Windows runners as virtual machines in Microsoft Azure. You never see or manage that infrastructure. You only see the label you asked for.
+
+## 📏 How big is the machine?
+
+The standard runners are modest. Public repositories get bigger ones for free:
+
+| Runner | Public repo | Private repo |
+|---|---|---|
+| 🐧 Ubuntu / 🪟 Windows (x64 or arm64) | 4 CPU · 16 GB RAM · 14 GB SSD | 2 CPU · 8 GB RAM · 14 GB SSD |
+| 🍎 macOS (Intel) | 4 CPU · 14 GB RAM · 14 GB SSD | 4 CPU · 14 GB RAM · 14 GB SSD |
+| 🍎 macOS (arm64, M1) | 3 CPU · 7 GB RAM · 14 GB SSD | 3 CPU · 7 GB RAM · 14 GB SSD |
+
+> [!NOTE]
+> **📘 From the GitHub docs:** 14 GB of disk fills up fast with Docker images or big builds. If a job dies with "no space left on device", that's the limit you hit. ([GitHub-hosted runners reference](https://docs.github.com/en/actions/reference/runners/github-hosted-runners))
 
 ---
 

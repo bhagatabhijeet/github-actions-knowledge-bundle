@@ -4,7 +4,7 @@ title: "The Core Components: One job, three machines"
 description: "Look again at the picture. The job doesn't name one operating system. It names a matrix of three:"
 tags: [github-actions, core-components, workflow, job, step, runner, matrix]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-understand
     resource: https://docs.github.com/en/actions/get-started/understand-github-actions
@@ -15,6 +15,9 @@ sources:
   - id: gh-hosted-runners
     resource: https://docs.github.com/en/actions/concepts/runners/github-hosted-runners
     title: GitHub-hosted runners
+  - id: gh-limits
+    resource: https://docs.github.com/en/actions/reference/limits
+    title: Actions limits
 ---
 
 <p align="center">
@@ -50,6 +53,9 @@ You wrote the job once. GitHub provisions **three virtual machines** and runs th
 
 > [!TIP]
 > This is Abhijeet's "several versions without conflicts" problem from Chapter 3, solved in four lines. Swap `os` for `node-version` and the same idea tests three Node.js releases.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** One matrix can generate at most **256 jobs** per workflow run. Three operating systems times three Node.js versions is only 9, so you have plenty of room. ([Actions limits](https://docs.github.com/en/actions/reference/limits))
 
 ---
 

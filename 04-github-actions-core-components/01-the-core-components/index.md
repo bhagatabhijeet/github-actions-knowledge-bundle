@@ -2,7 +2,7 @@
 
 * [Overview](README.md) - Workflow, job, step and runner seen inside one real workflow file - what each part is, how they nest, and how a small matrix turns one job into three machines.
 * [Four components, one picture](01-four-components-one-picture.md) - Four components do the work. An event sets them off.
-* [They nest like boxes](02-they-nest-like-boxes.md) - They nest like boxes
+* [They nest like boxes](02-they-nest-like-boxes.md) - Event, workflow, job, step and runner drawn as nested boxes, so you can see what contains what.
 * [Workflow: the process](03-workflow-the-process.md) - A workflow is an automated process that carries out one or more jobs. It lives in a YAML file inside .github/workflows/.
 * [Job: work for one machine](04-job-work-for-one-machine.md) - Inside a workflow you define one or more jobs. A job is a list of steps that all run on the same runner.
 * [Step: one task](05-step-one-task.md) - Steps are the individual tasks inside a job. They run one after another, top to bottom, on the same machine, so each step can use what the previous one left behind.

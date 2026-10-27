@@ -4,7 +4,7 @@ title: "GitHub-Hosted vs Self-Hosted Runners: Self-hosted runners"
 description: "You install GitHub's small runner application on a machine you control: a server, a VM, a cloud instance, even a laptop. It connects to GitHub and waits for jobs."
 tags: [github-actions, runners, github-hosted, self-hosted, comparison]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-hosted-runners
     resource: https://docs.github.com/en/actions/concepts/runners/github-hosted-runners
@@ -21,6 +21,9 @@ sources:
   - id: gh-billing
     resource: https://docs.github.com/en/billing/concepts/product-billing/github-actions
     title: GitHub Actions billing
+  - id: gh-limits
+    resource: https://docs.github.com/en/actions/reference/limits
+    title: Actions limits
 ---
 
 <p align="center">
@@ -40,6 +43,9 @@ You install GitHub's small runner application on a machine you control: a server
 | 🧹 | **All the upkeep** | Patching, cleaning, monitoring and scaling are yours |
 
 That last pair is two sides of one coin. A machine that keeps its state is faster to warm up, and it is also how builds start to depend on leftovers.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** Self-hosted runners get looser limits. A job can run for up to **5 days** (hosted: 6 hours). But if no runner picks a job up within **24 hours**, GitHub cancels it. Keep at least one machine online. ([Actions limits](https://docs.github.com/en/actions/reference/limits))
 
 ---
 

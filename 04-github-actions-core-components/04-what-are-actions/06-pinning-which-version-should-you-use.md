@@ -4,7 +4,7 @@ title: "What Are Actions?: Pinning: which version should you use?"
 description: "An action is someone else's code running with your repository's token and secrets. The version you pin decides how much you trust them."
 tags: [github-actions, actions, uses, marketplace, composite, docker, javascript, security]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-about-actions
     resource: https://docs.github.com/en/actions/concepts/workflows-and-actions/custom-actions
@@ -43,6 +43,9 @@ An action is **someone else's code running with your repository's token and secr
 > ```
 >
 > Then let **Dependabot** propose updates. Tags can be moved to point at new code; a SHA cannot. For GitHub's own `actions/*`, a major tag is a common, reasonable trade-off.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** Before you pin a SHA, check it comes from the action's **own** repository, not a fork. A commit from a fork can look identical in your workflow file but contain different code. ([Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use))
 
 ---
 

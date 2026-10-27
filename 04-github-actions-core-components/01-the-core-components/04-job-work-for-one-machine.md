@@ -4,7 +4,7 @@ title: "The Core Components: Job: work for one machine"
 description: "Inside a workflow you define one or more jobs. A job is a list of steps that all run on the same runner."
 tags: [github-actions, core-components, workflow, job, step, runner, matrix]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-understand
     resource: https://docs.github.com/en/actions/get-started/understand-github-actions
@@ -15,6 +15,9 @@ sources:
   - id: gh-hosted-runners
     resource: https://docs.github.com/en/actions/concepts/runners/github-hosted-runners
     title: GitHub-hosted runners
+  - id: gh-limits
+    resource: https://docs.github.com/en/actions/reference/limits
+    title: Actions limits
 ---
 
 <p align="center">
@@ -35,6 +38,9 @@ jobs:
 
 > [!IMPORTANT]
 > **Jobs run in parallel unless you say otherwise**, and each one starts on its own clean machine. Nothing is shared between jobs by default.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** A job on a GitHub-hosted runner can run for up to **6 hours**. Past that, GitHub stops it. A whole workflow run, including waiting and re-runs, is capped at **35 days**. ([Actions limits](https://docs.github.com/en/actions/reference/limits))
 
 ---
 

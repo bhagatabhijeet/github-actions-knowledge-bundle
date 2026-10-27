@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Life of a Workflow Run: The whole run in one picture"
-description: "The whole run in one picture, part 1 of 7 of Life of a Workflow Run."
+description: "A single timeline of one push: three jobs start in parallel on three operating systems, and the run passes only when all three pass."
 tags: [github-actions, workflow-run, matrix, logs, artifacts, hands-on]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-workflow-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax

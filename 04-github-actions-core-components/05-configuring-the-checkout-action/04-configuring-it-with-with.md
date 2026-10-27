@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Configuring the Checkout Action: Configuring it with `with:`"
-description: "Checkout takes inputs. These are the ones you'll actually use:"
+description: "The checkout inputs you'll actually use - fetch-depth, ref, path, repository, token, submodules, sparse-checkout, persist-credentials - with copy-ready recipes."
 tags: [github-actions, actions, checkout, hands-on, fetch-depth, sparse-checkout]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-25T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: checkout-repo
     resource: https://github.com/actions/checkout
@@ -77,6 +77,9 @@ Checkout takes inputs. These are the ones you'll actually use:
 
 > [!WARNING]
 > **Only check out what you trust.** With `pull_request_target`, checking out the pull request's code (`ref: ${{ github.event.pull_request.head.sha }}`) runs a stranger's code with your secrets. Use plain `pull_request` for running tests on contributions.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** By default checkout fetches **a single commit**. `fetch-depth: 0` fetches all history **for all branches and tags**. With `persist-credentials` on (the default), the token is saved on the runner for later git commands and removed during post-job cleanup. ([actions/checkout README](https://github.com/actions/checkout))
 
 ---
 
