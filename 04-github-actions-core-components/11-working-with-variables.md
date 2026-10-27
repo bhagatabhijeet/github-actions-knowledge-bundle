@@ -21,7 +21,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 11 of 13</b> &nbsp;·&nbsp; ⏱️ 32 min &nbsp;·&nbsp; 🛠️ Hands-on &nbsp;·&nbsp; ⭐ Fundamental
+  <b>Lesson 11 of 14</b> &nbsp;·&nbsp; ⏱️ 32 min &nbsp;·&nbsp; 🛠️ Hands-on &nbsp;·&nbsp; ⭐ Fundamental
 </p>
 
 # 🔤 Working with Variables

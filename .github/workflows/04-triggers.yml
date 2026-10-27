@@ -1,0 +1,81 @@
+# Chapter 4 companion workflow.
+# Walkthrough: 04-github-actions-core-components/13-triggering-workflows-in-detail/
+#
+# Four ways in: a filtered push, a weekly schedule, a manual run with typed
+# inputs, and an outside call through repository_dispatch.
+# Nothing is deployed. The job only prints what started it.
+
+name: 04 - Triggers
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/04-triggers.yml   # only when this file changes
+
+  schedule:
+    - cron: '17 6 * * 1'   # 06:17 UTC every Monday (off the busy top of the hour)
+
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Where to pretend to deploy
+        type: choice
+        options: [staging, production]
+        default: staging
+      version:
+        description: Version to deploy, for example 1.4.2
+        type: string
+        required: true
+        default: 0.0.1
+      dry-run:
+        description: Only print what would happen
+        type: boolean
+        default: true
+      replicas:
+        description: How many copies to run
+        type: number
+        default: 2
+
+  repository_dispatch:
+    types: [deploy-request]   # gh api repos/OWNER/REPO/dispatches -f event_type=deploy-request
+
+permissions:
+  contents: read
+
+jobs:
+  who-called:
+    runs-on: ubuntu-latest
+    steps:
+      - name: What started this run?
+        run: |
+          echo "Event:      ${{ github.event_name }}"
+          echo "Ref:        $GITHUB_REF"
+          echo "Commit:     $GITHUB_SHA"
+          echo "Started by: ${{ github.actor }}"
+
+      - name: Manual run - read the inputs
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          ENVIRONMENT: ${{ inputs.environment }}
+          VERSION: ${{ inputs.version }}
+          REPLICAS: ${{ inputs.replicas }}
+        run: |
+          echo "Would deploy $VERSION to $ENVIRONMENT with $REPLICAS replicas"
+
+      - name: Manual run - boolean input stays a boolean
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.dry-run }}
+        run: echo "dry-run is on, so nothing else happens"
+
+      - name: Outside call - read client_payload
+        if: ${{ github.event_name == 'repository_dispatch' }}
+        env:
+          ACTION: ${{ github.event.action }}
+          PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+        run: |
+          echo "event_type: $ACTION"
+          echo "payload:    $PAYLOAD"
+
+      - name: Scheduled run
+        if: ${{ github.event_name == 'schedule' }}
+        run: echo "Weekly check. Cron line was '${{ github.event.schedule }}'"

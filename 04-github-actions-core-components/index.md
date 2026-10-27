@@ -12,10 +12,14 @@
 * [Storing Workflow Data as Artifacts (Hands-On)](10-storing-workflow-data-as-artifacts.md) - Keep files after the runner is gone - what artifacts are, every upload-artifact input worth knowing, unique names and immutability, downloading by pattern, from the browser, the CLI or another run, retention and storage, and when to use cache, releases or packages instead.
 * [Working with Variables (Hands-On)](11-working-with-variables.md) - Stop hard-coding values - env at workflow, job and step level and which one wins, $VAR versus ${{ env.VAR }}, default GITHUB_ variables, setting values at runtime with $GITHUB_ENV, and configuration variables stored in Settings with the vars context.
 * [Working with Repository-Level Secrets (Hands-On)](12-working-with-repository-secrets.md) - Get passwords and tokens out of your workflow files - what a secret is and how GitHub protects it, creating repository secrets in Settings or with gh, using them safely in run steps and actions, log masking and its limits, forks, GITHUB_TOKEN, and what to do when a secret leaks.
-* [Chapter 4 Cheat Sheet and Quiz](13-cheat-sheet-and-quiz.md) - The core components on one page - workflow, job, step, runner, how a run unfolds, hosted versus self-hosted - followed by an eight-question self-check.
+* [Triggering Workflows in Detail (Hands-On)](13-triggering-workflows-in-detail.md) - Everything that can start a workflow - repository events and activity types, branch, tag and path filters, manual runs with workflow_dispatch and typed inputs, cron schedules, repository_dispatch, workflow_run and workflow_call, which commit a run uses, and the GITHUB_TOKEN loop guard.
+* [Chapter 4 Cheat Sheet and Quiz](14-cheat-sheet-and-quiz.md) - The core components on one page - workflow, job, step, runner, how a run unfolds, hosted versus self-hosted - followed by an eight-question self-check.
 
 # Companion Files
 
+* [04-triggers.yml](../.github/workflows/04-triggers.yml) - Live workflow: a filtered push, a weekly schedule, a manual run with typed inputs and a repository_dispatch, each printing what started it.
+* [trigger-doors.svg](../assets/images/trigger-doors.svg) - The four ways a run can start, and what GitHub does when an event fires.
+* [workflow-dispatch-form.svg](../assets/images/workflow-dispatch-form.svg) - workflow_dispatch inputs in YAML and the Run workflow form GitHub draws from them.
 * [04-core-components.yml](../.github/workflows/04-core-components.yml) - The live workflow used in the hands-on lesson: one job, three operating systems, one artifact each.
 * [sample-app](../sample-app/) - The tiny Python app the workflow tests.
 * [workflow-yaml-annotated.svg](../assets/images/workflow-yaml-annotated.svg) - A workflow file with every component labelled.

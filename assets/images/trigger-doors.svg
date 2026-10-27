@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-label="Four ways into a workflow. Repository events such as push, pull_request and issues, narrowed by activity types and filters. Schedules written as cron in UTC on the default branch, at most every 5 minutes. Manual runs with workflow_dispatch and up to 25 inputs, from the Run workflow button, the CLI or the API. Other systems and workflows through repository_dispatch, workflow_run and workflow_call. Below: how GitHub picks the workflows to run. The event carries a commit SHA and a ref, GitHub reads .github/workflows at that commit, keeps every workflow whose on block matches, and starts one run per match.">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#e3b341"/></marker>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1200" height="720" rx="20" fill="#0d1117"/>
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="52" font-size="28" font-weight="800" fill="#e6edf3">Four doors into a workflow</text>
+    <text x="600" y="84" font-size="16" fill="#8b949e">Everything a workflow reacts to goes under on:, and every trigger comes through one of these four doors</text>
+
+    <g stroke-width="2">
+      <rect x="30"  y="112" width="270" height="330" rx="20" fill="#161b22" stroke="#58a6ff"/>
+      <rect x="320" y="112" width="270" height="330" rx="20" fill="#161b22" stroke="#f778ba"/>
+      <rect x="610" y="112" width="270" height="330" rx="20" fill="#161b22" stroke="#3fb950"/>
+      <rect x="900" y="112" width="270" height="330" rx="20" fill="#161b22" stroke="#d2a8ff"/>
+    </g>
+    <circle cx="745" cy="160" r="30" fill="#3fb950" opacity="0.3" filter="url(#glow)"/>
+    <g font-size="34"><text x="165" y="170">🔔</text><text x="455" y="170">⏰</text><text x="745" y="170">🖱️</text><text x="1035" y="170">🔗</text></g>
+    <g font-size="12" font-weight="700" fill="#8b949e" letter-spacing="1"><text x="165" y="196">DOOR 1</text><text x="455" y="196">DOOR 2</text><text x="745" y="196">DOOR 3</text><text x="1035" y="196">DOOR 4</text></g>
+    <g font-size="20" font-weight="800">
+      <text x="165" y="224" fill="#79c0ff">Repository events</text>
+      <text x="455" y="224" fill="#ff9bce">On a schedule</text>
+      <text x="745" y="224" fill="#7ee787">By hand</text>
+      <text x="1035" y="224" fill="#d2a8ff">From elsewhere</text>
+    </g>
+
+    <g font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="start">
+      <rect x="48" y="242" width="234" height="112" rx="10" fill="#010409"/>
+      <text x="62" y="266" fill="#e3b341">on:</text>
+      <text x="62" y="286" fill="#c9d1d9">  push:</text>
+      <text x="62" y="306" fill="#c9d1d9">    branches: [main]</text>
+      <text x="62" y="326" fill="#c9d1d9">  pull_request:</text>
+      <text x="62" y="346" fill="#c9d1d9">    types: [opened]</text>
+
+      <rect x="338" y="242" width="234" height="112" rx="10" fill="#010409"/>
+      <text x="352" y="266" fill="#e3b341">on:</text>
+      <text x="352" y="286" fill="#c9d1d9">  schedule:</text>
+      <text x="352" y="306" fill="#c9d1d9">    - cron: '30 5 * * 1-5'</text>
+      <text x="352" y="334" fill="#8b949e"># 05:30 UTC, Mon–Fri</text>
+
+      <rect x="628" y="242" width="234" height="112" rx="10" fill="#010409"/>
+      <text x="642" y="266" fill="#e3b341">on:</text>
+      <text x="642" y="286" fill="#c9d1d9">  workflow_dispatch:</text>
+      <text x="642" y="306" fill="#c9d1d9">    inputs:</text>
+      <text x="642" y="326" fill="#c9d1d9">      environment: …</text>
+
+      <rect x="918" y="242" width="234" height="112" rx="10" fill="#010409"/>
+      <text x="932" y="266" fill="#e3b341">on:</text>
+      <text x="932" y="286" fill="#c9d1d9">  repository_dispatch:</text>
+      <text x="932" y="306" fill="#c9d1d9">  workflow_run:</text>
+      <text x="932" y="326" fill="#c9d1d9">  workflow_call:</text>
+    </g>
+
+    <g font-size="13" fill="#8b949e">
+      <text x="165" y="384">push, pull_request, issues,</text>
+      <text x="165" y="402">release… ~35 events</text>
+      <text x="165" y="426" fill="#79c0ff">narrow with types + filters</text>
+
+      <text x="455" y="384">cron, in UTC by default,</text>
+      <text x="455" y="402">default branch only</text>
+      <text x="455" y="426" fill="#ff9bce">every 5 min at most, may run late</text>
+
+      <text x="745" y="384">Run workflow button,</text>
+      <text x="745" y="402">gh workflow run, or the API</text>
+      <text x="745" y="426" fill="#7ee787">up to 25 typed inputs</text>
+
+      <text x="1035" y="384">an outside system, another</text>
+      <text x="1035" y="402">workflow finishing, or a caller</text>
+      <text x="1035" y="426" fill="#d2a8ff">API · chain · reuse</text>
+    </g>
+
+    <!-- how a run is chosen -->
+    <rect x="30" y="472" width="1140" height="220" rx="20" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+    <text x="600" y="508" font-size="19" font-weight="800" fill="#e6edf3">What happens when an event fires</text>
+    <g stroke-width="2">
+      <rect x="60"  y="532" width="240" height="120" rx="14" fill="#0d1117" stroke="#58a6ff"/>
+      <rect x="340" y="532" width="240" height="120" rx="14" fill="#0d1117" stroke="#e3b341"/>
+      <rect x="620" y="532" width="240" height="120" rx="14" fill="#0d1117" stroke="#d2a8ff"/>
+      <rect x="900" y="532" width="240" height="120" rx="14" fill="#0d1117" stroke="#3fb950"/>
+    </g>
+    <g fill="none" stroke="#e3b341" stroke-width="3" marker-end="url(#a)">
+      <path d="M302 592 H334"/><path d="M582 592 H614"/><path d="M862 592 H894"/>
+    </g>
+    <g font-size="16" font-weight="800" fill="#e6edf3">
+      <text x="180" y="564">1 · Event fires</text><text x="460" y="564">2 · Read the files</text><text x="740" y="564">3 · Match on:</text><text x="1020" y="564">4 · One run each</text>
+    </g>
+    <g font-size="13" fill="#8b949e">
+      <text x="180" y="592">carries a commit</text><text x="180" y="612" font-family="ui-monospace, Menlo, monospace" fill="#79c0ff">GITHUB_SHA</text><text x="180" y="632" font-family="ui-monospace, Menlo, monospace" fill="#79c0ff">+ GITHUB_REF</text>
+      <text x="460" y="592" font-family="ui-monospace, Menlo, monospace" fill="#e3b341">.github/workflows/</text><text x="460" y="612">as it is at that commit,</text><text x="460" y="632">not as it is on main</text>
+      <text x="740" y="592">event, activity type,</text><text x="740" y="612">branch, tag and path</text><text x="740" y="632">filters must all pass</text>
+      <text x="1020" y="592">every matching file</text><text x="1020" y="612">starts its own run,</text><text x="1020" y="632">in parallel</text>
+    </g>
+  </g>
+</svg>

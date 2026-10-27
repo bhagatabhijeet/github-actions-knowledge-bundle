@@ -24,7 +24,7 @@ sources:
 ---
 
 <p align="center">
-  <b>Lesson 12 of 13</b> &nbsp;·&nbsp; ⏱️ 28 min &nbsp;·&nbsp; 🛠️ Hands-on &nbsp;·&nbsp; 🔐 Security essential
+  <b>Lesson 12 of 14</b> &nbsp;·&nbsp; ⏱️ 28 min &nbsp;·&nbsp; 🛠️ Hands-on &nbsp;·&nbsp; 🔐 Security essential
 </p>
 
 # 🔐 Working with Repository-Level Secrets
@@ -391,5 +391,5 @@ No. It's still in the Git history and in every clone and fork. Rotate the passwo
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="index.md">📚 Chapter 4</a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="13-cheat-sheet-and-quiz.md"><b>Next: Cheat Sheet & Quiz ➡️</b></a>
+  <a href="13-triggering-workflows-in-detail.md"><b>Next: Triggering Workflows in Detail ➡️</b></a>
 </p>

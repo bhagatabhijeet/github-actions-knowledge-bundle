@@ -13,8 +13,8 @@ generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
 <p align="center">
   <a href="01-introduction-to-github-actions/01-what-is-github-actions.md"><img src="https://img.shields.io/badge/START%20READING-%E2%96%B6-2ea043?style=for-the-badge" alt="Start reading"></a>
   <img src="https://img.shields.io/badge/CHAPTERS-4-58a6ff?style=for-the-badge" alt="4 chapters">
-  <img src="https://img.shields.io/badge/LESSONS-28-bc8cff?style=for-the-badge" alt="28 lessons">
-  <img src="https://img.shields.io/badge/LIVE%20WORKFLOWS-11-f778ba?style=for-the-badge&logo=githubactions&logoColor=white" alt="11 live workflows">
+  <img src="https://img.shields.io/badge/LESSONS-29-bc8cff?style=for-the-badge" alt="29 lessons">
+  <img src="https://img.shields.io/badge/LIVE%20WORKFLOWS-12-f778ba?style=for-the-badge&logo=githubactions&logoColor=white" alt="12 live workflows">
   <img src="https://img.shields.io/badge/OKF-v0.2-ffa657?style=for-the-badge" alt="OKF v0.2">
   <img src="https://img.shields.io/badge/LICENSE-CC0-e3b341?style=for-the-badge" alt="CC0 license">
 </p>
@@ -127,7 +127,8 @@ flowchart LR
 | 4.10 | 📦 [**Storing Workflow Data as Artifacts**](04-github-actions-core-components/10-storing-workflow-data-as-artifacts.md) 🛠️ | Keep files after the runner is gone, name them safely in a matrix, and get them back anywhere | 16 min |
 | 4.11 | 🔤 [**Working with Variables**](04-github-actions-core-components/11-working-with-variables.md) 🛠️ ⭐ | Replace hard-coded values with `env` and `vars`, and know which value wins | 32 min |
 | 4.12 | 🔐 [**Repository-Level Secrets**](04-github-actions-core-components/12-working-with-repository-secrets.md) 🛠️ | Move passwords out of YAML, use them safely, and know the limits of masking | 28 min |
-| 4.13 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/13-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
+| 4.13 | 🚦 [**Triggering Workflows in Detail**](04-github-actions-core-components/13-triggering-workflows-in-detail.md) 🛠️ | Every way a run can start: events, filters, manual runs with inputs, cron, dispatch and chaining | 26 min |
+| 4.14 | 📋 [**Cheat Sheet & Quiz**](04-github-actions-core-components/14-cheat-sheet-and-quiz.md) | Prove it stuck | 5 min |
 
 > [!NOTE]
 > 🔜 **This book is still being written.** New chapters land one topic at a time. Watch the repo, or peek at the [change log](log.md).
@@ -149,6 +150,7 @@ These aren't screenshots. They're running right here, and they'll run in your fo
 | 📦 | [`04-artifacts.yml`](.github/workflows/04-artifacts.yml) | [4.10](04-github-actions-core-components/10-storing-workflow-data-as-artifacts.md) | Three matrix jobs upload uniquely named artifacts; a gallery job downloads them by pattern and re-uploads one |
 | 🔤 | [`04-variables.yml`](.github/workflows/04-variables.yml) | [4.11](04-github-actions-core-components/11-working-with-variables.md) | `env` at three levels, which value wins, default variables, `$GITHUB_ENV` and `vars` with a fallback |
 | 🔐 | [`04-secrets.yml`](.github/workflows/04-secrets.yml) | [4.12](04-github-actions-core-components/12-working-with-repository-secrets.md) | Log masking, `::add-mask::` and an optional Docker Hub login; safe with no secrets set |
+| 🚦 | [`04-triggers.yml`](.github/workflows/04-triggers.yml) | [4.13](04-github-actions-core-components/13-triggering-workflows-in-detail.md) | A filtered push, a weekly schedule, a manual run with typed inputs and a `repository_dispatch`, each printing what started it |
 
 ## 🚀 Get started in 60 seconds
 

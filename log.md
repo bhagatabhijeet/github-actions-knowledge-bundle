@@ -1,6 +1,7 @@
 # Bundle Update Log
 
 ## 2026-10-26
+* **Creation**: Added [Triggering Workflows in Detail](/04-github-actions-core-components/13-triggering-workflows-in-detail.md) as Lesson 13 of Chapter 4, with the live workflow `04-triggers.yml`, `trigger-doors.svg` and `workflow-dispatch-form.svg`. The Chapter 4 cheat sheet moves to [Lesson 14](/04-github-actions-core-components/14-cheat-sheet-and-quiz.md).
 * **Update**: [Working with Repository-Level Secrets](/04-github-actions-core-components/12-working-with-repository-secrets.md) gains a step-by-step walkthrough for creating secrets and variables in Settings, with four new screen illustrations and the empty-username gotcha.
 * **Creation**: Added [Working with Repository-Level Secrets](/04-github-actions-core-components/12-working-with-repository-secrets.md) as Lesson 12 of Chapter 4, with the live workflow `04-secrets.yml` and `secret-journey.svg`.
 * **Creation**: Added [Working with Variables](/04-github-actions-core-components/11-working-with-variables.md) as Lesson 11 of Chapter 4, with the live workflow `04-variables.yml` and `variable-scopes.svg`.

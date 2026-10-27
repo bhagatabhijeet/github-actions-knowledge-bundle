@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-label="From YAML to the Run workflow form. On the left, a workflow_dispatch block with four inputs: environment of type choice, version of type string and required, dry-run of type boolean, and replicas of type number. On the right, the form GitHub draws from it in the Actions tab: a branch picker, a dropdown, a text box marked required, a checkbox and a number box, and a green Run workflow button. Below, how each input arrives in the job: inputs.dry-run stays a boolean, github.event.inputs.dry-run becomes the string true or false.">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#e3b341"/></marker>
+  </defs>
+  <rect width="1200" height="640" rx="20" fill="#0d1117"/>
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="600" y="50" text-anchor="middle" font-size="28" font-weight="800" fill="#e6edf3">You write the inputs, GitHub draws the form</text>
+    <text x="600" y="82" text-anchor="middle" font-size="16" fill="#8b949e">Each input's type decides which control appears under the Run workflow button</text>
+
+    <!-- YAML -->
+    <rect x="30" y="108" width="500" height="380" rx="18" fill="#010409" stroke="#30363d" stroke-width="2"/>
+    <text x="50" y="136" font-size="13" font-weight="700" fill="#8b949e" letter-spacing="1">.github/workflows/deploy.yml</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">
+      <text x="50" y="168" fill="#e3b341">on:</text>
+      <text x="50" y="190" fill="#c9d1d9">  workflow_dispatch:</text>
+      <text x="50" y="212" fill="#c9d1d9">    inputs:</text>
+      <text x="50" y="240" fill="#79c0ff">      environment:</text>
+      <text x="50" y="262" fill="#c9d1d9">        type: <tspan fill="#ff9bce">choice</tspan></text>
+      <text x="50" y="284" fill="#c9d1d9">        options: [staging, production]</text>
+      <text x="50" y="312" fill="#79c0ff">      version:</text>
+      <text x="50" y="334" fill="#c9d1d9">        { type: <tspan fill="#ff9bce">string</tspan>, required: true }</text>
+      <text x="50" y="362" fill="#79c0ff">      dry-run:</text>
+      <text x="50" y="384" fill="#c9d1d9">        { type: <tspan fill="#ff9bce">boolean</tspan>, default: true }</text>
+      <text x="50" y="412" fill="#79c0ff">      replicas:</text>
+      <text x="50" y="434" fill="#c9d1d9">        { type: <tspan fill="#ff9bce">number</tspan>, default: 2 }</text>
+      <text x="50" y="468" fill="#8b949e"># shortened for the picture; full file in the lesson</text>
+    </g>
+
+    <path d="M540 298 H600" fill="none" stroke="#e3b341" stroke-width="3" marker-end="url(#a)"/>
+
+    <!-- form -->
+    <rect x="612" y="108" width="558" height="380" rx="18" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+    <text x="636" y="140" font-size="15" font-weight="700" fill="#e6edf3">Run workflow</text>
+    <text x="1146" y="140" text-anchor="end" font-size="13" fill="#8b949e">Actions tab → Deploy</text>
+    <g font-size="13" fill="#e6edf3">
+      <text x="636" y="172">Use workflow from</text>
+      <rect x="636" y="180" width="200" height="30" rx="6" fill="#21262d" stroke="#30363d"/>
+      <text x="648" y="200" fill="#c9d1d9">Branch: main ▾</text>
+
+      <text x="636" y="232">environment</text>
+      <rect x="636" y="240" width="250" height="30" rx="6" fill="#0d1117" stroke="#30363d"/>
+      <text x="648" y="260" fill="#c9d1d9">staging</text><text x="872" y="260" text-anchor="end" fill="#8b949e">▾</text>
+
+      <text x="636" y="292">version <tspan fill="#ff7b72">*</tspan></text>
+      <rect x="636" y="300" width="250" height="30" rx="6" fill="#0d1117" stroke="#30363d"/>
+      <text x="648" y="320" fill="#6e7681">e.g. 1.4.2</text>
+
+      <rect x="636" y="350" width="18" height="18" rx="4" fill="#238636"/>
+      <text x="645" y="364" text-anchor="middle" fill="#ffffff" font-weight="800">✓</text>
+      <text x="664" y="364">dry-run</text>
+
+      <text x="636" y="398">replicas</text>
+      <rect x="636" y="406" width="120" height="30" rx="6" fill="#0d1117" stroke="#30363d"/>
+      <text x="648" y="426" fill="#c9d1d9">2</text>
+
+      <rect x="636" y="448" width="150" height="30" rx="6" fill="#238636"/>
+      <text x="711" y="468" text-anchor="middle" font-weight="700" fill="#ffffff">Run workflow</text>
+    </g>
+    <g font-size="12" fill="#8b949e">
+      <text x="906" y="200">a branch or tag to run on</text>
+      <text x="906" y="260"><tspan fill="#ff9bce">choice</tspan> → dropdown</text>
+      <text x="906" y="320"><tspan fill="#ff9bce">string</tspan> → text box, * = required</text>
+      <text x="906" y="364"><tspan fill="#ff9bce">boolean</tspan> → checkbox</text>
+      <text x="906" y="426"><tspan fill="#ff9bce">number</tspan> → number box</text>
+      <text x="906" y="468">also: <tspan fill="#ff9bce">environment</tspan> → env picker</text>
+    </g>
+
+    <!-- arrival -->
+    <rect x="30" y="510" width="1140" height="106" rx="18" fill="#161b22" stroke="#d2a8ff" stroke-width="2"/>
+    <text x="54" y="542" font-size="16" font-weight="800" fill="#d2a8ff">How the values arrive in the job</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">
+      <text x="54" y="574" fill="#7ee787">${{ inputs.dry-run }}</text>
+      <text x="360" y="574" fill="#c9d1d9">→ true</text><text x="460" y="574" fill="#8b949e" font-family="-apple-system, 'Segoe UI', sans-serif">a real boolean, so  if: inputs.dry-run  works</text>
+      <text x="54" y="600" fill="#ffa657">${{ github.event.inputs.dry-run }}</text>
+      <text x="360" y="600" fill="#c9d1d9">→ 'true'</text><text x="460" y="600" fill="#8b949e" font-family="-apple-system, 'Segoe UI', sans-serif">a string, so the text 'false' is still truthy. Prefer inputs.</text>
+    </g>
+  </g>
+</svg>
