@@ -9,4 +9,4 @@
 * [Exercise 3: Plant a bug, watch CI catch it](06-exercise-3-plant-a-bug-watch-ci.md) - This is the moment CI earns its keep.
 * [Exercise 4: Fail the lint gate](07-exercise-4-fail-the-lint-gate.md) - Add an unused import to the top of core.py and push:
 * [Bonus: Make the tick mandatory](08-bonus-make-the-tick-mandatory.md) - Right now a red pull request can still be merged. To close that door:
-* [Something went wrong?](09-something-went-wrong.md) - Something went wrong?
+* [Something went wrong?](09-something-went-wrong.md) - A troubleshooting table that maps common first-pipeline symptoms to their most likely cause.

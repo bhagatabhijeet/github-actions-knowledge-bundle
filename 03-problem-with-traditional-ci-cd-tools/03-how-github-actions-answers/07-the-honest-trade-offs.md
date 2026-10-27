@@ -4,7 +4,7 @@ title: "How GitHub Actions Answers the Problem: The honest trade-offs"
 description: "A fair comparison has two columns. Here is what you give up."
 tags: [github-actions, ci-cd, hosted-runners, self-hosted-runners, jenkins, comparison, migration]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-hosted-runners
     resource: https://docs.github.com/en/actions/concepts/runners/github-hosted-runners
@@ -24,6 +24,9 @@ sources:
   - id: gh-billing
     resource: https://docs.github.com/en/billing/concepts/product-billing/github-actions
     title: GitHub Actions billing
+  - id: gh-billing-usage
+    resource: https://docs.github.com/en/actions/concepts/billing-and-usage
+    title: Billing and usage
 ---
 
 <p align="center">
@@ -42,6 +45,9 @@ A fair comparison has two columns. Here is what you give up.
 | ⏱️ | **Job time limit** | A job on a GitHub-hosted runner is stopped after 6 hours |
 | 💰 | **Cost at very high volume** | Per-minute pricing can exceed the cost of your own machines if you build constantly |
 | 🚨 | **Someone else's outage** | If the service has an incident, you wait. You can't log in and fix it |
+
+> [!NOTE]
+> **📘 From the GitHub docs:** The cost row only bites private repositories. Standard GitHub-hosted runners are free in public repositories, and private repositories get a monthly quota of free minutes and storage based on your plan. ([Billing and usage](https://docs.github.com/en/actions/concepts/billing-and-usage))
 
 ---
 

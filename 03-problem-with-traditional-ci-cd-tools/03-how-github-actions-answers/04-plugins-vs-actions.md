@@ -4,7 +4,7 @@ title: "How GitHub Actions Answers the Problem: Plugins vs actions"
 description: "This one deserves a closer look, because actions and plugins sound like the same idea."
 tags: [github-actions, ci-cd, hosted-runners, self-hosted-runners, jenkins, comparison, migration]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-hosted-runners
     resource: https://docs.github.com/en/actions/concepts/runners/github-hosted-runners
@@ -49,6 +49,9 @@ steps:
 ```
 
 The upgrade trap from Lesson 2 can't happen. There is no server to upgrade, and bumping an action in one workflow leaves every other workflow untouched.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** A tag like `@v7` can be moved by whoever owns the action. For the strongest protection, GitHub recommends pinning to a full-length commit SHA, for example `uses: actions/checkout@<40-character-sha>`. An attacker would then need a SHA-1 collision to slip in a backdoor. ([Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use))
 
 ---
 

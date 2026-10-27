@@ -1,11 +1,11 @@
 ---
 type: Tutorial
 title: "Your First CI Pipeline: Something went wrong?"
-description: "Something went wrong?, part 9 of 9 of Your First CI Pipeline."
+description: "A troubleshooting table that maps common first-pipeline symptoms to their most likely cause."
 resource: /.github/workflows/02-ci-basics.yml
 tags: [ci-cd, hands-on, pipeline, matrix, artifacts, python, pull-requests]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-python
     resource: https://docs.github.com/en/actions/tutorials/build-and-test-code/python

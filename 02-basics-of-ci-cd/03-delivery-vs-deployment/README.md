@@ -34,7 +34,7 @@ CI told you a change is *good*. CD is about getting that good change *to users*.
 |---|---|---|
 | 1 | 🎯 [**The difference in one picture**](01-the-difference-in-one-picture.md) | 1 min |
 | 2 | 🪜 [**Three rungs of one ladder**](02-three-rungs-of-one-ladder.md) | 1 min |
-| 3 | 🏗️ [**Environments: the rehearsal stages**](03-environments-the-rehearsal-stages.md) | 2 min |
+| 3 | 🏗️ [**Environments: the rehearsal stages**](03-environments-the-rehearsal-stages.md) | 3 min |
 | 4 | 📦 [**Build once, deploy many**](04-build-once-deploy-many.md) | 2 min |
 | 5 | 🛟 [**Deploying without fear**](05-deploying-without-fear.md) | 1 min |
 | 6 | 🧭 [**Which one should you choose?**](06-which-one-should-you-choose.md) | 1 min |

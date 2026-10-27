@@ -1,10 +1,10 @@
 ---
 type: Reference
 title: "Chapter 3 Cheat Sheet and Quiz: Trade-offs to remember"
-description: "Trade-offs to remember, part 4 of 8 of Chapter 3 Cheat Sheet and Quiz."
+description: "What you give up by moving to GitHub Actions, and a practical mitigation for each trade-off."
 tags: [ci-cd, github-actions, self-hosted, cheat-sheet, quiz, recap]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-hosted-runners
     resource: https://docs.github.com/en/actions/concepts/runners/github-hosted-runners
@@ -12,6 +12,12 @@ sources:
   - id: gh-migrate-jenkins
     resource: https://docs.github.com/en/actions/tutorials/migrate-to-github-actions/manual-migrations/migrate-from-jenkins
     title: Migrating from Jenkins to GitHub Actions
+  - id: gh-limits
+    resource: https://docs.github.com/en/actions/reference/limits
+    title: Actions limits
+  - id: gh-secure-use
+    resource: https://docs.github.com/en/actions/reference/security/secure-use
+    title: Secure use reference
 ---
 
 <p align="center">
@@ -28,6 +34,9 @@ sources:
 | ⏱️ | 6-hour job limit on hosted runners | Split the job, or self-host |
 | 💰 | Per-minute cost on private repos | Caching, path filters, concurrency |
 | 🛡️ | Third-party action risk | Vet actions; pin to a commit SHA |
+
+> [!NOTE]
+> **📘 From the GitHub docs:** Self-hosted runners lift the job limit to 5 days, but GitHub warns they "should almost never be used for public repositories". ([Actions limits](https://docs.github.com/en/actions/reference/limits) · [Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use))
 
 ---
 

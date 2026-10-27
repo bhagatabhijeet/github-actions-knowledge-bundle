@@ -4,7 +4,7 @@ title: "Anatomy of a Pipeline: Carrying things between stages"
 description: "Remember the rule from Chapter 1: every job gets a fresh, empty runner. So how does the thing you built in package reach deploy?"
 tags: [ci-cd, pipeline, stages, artifacts, matrix, needs, caching]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
@@ -55,6 +55,9 @@ This is **build once, deploy many** in practice: `deploy` receives the exact byt
 > **Artifact or cache?** They look similar and are often confused.
 > - An **artifact** is an *output* of your pipeline. You want to keep it or pass it on.
 > - A **cache** is a *speed-up*. If it disappeared, the pipeline would still work, just slower.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** Artifacts and caches "cannot be used interchangeably". Use a **cache** for files that rarely change between runs, like downloaded dependencies. Use an **artifact** for files a job produces that you want to keep after the run or hand to another job. ([Workflow artifacts](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflow-artifacts))
 
 ---
 

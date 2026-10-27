@@ -6,5 +6,5 @@
 * [Environments: the rehearsal stages](03-environments-the-rehearsal-stages.md) - You don't perform a play for the first time on opening night. Code gets rehearsals too, in a series of environments.
 * [Build once, deploy many](04-build-once-deploy-many.md) - One rule separates trustworthy pipelines from hopeful ones:
 * [Deploying without fear](05-deploying-without-fear.md) - A few release strategies you'll hear named. You don't need them yet, but you should recognise the words.
-* [Which one should you choose?](06-which-one-should-you-choose.md) - Which one should you choose?
+* [Which one should you choose?](06-which-one-should-you-choose.md) - A three-question decision tree for picking continuous delivery or continuous deployment.
 * [Checkpoint](07-checkpoint.md) - Continuous delivery. A human makes the final call.

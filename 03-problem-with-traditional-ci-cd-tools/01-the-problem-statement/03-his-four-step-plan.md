@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "The Problem Statement: His four-step plan"
-description: "Abhijeet writes down a plan that addresses every finding:"
+description: "Abhijeet's four-step pipeline plan that answers every problem he found in the project's build history."
 tags: [ci-cd, problem-statement, devops, self-hosted, jenkins, beginner]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: jenkins-install
     resource: https://www.jenkins.io/doc/book/installing/

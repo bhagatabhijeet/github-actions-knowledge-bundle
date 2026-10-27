@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "The Problem Statement: The bill before the first build"
-description: "And that is only the first project."
+description: "The seven install-and-maintain tasks a self-hosted Jenkins needs before the first build, and how the list grows with every new project."
 tags: [ci-cd, problem-statement, devops, self-hosted, jenkins, beginner]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: jenkins-install
     resource: https://www.jenkins.io/doc/book/installing/

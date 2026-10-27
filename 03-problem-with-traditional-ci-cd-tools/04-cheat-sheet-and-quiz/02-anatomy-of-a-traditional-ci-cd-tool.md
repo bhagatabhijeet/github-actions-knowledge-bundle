@@ -1,10 +1,10 @@
 ---
 type: Reference
 title: "Chapter 3 Cheat Sheet and Quiz: Anatomy of a traditional CI/CD tool"
-description: "Anatomy of a traditional CI/CD tool, part 2 of 8 of Chapter 3 Cheat Sheet and Quiz."
+description: "The three parts of a traditional CI/CD tool (server, agents, plugins) and the upkeep each one hands to you."
 tags: [ci-cd, github-actions, self-hosted, cheat-sheet, quiz, recap]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-hosted-runners
     resource: https://docs.github.com/en/actions/concepts/runners/github-hosted-runners

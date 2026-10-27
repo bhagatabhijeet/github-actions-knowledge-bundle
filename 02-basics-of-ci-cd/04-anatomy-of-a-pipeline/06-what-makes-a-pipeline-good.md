@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Anatomy of a Pipeline: What makes a pipeline good?"
-description: "What makes a pipeline good?, part 6 of 7 of Anatomy of a Pipeline."
+description: "Five qualities of a good pipeline (fast, reliable, repeatable, visible, secure) with a rule of thumb for each."
 tags: [ci-cd, pipeline, stages, artifacts, matrix, needs, caching]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
@@ -15,6 +15,9 @@ sources:
   - id: gh-cache
     resource: https://docs.github.com/en/actions/concepts/workflows-and-actions/dependency-caching
     title: Dependency caching
+  - id: gh-secure-use
+    resource: https://docs.github.com/en/actions/reference/security/secure-use
+    title: Secure use reference
 ---
 
 <p align="center">
@@ -30,6 +33,16 @@ sources:
 | 🔁 | **Repeatable** | Same commit, same result, every time |
 | 👀 | **Visible** | Anyone can see what ran and why it failed |
 | 🔒 | **Secure** | Minimal permissions; secrets never printed |
+
+> [!NOTE]
+> **📘 From the GitHub docs:** For the 🔒 row, GitHub recommends giving the `GITHUB_TOKEN` the minimum permissions it needs: read-only by default, raised per job only where required.
+>
+> ```yaml
+> permissions:
+>   contents: read
+> ```
+>
+> ([Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use))
 
 ---
 

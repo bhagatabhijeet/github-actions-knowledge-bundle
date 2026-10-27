@@ -47,7 +47,7 @@ sources:
 | 5 | 🔍 [**Same pipeline, two worlds**](05-same-pipeline-two-worlds.md) | 2 min |
 | 6 | 🧾 [**What is still your job**](06-what-is-still-your-job.md) | 1 min |
 | 7 | ⚖️ [**The honest trade-offs**](07-the-honest-trade-offs.md) | 1 min |
-| 8 | 🌉 [**The middle path: self-hosted runners**](08-the-middle-path-self-hosted-runners.md) | 2 min |
+| 8 | 🌉 [**The middle path: self-hosted runners**](08-the-middle-path-self-hosted-runners.md) | 3 min |
 | 9 | 🧭 [**So which should you use?**](09-so-which-should-you-use.md) | 2 min |
 | 10 | 🚚 [**Already on a traditional tool?**](10-already-on-a-traditional-tool.md) | 1 min |
 | 11 | ✅ [**Checkpoint**](11-checkpoint.md) | 2 min |

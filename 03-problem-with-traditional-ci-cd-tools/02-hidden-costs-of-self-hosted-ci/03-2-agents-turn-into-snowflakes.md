@@ -4,7 +4,7 @@ title: "The Hidden Costs of Running Your Own CI Server: 2️⃣ Agents turn into
 description: "A build agent is usually a long-lived machine. Somebody installed Java on it in March, Node in June, and a newer Node in September \"just for one project\". This is task 4 on Abhijeet's list, several Node.js versions side..."
 tags: [ci-cd, self-hosted, jenkins, plugins, build-agents, maintenance]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: jenkins-scale
     resource: https://www.jenkins.io/doc/book/scaling/architecting-for-scale/
@@ -18,6 +18,9 @@ sources:
   - id: jenkins-advisories
     resource: https://www.jenkins.io/security/advisories/
     title: Jenkins Security Advisories
+  - id: gh-hosted-runners
+    resource: https://docs.github.com/en/actions/concepts/runners/github-hosted-runners
+    title: GitHub-hosted runners
 ---
 
 <p align="center">
@@ -41,6 +44,9 @@ Two problems follow.
 | "Works on agent 2" | A real sentence people say | Impossible |
 
 Each agent slowly becomes unique, a **snowflake**. Nobody can rebuild it from memory.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** This is the pain GitHub-hosted runners remove. Each one is a new virtual machine, and GitHub refreshes the tools in its runner images weekly. Machine maintenance and upgrades are taken care of for you. ([GitHub-hosted runners](https://docs.github.com/en/actions/concepts/runners/github-hosted-runners))
 
 ---
 

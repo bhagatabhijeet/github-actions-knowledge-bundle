@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "Continuous Delivery vs Continuous Deployment: Which one should you choose?"
-description: "Which one should you choose?, part 6 of 7 of Continuous Delivery vs Continuous Deployment."
+description: "A three-question decision tree for picking continuous delivery or continuous deployment."
 tags: [ci-cd, continuous-delivery, continuous-deployment, environments, approvals]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: fowler-cd
     resource: https://martinfowler.com/bliki/ContinuousDelivery.html

@@ -4,7 +4,7 @@ title: "Anatomy of a Pipeline: The matrix: one job, many variations"
 description: "\"Does it work on Python 3.12, 3.13 and 3.14?\" Don't copy the job three times. Describe the variations and let GitHub multiply."
 tags: [ci-cd, pipeline, stages, artifacts, matrix, needs, caching]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-syntax
     resource: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
@@ -15,6 +15,9 @@ sources:
   - id: gh-cache
     resource: https://docs.github.com/en/actions/concepts/workflows-and-actions/dependency-caching
     title: Dependency caching
+  - id: gh-limits
+    resource: https://docs.github.com/en/actions/reference/limits
+    title: Actions limits
 ---
 
 <p align="center">
@@ -43,6 +46,9 @@ One job definition becomes three parallel jobs, each with a different value in `
 
 > [!TIP]
 > Add a second key, such as `os: [ubuntu-latest, windows-latest]`, and you get every combination: 3 versions × 2 systems = 6 jobs.
+
+> [!NOTE]
+> **📘 From the GitHub docs:** Matrices multiply fast. One matrix can generate at most **256 jobs** per workflow run. Hosted runners also cap how many jobs run at once (20 concurrent jobs on the Free plan), so a huge matrix queues instead of finishing faster. ([Actions limits](https://docs.github.com/en/actions/reference/limits))
 
 ---
 

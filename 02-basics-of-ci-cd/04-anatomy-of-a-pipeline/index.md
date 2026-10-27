@@ -6,5 +6,5 @@
 * [Fan-out and fan-in](03-fan-out-and-fan-in.md) - needs takes a list, so stages can run side by side and then join up.
 * [The matrix: one job, many variations](04-the-matrix-one-job-many-variations.md) - "Does it work on Python 3.12, 3.13 and 3.14?" Don't copy the job three times. Describe the variations and let GitHub multiply.
 * [Carrying things between stages](05-carrying-things-between-stages.md) - Remember the rule from Chapter 1: every job gets a fresh, empty runner. So how does the thing you built in package reach deploy?
-* [What makes a pipeline good?](06-what-makes-a-pipeline-good.md) - What makes a pipeline good?
+* [What makes a pipeline good?](06-what-makes-a-pipeline-good.md) - Five qualities of a good pipeline (fast, reliable, repeatable, visible, secure) with a rule of thumb for each.
 * [Checkpoint](07-checkpoint.md) - Make each stage a job and give B needs: A.

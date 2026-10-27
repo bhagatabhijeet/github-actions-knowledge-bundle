@@ -1,10 +1,10 @@
 ---
 type: Reference
 title: "Chapter 2 Cheat Sheet and Quiz: Idea → GitHub Actions"
-description: "Idea → GitHub Actions, part 3 of 6 of Chapter 2 Cheat Sheet and Quiz."
+description: "Each CI/CD idea from the chapter mapped to the GitHub Actions feature and snippet that implements it."
 tags: [ci-cd, cheat-sheet, quiz, recap]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-ci
     resource: https://docs.github.com/en/actions/get-started/continuous-integration
@@ -12,6 +12,9 @@ sources:
   - id: gh-cd
     resource: https://docs.github.com/en/actions/get-started/continuous-deployment
     title: Continuous deployment (GitHub Docs)
+  - id: gh-limits
+    resource: https://docs.github.com/en/actions/reference/limits
+    title: Actions limits
 ---
 
 <p align="center">
@@ -31,6 +34,9 @@ sources:
 | Cancel stale runs | Concurrency | `cancel-in-progress: true` |
 | Approval before prod | Environments | `environment: production` |
 | Block bad merges | Rulesets | Required status checks |
+
+> [!TIP]
+> **📘 Limits worth remembering:** 6 hours per job on hosted runners, 24 hours in the queue, 256 jobs per matrix. ([Actions limits](https://docs.github.com/en/actions/reference/limits))
 
 ---
 

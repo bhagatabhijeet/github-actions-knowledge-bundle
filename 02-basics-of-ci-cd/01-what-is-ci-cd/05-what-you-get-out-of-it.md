@@ -1,10 +1,10 @@
 ---
 type: Tutorial
 title: "What is CI/CD?: What you get out of it"
-description: "What you get out of it, part 5 of 6 of What is CI/CD?."
+description: "Six concrete payoffs of CI/CD, from bugs caught in minutes to calm releases and easy rollbacks."
 tags: [ci-cd, continuous-integration, continuous-delivery, devops, beginner]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: fowler-ci
     resource: https://martinfowler.com/articles/continuousIntegration.html
@@ -29,6 +29,9 @@ sources:
 | 🔁 | **Easy rollbacks** | Small releases are small to undo |
 | 🤝 | **Shared confidence** | A green tick means the same thing to everyone |
 | 🚀 | **Faster delivery** | Finished work reaches users instead of waiting in a queue |
+
+> [!NOTE]
+> **📘 From the GitHub docs:** GitHub defines CI as "frequently committing code to a shared repository". Its reasoning is simple: committing more often detects errors sooner, and small, frequent updates are easier to merge with your teammates' work. ([Continuous integration](https://docs.github.com/en/actions/get-started/continuous-integration))
 
 ---
 

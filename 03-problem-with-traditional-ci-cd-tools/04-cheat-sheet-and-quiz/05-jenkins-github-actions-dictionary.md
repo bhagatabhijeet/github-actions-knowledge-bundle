@@ -1,10 +1,10 @@
 ---
 type: Reference
 title: "Chapter 3 Cheat Sheet and Quiz: Jenkins → GitHub Actions dictionary"
-description: "Jenkins → GitHub Actions dictionary, part 5 of 8 of Chapter 3 Cheat Sheet and Quiz."
+description: "A quick lookup table that translates Jenkins terms into their GitHub Actions equivalents."
 tags: [ci-cd, github-actions, self-hosted, cheat-sheet, quiz, recap]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-hosted-runners
     resource: https://docs.github.com/en/actions/concepts/runners/github-hosted-runners

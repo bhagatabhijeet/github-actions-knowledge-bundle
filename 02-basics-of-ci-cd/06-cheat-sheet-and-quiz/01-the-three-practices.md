@@ -1,10 +1,10 @@
 ---
 type: Reference
 title: "Chapter 2 Cheat Sheet and Quiz: The three practices"
-description: "The three practices, part 1 of 6 of Chapter 2 Cheat Sheet and Quiz."
+description: "CI, continuous delivery and continuous deployment side by side, with who takes the final step to production."
 tags: [ci-cd, cheat-sheet, quiz, recap]
 status: stable
-generated: { by: claude-code/claude-opus-5-5, at: 2026-10-07T00:00:00Z }
+generated: { by: claude-code/claude-opus-5-5, at: 2026-10-26T00:00:00Z }
 sources:
   - id: gh-ci
     resource: https://docs.github.com/en/actions/get-started/continuous-integration
